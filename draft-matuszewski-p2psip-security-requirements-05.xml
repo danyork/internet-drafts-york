@@ -29,8 +29,8 @@
   <?rfc strict="yes" ?>
 
   <front>
-    <title abbrev="Security requirements in P2PSIP">P2PSIP Security Tutorial
-    and Analysis</title>
+    <title abbrev="P2PSIP Security Overview">P2PSIP Security Overview
+    and Risk Analysis</title>
 
     <author fullname="Song Haibin" initials="H." surname="Song">
       <organization>Huawei</organization>
@@ -100,7 +100,7 @@
       </address>
     </author>
 
-    <date day="27" month="December" year="2008" />
+    <date year="2009" />
 
     <area>Real-time Applications and Infrastructure</area>
 
@@ -111,7 +111,7 @@
     <keyword>P2PSIP</keyword>
 
     <abstract>
-      <t>This document provides a security analysis and tutorial for the
+      <t>This document provides a security analysis and overview for the
       Peer-to-Peer Session Initiation Protocol (P2PSIP) overlay network. It
       discusses security threats for the P2PSIP architecture and its
       components. It compares security difference between client/server (C/S)
@@ -122,33 +122,6 @@
   </front>
 
   <middle>
-    <section title="Authors' Notes">
-      <t>This document represents a merge of two drafts:<list style="symbols">
-          <t>draft-matuszewski-p2psip-security-requirements</t>
-
-          <t><xref target="I-D.song-p2psip-security-eval"></xref></t>
-        </list>with some post-merge editing by Song Haibin, Dan York and
-      Marcin Matuszewski. The authors have finished with the work that is
-      promised in the previous version. The main changes include:<list
-          style="symbols">
-          <t>The security requirements have been taken out from this document,
-          which have been sent out to the P2PSIP mailing list to provide
-          security guidance for the base draft. And this document has become
-          an analysis and tutorial for p2psip security.</t>
-
-          <t>The document is synchronized with the recently released updates
-          to the RELOAD protocol as documented by editor Bruce Lowekamp in
-          <xref target="I-D.ietf-p2psip-sip"></xref> and <xref
-          target="I-D.ietf-p2psip-base"></xref></t>
-
-          <t>The merge between the two previous documents is completed and the
-          text flows better.</t>
-
-          <t>A section will be added on security requirements related to
-          interconnection of P2PSIP networks to other networks including
-          non-P2P SIP networks and the PSTN. (TBD)</t>
-        </list></t>
-    </section>
 
     <section title="Introduction">
       <t>The scope of this document is to analyze security threats concerning
@@ -719,9 +692,9 @@ Figure 1    Comparision between C/S and P2P security</artwork>
 
         <t>Another security issue in this layer is about the message state
         maintenance. The timeout value for the end to end message transport
-        must be chosen appropriately, becasue too short timeout value will
+        must be chosen appropriately, because too short timeout value will
         cause the overlay be flooded with messages since the initiator will
-        send the request again before the resposne is received. And too long
+        send the request again before the response is received. And too long
         timeout value will not satisfy the requirement for communication
         efficiency when routing failures occur. An open issue here is: How to
         derive the appropriate timeout value and should the timeout value be
@@ -798,7 +771,7 @@ Figure 3    Trusted P2P Overlay Base</artwork>
         <figure>
           <preamble></preamble>
 
-          <artwork> +--------------------+-----------------------+---------------------+
+ <artwork> +--------------------+-----------------------+---------------------+
  |  Possible Attacks  |   Descriptions        |  Considerations     |
  |--------------------+-----------------------+---------------------+
  |                    | 1.Message Privacy     | TLS and DTLS        |
@@ -826,7 +799,7 @@ Figure 3    Trusted P2P Overlay Base</artwork>
  |                    |                       | per timeunit        |
  +--------------------+-----------------------+---------------------+
 
-Figure 4    Possible Attacks on the Trusted Overlay Base Scenarios</artwork>
+Figure 4 Additional Possible Attacks on Trusted Overlay Base Scenarios</artwork>
 
           <postamble></postamble>
         </figure>
@@ -976,12 +949,20 @@ Figure 6 Possible Attacks on the Untrusted Overlay Base Scenarios</artwork>
           are widely implemented and used.</t>
         </section>
 
-        <section title="Requirements on a base P2P algorithm">
+        <section title="Base P2P security design considerations and guideline">
           <t>All of the security operations should be specified in such a way
           that they do not impose new unnecessary requirements on a base P2P
           algorithm (e.g., DHT implementations) and limit its scalability. The
           security issues that are not introduced by the P2P algorithm MUST
           not be left to the P2P algorithm to solve.</t>
+
+          <t>A P2PSIP system should provide methods to support various level of 
+	  security provisioning. Security requirements in P2P systems can be 
+	  different, depending on level of trust in the central entities and 
+	  connectivity to the global Internet. Security operations should be 
+	  specified in a manner that they do not overload base P2P algorithms 
+	  (e.g.  DHT implementations). Security risks, not covered by these, 
+	  should be further investigated in research projects.</t>
         </section>
 
         <section title="Node and user identification">
@@ -995,11 +976,9 @@ Figure 6 Possible Attacks on the Untrusted Overlay Base Scenarios</artwork>
         </section>
 
         <section title="Enrollment">
-          <t>The ease for users to enroll to a P2PSIP system SHOULD be
-          ensured. The enrollment process defines the set of users and P2PSIP
-          network entities that may participate in a P2PSIP system and issue
-          credentials for them. This process is defined by the P2PSIP system,
-          and the policy who can join it is done during this process. The
+          <t>The enrollment process defines the set of users and P2PSIP
+          network entities that may participate in a P2PSIP system. Each P2PSIP
+	  system may establish its own policy for who can join the system. The
           enrollment process policy may define:</t>
 
           <t><list style="symbols">
@@ -1013,7 +992,7 @@ Figure 6 Possible Attacks on the Untrusted Overlay Base Scenarios</artwork>
           <t>As it was indicated in <xref
           target="I-D.bryan-p2psip-requirements"></xref> the enrollment
           process may take several measures in admitting a user or a network
-          node to the P2PSIP system, for example:</t>
+          node to the P2PSIP system to increase security:</t>
 
           <t><list style="symbols">
               <t>may require strong identity such as employment or identity
@@ -1038,7 +1017,7 @@ Figure 6 Possible Attacks on the Untrusted Overlay Base Scenarios</artwork>
           (user) records in a P2PSIP overlay.</t>
         </section>
 
-        <section title="Data access">
+        <section title="Unauthorized data access">
           <t>An attacker MUST NOT be able to easily corrupt, delete, or
           overwrite other user's or resource's data stored in P2PSIP resource
           (user) records as well as routing tables. Only authorized users MUST
@@ -1082,7 +1061,7 @@ Figure 6 Possible Attacks on the Untrusted Overlay Base Scenarios</artwork>
           overlay.</t>
         </section>
 
-        <section title="Privacy">
+        <section title="Privacy Protection">
           <t>The security of P2PSIP systems MUST guarantee privacy of the
           P2PSIP network participants. The P2PSIP security SHOULD allow the
           users and P2PSIP network entities to indicate which other users or
@@ -1099,15 +1078,15 @@ Figure 6 Possible Attacks on the Untrusted Overlay Base Scenarios</artwork>
           P2PSIP network entities.</t>
         </section>
 
-        <section title="Detection and rejection of badly behaving nodes">
+        <section title="Badly behaving nodes">
           <t>It SHOULD be possible to limit potential damage caused by
           malfunctioning and badly behaving nodes in a P2PSIP system. As the
           policy taken by the P2PSIP system operator/community may be very
           liberal, any user can obtain the right to be a user of a P2PSIP
           system. It may be that some users behave badly intentionally in
           which case it should be possible to limit the impact of the badly
-          behaving nodes on the overall system security. It SHOULD be possible
-          to identify badly behaving nodes, and exclude or reject them from
+          behaving nodes on the overall system security. There should be methods
+          to look for badly behaving nodes and exclude or reject them from
           the P2PSIP system.</t>
         </section>
       </section>
@@ -1130,272 +1109,46 @@ Figure 6 Possible Attacks on the Untrusted Overlay Base Scenarios</artwork>
 
       <t>Acknowledgement is also given to Jan-Erik Ekberg and Pekka Laitinen,
       both with Nokia, and to Jiang Xingfeng with Huawei for their work on
-      earlier versions of the documents now incorporated into this draft.</t>
+      earlier versions of the documents now incorporated into this draft.
+      Acknowledgement also to Christian Schmidt with Nokia Siemens Networks for
+      providing valuable input to this document.</t>
     </section>
 
     <section anchor="Changes" title="Changes">
-      <section title="Revision 5">
-        <t>In this revision, the following changes were made:<list
-            style="symbols">
-            <t>Changes has been made based on new p2psip base draft
-            architecuture layers.</t>
 
-            <t>A new section about Interconnection to other networks has been
-            created.</t>
+    <section title="Revision 5">
+      <t>This document represents a merge of two drafts:<list style="symbols">
+          <t>draft-matuszewski-p2psip-security-requirements</t>
 
-            <t>A subsection about SIP usage security has been created.</t>
+          <t><xref target="I-D.song-p2psip-security-eval"></xref></t>
+        </list>with some post-merge editing by Song Haibin, Dan York and
+      Marcin Matuszewski. The authors have finished with the work that is
+      promised in the previous version. The main changes include:<list
+          style="symbols">
+          <t>The security requirements have been taken out from this document,
+          which have been sent out to the P2PSIP mailing list to provide
+          security guidance for the base draft. And this document has become
+          an analysis and tutorial for p2psip security.</t>
 
-            <t>Various wording changes based on comments from Christian
-            Schmidt.</t>
-          </list></t>
-      </section>
+          <t>The document is synchronized with the recently released updates
+          to the RELOAD protocol as documented by editor Bruce Lowekamp in
+          <xref target="I-D.ietf-p2psip-sip"></xref> and <xref
+          target="I-D.ietf-p2psip-base"></xref></t>
+
+          <t>The merge between the two previous documents is completed and the
+          text flows better.</t>
+
+          <t>A section will be added on security requirements related to
+          interconnection of P2PSIP networks to other networks including
+          non-P2P SIP networks and the PSTN.</t>
+
+	  <t>A subsection about SIP usage security has been created.</t>
+	  <t>Various wording changes based on comments from Christian Schmidt.</t>
+        </list></t>
+    </section>
+      
     </section>
 
-    <section title="Appendix: Security threats">
-      <t>This section analyses security threats in the Peer-to-Peer SIP
-      architecture.</t>
-
-      <section title="Replay Attacks">
-        <t>Replay attacks are a form of network attacks where a valid data
-        transmission is repeated or delayed. A badly behaving node may take an
-        older message sent by another node, resend it to the overlay, and thus
-        replace any newer data with the old information present in this
-        message. During those procedures, an attacker may be able to enroll
-        credentials for himself, or replace existing entry in the P2PSIP
-        overlay by an older entry. Thus, the architecture must consider this
-        issue in the process of both enrollment and modification of P2PSIP
-        resource (user) records in a P2PSIP overlay.</t>
-
-        <t>This is especially applicable to P2PSIP overlays that use the
-        recursive routing mode. In the recursive routing mode, data sent in a
-        PUT request traverses many peers in the overlay. If there is no
-        protection against the replay attacks any peer that forwards the
-        request may store a copy of the request and resend the captured
-        request corrupting data stored in the overlay.</t>
-      </section>
-
-      <section title="Message Insertion, Modification, Deletion">
-        <t>The message insertion, modification, and deletion attacks are where
-        an attacker is able to alter the messages being exchanged between two
-        end points.</t>
-
-        <t>P2PSIP peers connect to other peers to form the P2PSIP overlay
-        network. Typically peers provide storage, routing and bootstrap
-        services for other peers and clients. They allow P2PSIP entities to
-        PUT information to or GET information from the P2PSIP overlay network.
-        In the P2PSIP overlay that allows for a recursive routing, peers are
-        responsible for forwarding messages (requests and responses) received
-        from P2PSIP network entities to other peers. Depending on the size of
-        the overlay a single message can be forwarded by many peers before it
-        reaches a destination. In the iterative routing peers are responsible
-        for redirecting the requests to other peers. They do not forward the
-        requests to other peers. They respond to a request originator with an
-        address of a peer that should be contacted in the next step. In such
-        an environment a badly behaving peer may:</t>
-
-        <t><list style="symbols">
-            <t>modify incoming messages,</t>
-
-            <t>discard incoming messages (the peer can discard requests and
-            responses it is supposed to forward),</t>
-
-            <t>generate incorrect responses to requests that are directed to
-            some other nodes.</t>
-          </list></t>
-
-        <t>The first bullet point describes the attack that allows the peer to
-        cause the overlay to store unauthorized or outdated information in the
-        resource (user) records or return corrupted data to the originator of
-        the GET request (a peer or client). The peer may change the data
-        record in the overlay by changing incoming PUT messages or modify
-        result of the GET operation by modifying incoming GET responses. With
-        this type of attack the integrity of the P2PSIP system can become
-        compromised.</t>
-
-        <t>The middle bullet point is related not only to attacks that allow a
-        malicious peer to prevent access to a P2PSIP resource (user) record,
-        but also to attacks that can degrade the performance of the P2PSIP
-        system making it useless from the end-user perspective. The second
-        problem is of high importance in P2PSIP overlays that store user's
-        reachability data which is much more time-critical than content stored
-        in file sharing networks.</t>
-
-        <t>The attack described in the last bullet above may lead to a
-        requestor receiving corrupted data e.g. a connectivity information
-        that points to some other node. This may happen if a malicious peer
-        can respond to incoming requests that are directed to another
-        peer.</t>
-
-        <t>Besides peers may act as relays relaying traffic between two P2PSIP
-        network entities or act as a SIP proxy and a SIP registrar. Providing
-        those services a malicious peer may perform a similar attacks as
-        described above. Let us consider the following deployment scenario
-        where some peers act as SIP registrars or/and SIP proxies and allow a
-        conventional SIP UA to access resources of the P2PSIP overlay network.
-        An unmodified SIP UA sends an SIP Invite request towards an unknown
-        peer that acts as a SIP proxy. If the SIP messages are not
-        cryptographically protected, this peer may act maliciously and proxy a
-        request to other than intended node or modify SDP messages in order to
-        stay on the media path. Similarly a peer that acts as a SIP Registrar
-        may modify registration information before it sends it to a peer that
-        is responsible for storing the P2PSIP user record of a registering SIP
-        UA. Those attacks do not have impact on the integrity of the overlay.
-        Nevertheless those attacks must be addressed by designers of service
-        specific protocols such as <xref target="RFC3261">SIP</xref>.</t>
-      </section>
-
-      <section title="Man-In-The-Middle">
-        <t>In man-in-the-middle (m-i-m) attacks a malicious node can hijack a
-        connection established between two legitimate nodes, or just listen
-        and/or modify messages exchanged between two nodes. In contrast to the
-        attacks presented in Section 13.2 man-in-the middle attacks are
-        prevalent in pairing and authentication procedures.</t>
-
-        <t>The m-i-m threat can be mitigated by using well-established
-        authentication protocols. The authentication protocols may be used to
-        verify if a certain P2PSIP entity is the entity it claims to be, for
-        example if it is really a peer that is identified by a certain peer
-        ID. The authentication protocols can also be used to verify if a
-        particular P2PSIP entity belongs to a particular overlay or not.
-        However, authentication protocols cannot fully mitigate all of the
-        attacks presented in Section 13.2. There can be malicious peers that
-        are authorized overlay participants with a particular peer
-        identifiers.</t>
-
-        <t>If a bootstrap process is fully decentralized and a bootstrap node
-        is not trusted or authentication of the bootstrap node is not
-        possible, then the joining node can easily be attacked, e.g. it may be
-        redirected to another overlay or a part of the legacy overlay that is
-        controlled by the attacker. However if it is possible to authenticate
-        a particular peer in the overlay the joining peer may use P2P specific
-        mechanisms to detect if it is redirected to the right overlay or the
-        right place in the overlay.</t>
-
-        <t>Conventional SIP proxy and SIP registrars are servers maintained by
-        a service provider. If a user trust a service provider he also trusts
-        servers the service provider maintains. In P2PSIP SIP proxies and
-        registrars can be maintained by users themselves (they can be
-        collocated with peers). In a distributed environment it is very
-        difficult to trust all of peers in the overlay. Without an efficient
-        verification mechanism that allows to verify which peers are be
-        trusted, peers that act as SIP proxies and registrars may easily
-        perform m-i-m attacks. The problem must be solved by SIP designers as
-        well as by the P2PSIP community.</t>
-      </section>
-
-      <section title="Offline Cryptographic Attacks">
-        <t>The incentive to break a secure system dominates the effort to do
-        so. It is likely that P2PSIP systems do not pose a likely target for
-        attacks, and if state-of-the art security methods are used, the needed
-        effort to break the system by breaking cryptography is very likely to
-        be higher than by finding and exploiting software errors and
-        vulnerabilities.</t>
-      </section>
-
-      <section title="Unauthorized Usage">
-        <t>The basic notions of authentication and authorization, when
-        implemented correctly and consistently SHOULD protect against
-        unauthorized usage of the P2PSIP system. However, the trustworthiness
-        of an identity may be weak i.e. the enrollment system might be fairly
-        open and allow devices and persons that wish to attack the system.
-        Thus, there is a significant threat of attacks from within the
-        system.</t>
-
-        <t>A malicious peer may do a multitude of attacks towards the overlay
-        including:</t>
-
-        <t><list style="symbols">
-            <t>ignoring, changing, and deleting records in DHT that is it
-            responsible for,</t>
-
-            <t>misbehaving during data lookups (ie, giving wrong node
-            addresses, discarding queries).</t>
-          </list></t>
-
-        <t>The first bullet point is related to attacks that may cause DHT to
-        contain unauthorized, outdated information and/or miss information
-        about users or resources. Each peer is responsible for a part of the
-        hash space. Peers store resource (user) records that fall into their
-        part of the hash space. A malicious peer may modify or delete resource
-        (user) records it is supposed to store. It may also reply with
-        incorrect information to the GET requests addressed to resource (user)
-        records it is responsible for. In addition it may ignore any record
-        updates. These attacks are not limited to peers that are responsible
-        for primary copies of resource (user) records. They are also related
-        to peers that store replicas of resource (user) records. Besides a
-        bootstrap node may also respond with wrong bootstraping
-        information.</t>
-
-        <t>The second bullet point addresses attacks that may impact
-        correctness of routing mechanisms. If the recursive routing is used a
-        malicious peer can forward messages to another malicious node rather
-        than forwarding the messages according to the legitimate routing
-        information. This may also impact the iterative routing being
-        corrupted when the peer redirects the requester to a malicious
-        node.</t>
-      </section>
-
-      <section title="Inappropriate Usage">
-        <t>The P2PSIP overlay essentially provides a distributed storage for
-        P2PSIP resource (user) records. The data stored in the distributed
-        database can be used in an inappropriate manner. If there is no access
-        control to a resource (user) records stored in the overlay and any
-        node can update or retrieve information stored in the overlay. An
-        attacker may request data stored in the P2PSIP resource (user) records
-        and perform inappropriate usage attacks. Besides the attacker may also
-        update entries of other users or resources.</t>
-
-        <t>The individual services provided by P2PSIP (messaging, real-time
-        communication) have their respective threat models regarding
-        inappropriate use (Spam, viruses, ...) but these can be considered out
-        of scope for this document.</t>
-      </section>
-
-      <section title="Denial of Service">
-        <t>In the P2PSIP architecture <xref
-        target="I-D.ietf-p2psip-concepts"></xref>, the P2PSIP resource (user)
-        records are not maintained in a central, trustworthy storage system,
-        rather they are distributed among peers participating in the system.
-        Routing, relaying, SIP proxy and registrar services are also
-        distributed among P2PSIP entities. In cases where authentication in
-        the P2PSIP overlay is weak or where the system is fairly open to new
-        participants the "infiltration" is trivial (e.g., Sybil attack).</t>
-
-        <t>If peers in the P2PSIP overlay can freely choose peer IDs or/and
-        easily modify previously selected peer IDs the attacker may use
-        join-leave attacks to place a malicious peer intentionally at any
-        location in overlay. Placing the peer at any location allows an
-        attacker to obtain control of the location in the overlay where the
-        attacked user or resource is registered. A malicious peer may discard,
-        modify the data it is supposed to store and may discard lookup
-        requests or reply with incorrect entries to the incoming requests.</t>
-
-        <t>The attacker may also try to register a large number of resources
-        to the P2PSIP overlay increasing processing load on peers that are
-        responsible for storing the resources and limiting the overall
-        capacity of the P2PSIP overlay network. It may also try to register
-        all popular names preventing the name holders from registering their
-        preferred URIs.</t>
-
-        <t>Another critical point where a D-o-S attack can be mounted is the
-        enrollment system.</t>
-      </section>
-
-      <section title="Communication security threats">
-        <t>The main places where communication security becomes an issue in
-        the P2PSIP context is the enrollment process and the communication
-        between endpoints. The last ones are subject to all typical threats in
-        this domain, however they have been individually considered in the
-        earlier sections of this chapter.</t>
-
-        <t>This document assumes that the actual SIP service implementation
-        provides its own communication security, and the P2PSIP adds to that
-        only in providing a means for the communication endpoints to establish
-        a shared key for further security needs. Otherwise, the communication
-        security threats in that domain is out-of-scope for this
-        discussion.</t>
-      </section>
-    </section>
   </middle>
 
   <back>
