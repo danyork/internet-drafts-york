@@ -59,7 +59,7 @@ Internet-Draft          P2PSIP Security Overview               July 2009
 
 Abstract
 
-   This document provides a security analysis and overview for the Peer-
+   This document provides a security overview and analysis for the Peer-
    to-Peer Session Initiation Protocol (P2PSIP) overlay network.  It
    discusses security threats for the P2PSIP architecture and its
    components.  It compares security difference between client/server
@@ -151,7 +151,7 @@ Table of Contents
        8.2.7.  Replay attacks . . . . . . . . . . . . . . . . . . . . 27
        8.2.8.  Unauthorized data access . . . . . . . . . . . . . . . 27
        8.2.9.  Data validation  . . . . . . . . . . . . . . . . . . . 27
-       8.2.10. Denial of Service (DOS) attacks  . . . . . . . . . . . 27
+       8.2.10. Denial of Service (DOS) attacks  . . . . . . . . . . . 28
        8.2.11. Privacy Protection . . . . . . . . . . . . . . . . . . 28
        8.2.12. Badly behaving nodes . . . . . . . . . . . . . . . . . 28
    9.  Security Considerations  . . . . . . . . . . . . . . . . . . . 29
@@ -181,16 +181,16 @@ Internet-Draft          P2PSIP Security Overview               July 2009
    layer and the security relationship among the layers.  This draft
    also classifies the application scenarios into two main types and
    then analyzes in detail the security threats with these two types of
-   scenarios.  In the end, it provides user and system security
-   considerations for the P2PSIP overlay network.
+   scenarios.  Some solutions to certain attacks are given as an example
+   in the analysis text.  In the end, it provides user and system
+   security considerations for the P2PSIP overlay network.  This
+   document is designed to complement the P2PSIP Protocol Framework and
+   Requirements document [I-D.bryan-p2psip-requirements].
 
-   This document is intended to analyze security issues in P2PSIP
-   overlay network.  Some solutions to certain attacks are given as an
-   example in the analysis text.  This document is a merge of features
-   from the security requirement draft version and the security analysis
-   and evaluation draft [I-D.song-p2psip-security-eval].  It complements
-   the P2PSIP Protocol Framework and Requirements document
-   [I-D.bryan-p2psip-requirements].
+
+
+
+
 
 
 
@@ -479,7 +479,7 @@ Internet-Draft          P2PSIP Security Overview               July 2009
    record updates.  These attacks are not limited to peers that are
    responsible for primary copies of resource (user) records.  They are
    also related to peers that store replicas of resource (user) records.
-   Besides a bootstrap node may also respond with wrong bootstraping
+   Besides a bootstrap node may also respond with wrong bootstrapping
    information.
 
    The second bullet point addresses attacks that may impact correctness
@@ -696,7 +696,7 @@ Internet-Draft          P2PSIP Security Overview               July 2009
       |            |                      |                          |
       +------------+----------------------+--------------------------+
 
-     Figure 1    Comparision between C/S and P2P security
+     Figure 1    Comparison between C/S and P2P security
 
 
 
@@ -853,8 +853,8 @@ Internet-Draft          P2PSIP Security Overview               July 2009
    is important for hop by hop forwarding security.
 
    Second, some attackers may discard the messages when forwarding, or
-   on purpose forward the message to a wrong next hop.  Should the
-   overlay need a method to detect the misbehaving forwardings?
+   on purpose forward the message to a wrong next hop.  The overlay
+   should include some method to detect incorrectly forwarded messages.
 
    Third, some attacks may cause high churn rate to the overlay.  For
    example, some peers may frequently join and leave the overlay.
@@ -862,18 +862,18 @@ Internet-Draft          P2PSIP Security Overview               July 2009
    transfer relative resource objects under churn.  It can also make the
    routing messages fail.
 
-      In this case, we need a method to control nodes joining the
-      overlay.  The join control entity, which may be a bootstrap server
-      or enrollment server, or a bootstrap peer, makes records of peers'
-      historical behaviors in the overlay and their historical join
-      requests.  When it receives the join request from a peer to join
-      the overlay, it checks the historical records as mentioned above
-      to determine whether this peer is permitted to join at this point.
-      It will deny the node to join the overlay when it determines the
-      peer is not permitted to join.  For example, if a peer joins and
-      leaves too frequently, it will be denied to join the overlay as a
-      peer for a period of time and instead it will be allowed to join
-      the overlay as a client.
+   In this case, we need a method to control nodes joining the overlay.
+   The join control entity, which may be a bootstrap server or
+   enrollment server, or a bootstrap peer, makes records of peers'
+   historical behaviors in the overlay and their historical join
+   requests.  When it receives the join request from a peer to join the
+   overlay, it checks the historical records as mentioned above to
+   determine whether this peer is permitted to join at this point.  It
+   will deny the node to join the overlay when it determines the peer is
+   not permitted to join.  For example, if a peer joins and leaves too
+   frequently, it will be denied to join the overlay as a peer for a
+   period of time and instead it will be allowed to join the overlay as
+   a client.
 
    Chosen-ID attack makes the above security issues much more worse.
 
@@ -939,9 +939,9 @@ Internet-Draft          P2PSIP Security Overview               July 2009
 
    Another security issue in this layer is about the message state
    maintenance.  The timeout value for the end to end message transport
-   must be chosen appropriately, becasue too short timeout value will
+   must be chosen appropriately, because too short timeout value will
    cause the overlay be flooded with messages since the initiator will
-   send the request again before the resposne is received.  And too long
+   send the request again before the response is received.  And too long
    timeout value will not satisfy the requirement for communication
    efficiency when routing failures occur.  An open issue here is: How
    to derive the appropriate timeout value and should the timeout value
@@ -1028,12 +1028,12 @@ Internet-Draft          P2PSIP Security Overview               July 2009
 
 6.1.  Trusted P2P Overlay Base
 
-   In a trusted P2P Overlay Base, all the peers are deployed with good
-   behavior trustful nodes.  They are of good behaviors.  They may
+   In a trusted P2P Overlay Base, all the peers are deemed to be
+   trustworthy and are assumed to behave in a good manner.  They may be
    deployed to provide reliable and high quality services, and may also
    do some management services for the overlay.  All P2PSIP clients
-   access the overlay service through an associated trusted peer.  Shown
-   in the figure 3.
+   access the overlay service through an associated trusted peer, as
+   shown in figure 3.
 
 
 
@@ -1089,12 +1089,12 @@ Internet-Draft          P2PSIP Security Overview               July 2009
 
                  Figure 3    Trusted P2P Overlay Base
 
-   As for this type of scenarios, we regard the P2P Overlay Base to be
-   secure.  The security issues to be considered are the transport
-   security between trusted peers and the security issues associated
-   with clients.  Because clients do not provide routing service for the
-   overlay.  Security issues focus on distributed storage layer.  Some
-   of the attacks are described in the appendix of this draft.
+   In these scenarios, we regard the P2P Overlay Base to be secure.  The
+   security issues to be considered are the transport security between
+   trusted peers and the security issues associated with clients.
+   Security issues also focus on distributed storage layer.
+
+
 
 
 
@@ -1146,7 +1146,7 @@ Internet-Draft          P2PSIP Security Overview               July 2009
    |  Spam Attack       | Publish lots of       | 1. Check Mechanism? |
    |                    | redundant resources   | 2. Limit one's      |
    |                    |                       | publication number  |
-   |                    |                       | per timeunit        |
+   |                    |                       | per time unit       |
    +--------------------+-----------------------+---------------------+
 
   Figure 4 Additional Possible Attacks on Trusted Overlay Base Scenarios
@@ -1156,7 +1156,7 @@ Internet-Draft          P2PSIP Security Overview               July 2009
    In an untrusted P2P Overlay Base, there are peers who are not trusted
    by other peers.  Some of the untrusted peers may do harmful things or
    abnormal behaviors to the overlay due to malicious or unknown
-   intentions.  There may be trusted peers in the overlay.  As Shown in
+   intentions.  There may be trusted peers in the overlay, as Shown in
    Figure 5.
 
 
@@ -1178,8 +1178,8 @@ Internet-Draft          P2PSIP Security Overview               July 2009
 
 
                    +---------+               +---------+
-                   |Untrusted+---------------+   Peer  |
-                   | Peer    |               |         |
+                   |Untrusted+---------------+ Trusted |
+                   | Peer    |               | Peer    |
                    +---+-----+               +----+----+
                        |                          |
                        |                          |
@@ -1187,8 +1187,8 @@ Internet-Draft          P2PSIP Security Overview               July 2009
                        |                          |
                        |       P2PSIP Peer        |
                    +---+-----+ Protocol      +----+----+
-                   |  Peer   +---------------+Untrusted|
-                   |         |               | Peer    |
+                   | Trusted +---------------+Untrusted|
+                   | Peer    |               | Peer    |
                    +---+-----+               +----+----+
                        |                          |
                    P2PSIP Client              P2PSIP Client
@@ -1201,12 +1201,12 @@ Internet-Draft          P2PSIP Security Overview               July 2009
                  Figure 5 Untrusted P2P Overlay Base
 
 
-   For this type of scenarios, the security threats with the Trusted P2P
-   Overlay Base still exist, besides that, even more security issues
-   emerge, because there may exist malicious peers in this type of
-   scenarios.  Each layer of the P2PSIP architecture and the enrollment
-   may be attacked, the attacks beyond those in the Trusted Overlay Base
-   scenarios are listed in Figure 6.
+   In these scenarios, the security threats with the Trusted P2P Overlay
+   Base still exist.  However there are many additional security threats
+   because there may exist malicious peers in these networks.  Each
+   layer of the P2PSIP architecture and the enrollment may be attacked.
+   The attacks beyond those in the Trusted Overlay Base scenarios are
+   listed in Figure 6.
 
 
 
@@ -1352,8 +1352,9 @@ Internet-Draft          P2PSIP Security Overview               July 2009
 
 8.1.  User security considerations
 
-   with other users and resources in a secure way.  This means that the
-   P2PSIP system MUST provide:
+   The user wants available and reliable service that enables him to
+   interact with other users and resources in a secure way.  This means
+   that the P2PSIP system MUST provide:
 
    o  lookup and discovery of users and resources that is secure and
       reliable,
@@ -1392,7 +1393,6 @@ Internet-Draft          P2PSIP Security Overview               July 2009
    interfaces and protocols, for security there are several standardized
    solutions for access control, authentication, integrity protection
    and communication security.  Using established protocols minimizes
-   potential security loopholes that need to be patched later.  Besides
 
 
 
@@ -1401,6 +1401,7 @@ Song, et al.             Expires January 3, 2010               [Page 25]
 Internet-Draft          P2PSIP Security Overview               July 2009
 
 
+   potential security loopholes that need to be patched later.  Besides
    implementation is easier if chosen security protocols are widely
    implemented and used.
 
@@ -1446,8 +1447,7 @@ Internet-Draft          P2PSIP Security Overview               July 2009
    process may take several measures in admitting a user or a network
    node to the P2PSIP system to increase security:
 
-   o  may require strong identity such as employment or identity
-      provided by a trusted 3rd party or by the P2PSIP service operator,
+
 
 
 
@@ -1456,6 +1456,9 @@ Song, et al.             Expires January 3, 2010               [Page 26]
 
 Internet-Draft          P2PSIP Security Overview               July 2009
 
+
+   o  may require strong identity such as employment or identity
+      provided by a trusted 3rd party or by the P2PSIP service operator,
 
    o  may apply reputation mechanisms.
 
@@ -1500,11 +1503,8 @@ Internet-Draft          P2PSIP Security Overview               July 2009
    validate the data received in the process of P2PSIP resource (user)
    record insertion and modification.
 
-8.2.10.  Denial of Service (DOS) attacks
 
-   It MUST NOT be possible to obtain control of the location in the
-   overlay where the attacked user's or resource's records are
-   registered.  In order to prevent so-called Sybil or join-leave
+
 
 
 
@@ -1513,6 +1513,11 @@ Song, et al.             Expires January 3, 2010               [Page 27]
 Internet-Draft          P2PSIP Security Overview               July 2009
 
 
+8.2.10.  Denial of Service (DOS) attacks
+
+   It MUST NOT be possible to obtain control of the location in the
+   overlay where the attacked user's or resource's records are
+   registered.  In order to prevent so-called Sybil or join-leave
    attacks the attacker SHOULD NOT be able to easily register a
    unlimited number of IDs of his choice in the P2SIP overlay.  The
    P2PSIP system SHOULD be able to control ID assignment.  Once
@@ -1552,11 +1557,6 @@ Internet-Draft          P2PSIP Security Overview               July 2009
    behaving nodes on the overall system security.  There should be
    methods to look for badly behaving nodes and exclude or reject them
    from the P2PSIP system.
-
-
-
-
-
 
 
 

@@ -111,7 +111,7 @@
     <keyword>P2PSIP</keyword>
 
     <abstract>
-      <t>This document provides a security analysis and overview for the
+      <t>This document provides a security overview and analysis for the
       Peer-to-Peer Session Initiation Protocol (P2PSIP) overlay network. It
       discusses security threats for the P2PSIP architecture and its
       components. It compares security difference between client/server (C/S)
@@ -134,18 +134,14 @@
       security issues in each layer and the security relationship among the
       layers. This draft also classifies the application scenarios into two
       main types and then analyzes in detail the security threats with these
-      two types of scenarios. In the end, it provides user and system security
-      considerations for the P2PSIP overlay network.</t>
-
-      <t>This document is intended to analyze security issues in P2PSIP
-      overlay network. Some solutions to certain attacks are given as an
-      example in the analysis text. This document is a merge of features from
-      the security requirement draft version and the <xref
-      target="I-D.song-p2psip-security-eval">security analysis and evaluation
-      draft</xref>. It complements the <xref
+      two types of scenarios. Some solutions to certain attacks are given as
+      an example in the analysis text. In the end, it provides user and system 
+      security considerations for the P2PSIP overlay network.  This document 
+      is designed to complement the <xref 
       target="I-D.bryan-p2psip-requirements">P2PSIP Protocol Framework and
       Requirements document</xref>.</t>
-    </section>
+
+      </section>
 
     <section title="Terminology">
       <t>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
@@ -357,7 +353,7 @@
         updates. These attacks are not limited to peers that are responsible
         for primary copies of resource (user) records. They are also related
         to peers that store replicas of resource (user) records. Besides a
-        bootstrap node may also respond with wrong bootstraping
+        bootstrap node may also respond with wrong bootstrapping
         information.</t>
 
         <t>The second bullet point addresses attacks that may impact
@@ -491,7 +487,7 @@
  |            |                      |                          |
  +------------+----------------------+--------------------------+
 
-Figure 1    Comparision between C/S and P2P security</artwork>
+Figure 1    Comparison between C/S and P2P security</artwork>
 
         <postamble></postamble>
       </figure>
@@ -610,8 +606,8 @@ Figure 1    Comparision between C/S and P2P security</artwork>
         important for hop by hop forwarding security.</t>
 
         <t>Second, some attackers may discard the messages when forwarding, or
-        on purpose forward the message to a wrong next hop. Should the overlay
-        need a method to detect the misbehaving forwardings?</t>
+        on purpose forward the message to a wrong next hop. The overlay should
+	include some method to detect incorrectly forwarded messages.</t>
 
         <t>Third, some attacks may cause high churn rate to the overlay. For
         example, some peers may frequently join and leave the overlay. Overlay
@@ -619,7 +615,6 @@ Figure 1    Comparision between C/S and P2P security</artwork>
         relative resource objects under churn. It can also make the routing
         messages fail.</t>
 
-        <t><list>
             <t>In this case, we need a method to control nodes joining the
             overlay. The join control entity, which may be a bootstrap server
             or enrollment server, or a bootstrap peer, makes records of peers'
@@ -632,7 +627,6 @@ Figure 1    Comparision between C/S and P2P security</artwork>
             leaves too frequently, it will be denied to join the overlay as a
             peer for a period of time and instead it will be allowed to join
             the overlay as a client.</t>
-          </list></t>
 
         <t>Chosen-ID attack makes the above security issues much more
         worse.</t>
@@ -723,12 +717,12 @@ Figure 1    Comparision between C/S and P2P security</artwork>
       using the second type(refer to section 6.2 of this specification).</t>
 
       <section title="Trusted P2P Overlay Base">
-        <t>In a trusted P2P Overlay Base, all the peers are deployed with good
-        behavior trustful nodes. They are of good behaviors. They may deployed
-        to provide reliable and high quality services, and may also do some
-        management services for the overlay. All P2PSIP clients access the
-        overlay service through an associated trusted peer. Shown in the
-        figure 3.</t>
+        <t>In a trusted P2P Overlay Base, all the peers are deemed to be
+	trustworthy and are assumed to behave in a good manner. They may be 
+	deployed to provide reliable and high quality services, and may also 
+	do some management services for the overlay. All P2PSIP clients 
+	access the overlay service through an associated trusted peer, as
+	shown in figure 3.</t>
 
         <figure>
           <preamble></preamble>
@@ -761,12 +755,11 @@ Figure 3    Trusted P2P Overlay Base</artwork>
           <postamble></postamble>
         </figure>
 
-        <t>As for this type of scenarios, we regard the P2P Overlay Base to be
+        <t>In these scenarios, we regard the P2P Overlay Base to be
         secure. The security issues to be considered are the transport
         security between trusted peers and the security issues associated with
-        clients. Because clients do not provide routing service for the
-        overlay. Security issues focus on distributed storage layer. Some of
-        the attacks are described in the appendix of this draft.</t>
+        clients. Security issues also focus on distributed storage layer.
+        </t>
 
         <figure>
           <preamble></preamble>
@@ -796,7 +789,7 @@ Figure 3    Trusted P2P Overlay Base</artwork>
  |  Spam Attack       | Publish lots of       | 1. Check Mechanism? |
  |                    | redundant resources   | 2. Limit one's      |
  |                    |                       | publication number  |
- |                    |                       | per timeunit        |
+ |                    |                       | per time unit       |
  +--------------------+-----------------------+---------------------+
 
 Figure 4 Additional Possible Attacks on Trusted Overlay Base Scenarios</artwork>
@@ -809,7 +802,7 @@ Figure 4 Additional Possible Attacks on Trusted Overlay Base Scenarios</artwork>
         <t>In an untrusted P2P Overlay Base, there are peers who are not
         trusted by other peers. Some of the untrusted peers may do harmful
         things or abnormal behaviors to the overlay due to malicious or
-        unknown intentions. There may be trusted peers in the overlay. As
+        unknown intentions. There may be trusted peers in the overlay, as
         Shown in Figure 5.</t>
 
         <figure>
@@ -817,8 +810,8 @@ Figure 4 Additional Possible Attacks on Trusted Overlay Base Scenarios</artwork>
 
           <artwork align="center">
   +---------+               +---------+
-  |Untrusted+---------------+   Peer  |
-  | Peer    |               |         |
+  |Untrusted+---------------+ Trusted |
+  | Peer    |               | Peer    |
   +---+-----+               +----+----+
       |                          |
       |                          |
@@ -826,8 +819,8 @@ Figure 4 Additional Possible Attacks on Trusted Overlay Base Scenarios</artwork>
       |                          |
       |       P2PSIP Peer        |
   +---+-----+ Protocol      +----+----+
-  |  Peer   +---------------+Untrusted|
-  |         |               | Peer    |
+  | Trusted +---------------+Untrusted|
+  | Peer    |               | Peer    |
   +---+-----+               +----+----+
       |                          |
   P2PSIP Client              P2PSIP Client
@@ -844,11 +837,11 @@ Figure 5 Untrusted P2P Overlay Base
           <postamble></postamble>
         </figure>
 
-        <t>For this type of scenarios, the security threats with the Trusted
-        P2P Overlay Base still exist, besides that, even more security issues
-        emerge, because there may exist malicious peers in this type of
-        scenarios. Each layer of the P2PSIP architecture and the enrollment
-        may be attacked, the attacks beyond those in the Trusted Overlay Base
+        <t>In these scenarios, the security threats with the Trusted
+        P2P Overlay Base still exist. However there are many additional
+	security threats because there may exist malicious peers in these
+	networks. Each layer of the P2PSIP architecture and the enrollment
+        may be attacked. The attacks beyond those in the Trusted Overlay Base
         scenarios are listed in Figure 6.</t>
 
         <figure>
@@ -902,7 +895,8 @@ Figure 6 Possible Attacks on the Untrusted Overlay Base Scenarios</artwork>
       system. </t>
 
       <section title="User security considerations">
-        <t> with other users and resources in a secure way. This means that
+        <t> The user wants available and reliable service that enables him to
+	interact with other users and resources in a secure way. This means that
         the P2PSIP system MUST provide:</t>
 
         <t><list style="symbols">
