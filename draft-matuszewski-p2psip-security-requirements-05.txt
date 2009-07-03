@@ -68,51 +68,6 @@ Abstract
    layer and the security relationship among the layers.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Song, et al.             Expires January 3, 2010                [Page 2]
-
-Internet-Draft          P2PSIP Security Overview               July 2009
-
-
 Table of Contents
 
    1.  Introduction . . . . . . . . . . . . . . . . . . . . . . . . .  4
@@ -138,29 +93,74 @@ Table of Contents
      6.1.  Trusted P2P Overlay Base . . . . . . . . . . . . . . . . . 19
      6.2.  Untrusted P2P Overlay Base . . . . . . . . . . . . . . . . 21
    7.  Interconnection to other networks  . . . . . . . . . . . . . . 24
-   8.  Security considerations  . . . . . . . . . . . . . . . . . . . 25
-     8.1.  User security considerations . . . . . . . . . . . . . . . 25
-     8.2.  System security considerations . . . . . . . . . . . . . . 25
-       8.2.1.  Dependence of reachability of a centralized server . . 25
-       8.2.2.  Scalability  . . . . . . . . . . . . . . . . . . . . . 25
-       8.2.3.  Preference of existing security mechanisms . . . . . . 25
+     7.1.  Connections to SIP networks  . . . . . . . . . . . . . . . 24
+     7.2.  Direct connections to the PSTN . . . . . . . . . . . . . . 25
+   8.  Security considerations  . . . . . . . . . . . . . . . . . . . 26
+     8.1.  User security considerations . . . . . . . . . . . . . . . 26
+     8.2.  System security considerations . . . . . . . . . . . . . . 26
+       8.2.1.  Dependence of reachability of a centralized server . . 26
+       8.2.2.  Scalability  . . . . . . . . . . . . . . . . . . . . . 26
+       8.2.3.  Preference of existing security mechanisms . . . . . . 26
        8.2.4.  Base P2P security design considerations and
-               guideline  . . . . . . . . . . . . . . . . . . . . . . 26
-       8.2.5.  Node and user identification . . . . . . . . . . . . . 26
-       8.2.6.  Enrollment . . . . . . . . . . . . . . . . . . . . . . 26
-       8.2.7.  Replay attacks . . . . . . . . . . . . . . . . . . . . 27
-       8.2.8.  Unauthorized data access . . . . . . . . . . . . . . . 27
-       8.2.9.  Data validation  . . . . . . . . . . . . . . . . . . . 27
-       8.2.10. Denial of Service (DOS) attacks  . . . . . . . . . . . 28
-       8.2.11. Privacy Protection . . . . . . . . . . . . . . . . . . 28
-       8.2.12. Badly behaving nodes . . . . . . . . . . . . . . . . . 28
-   9.  Security Considerations  . . . . . . . . . . . . . . . . . . . 29
-   10. IANA Considerations  . . . . . . . . . . . . . . . . . . . . . 30
-   11. Acknowledgments  . . . . . . . . . . . . . . . . . . . . . . . 31
-   12. Changes  . . . . . . . . . . . . . . . . . . . . . . . . . . . 32
-     12.1. Revision 5 . . . . . . . . . . . . . . . . . . . . . . . . 32
-   13. Normative References . . . . . . . . . . . . . . . . . . . . . 33
-   Authors' Addresses . . . . . . . . . . . . . . . . . . . . . . . . 34
+               guideline  . . . . . . . . . . . . . . . . . . . . . . 27
+       8.2.5.  Node and user identification . . . . . . . . . . . . . 27
+       8.2.6.  Enrollment . . . . . . . . . . . . . . . . . . . . . . 27
+
+
+
+Song, et al.             Expires January 3, 2010                [Page 2]
+
+Internet-Draft          P2PSIP Security Overview               July 2009
+
+
+       8.2.7.  Replay attacks . . . . . . . . . . . . . . . . . . . . 28
+       8.2.8.  Unauthorized data access . . . . . . . . . . . . . . . 28
+       8.2.9.  Data validation  . . . . . . . . . . . . . . . . . . . 28
+       8.2.10. Denial of Service (DOS) attacks  . . . . . . . . . . . 29
+       8.2.11. Privacy Protection . . . . . . . . . . . . . . . . . . 29
+       8.2.12. Badly behaving nodes . . . . . . . . . . . . . . . . . 29
+   9.  Security Considerations  . . . . . . . . . . . . . . . . . . . 30
+   10. IANA Considerations  . . . . . . . . . . . . . . . . . . . . . 31
+   11. Acknowledgments  . . . . . . . . . . . . . . . . . . . . . . . 32
+   12. Changes  . . . . . . . . . . . . . . . . . . . . . . . . . . . 33
+     12.1. Revision 5 . . . . . . . . . . . . . . . . . . . . . . . . 33
+   13. Normative References . . . . . . . . . . . . . . . . . . . . . 34
+   Authors' Addresses . . . . . . . . . . . . . . . . . . . . . . . . 35
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1291,56 +1291,112 @@ Internet-Draft          P2PSIP Security Overview               July 2009
 
 7.  Interconnection to other networks
 
-   TBD
+   While some P2PSIP systems may exist that only allow communication
+   between P2PSIP peers within the system, other P2PSIP systems may have
+   connections to other networks such as the traditional Public Switched
+   Telephone Network (PSTN) or newer SIP-based networks.
 
+   For example, a P2PSIP system might be deployed within a branch office
+   with a connection from the P2PSIP system going back to a SIP-based
+   communication network in a main corporate office.  Alternatively, a
+   small office might deploy a P2PSIP system and then have some gateway
+   to the PSTN for external communication.
 
+   In examples such as these, care must be taken to ensure the security
+   of communication to those external networks.  Note that the level of
+   concern may vary depending upon whether the P2PSIP overlay base is
+   trusted or untrusted, as discussed in the previous section.
 
+7.1.  Connections to SIP networks
 
+   A common scenario may be for a P2PSIP system to be connected to
+   another SIP network.  This could be to a main corporate network as
+   described earlier, or it could be to a SIP-based Service Provider who
+   would then provide inbound and / or outbound connectivity to the
+   PSTN.  It could also be to an on-premise device such as an IP-PBX or
+   SIP application server that would provide connectivity to other
+   networks.
 
+   Important considerations here include:
 
+   o  How is the P2PSIP overlay network connected to the SIP network?
+      Is it through a single designated peer?  Is it through multiple
+      peers?
 
+   o  How is the availability of the connection to the SIP network
+      preserved?
 
+   o  How susceptible to Denial of Service attacks is the connection?
 
+   o  How are the authentication credentials for the SIP connection
+      protected?
 
+   o  What kind of transport security is deployed for the connection?
 
+   o  How are firewall traversal issues addressed?
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+   Care must be taken that the confidentiality, integrity and
+   availability of this connection be maintained.
 
 
 
 Song, et al.             Expires January 3, 2010               [Page 24]
+
+Internet-Draft          P2PSIP Security Overview               July 2009
+
+
+7.2.  Direct connections to the PSTN
+
+   While some P2PSIP systems may choose to connect to SIP-based Service
+   Providers to achieve PSTN connectivity, others might opt for direct
+   connectivity to the PSTN through local gateways such as hardware
+   cards.  For instance, a small office might have a PC or other device
+   with a hardware card that provided connectivity to a a traditional
+   analog line to the PSTN.  Similarly, a desk phone may be created with
+   both an IP connection and an analog line connection.
+
+   In these cases, one or more of the P2PSIP Peers may have these
+   devices installed and may then advertise these resources as being
+   available.  Important considerations here include:
+
+   o  How is the availability of the Peer(s) providing the PSTN gateway?
+
+   o  Are there protections in place to ensure that routing tables
+      aren't manipulated so that other Peers cannot find the gateways?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Song, et al.             Expires January 3, 2010               [Page 25]
 
 Internet-Draft          P2PSIP Security Overview               July 2009
 
@@ -1396,7 +1452,7 @@ Internet-Draft          P2PSIP Security Overview               July 2009
 
 
 
-Song, et al.             Expires January 3, 2010               [Page 25]
+Song, et al.             Expires January 3, 2010               [Page 26]
 
 Internet-Draft          P2PSIP Security Overview               July 2009
 
@@ -1452,7 +1508,7 @@ Internet-Draft          P2PSIP Security Overview               July 2009
 
 
 
-Song, et al.             Expires January 3, 2010               [Page 26]
+Song, et al.             Expires January 3, 2010               [Page 27]
 
 Internet-Draft          P2PSIP Security Overview               July 2009
 
@@ -1508,7 +1564,7 @@ Internet-Draft          P2PSIP Security Overview               July 2009
 
 
 
-Song, et al.             Expires January 3, 2010               [Page 27]
+Song, et al.             Expires January 3, 2010               [Page 28]
 
 Internet-Draft          P2PSIP Security Overview               July 2009
 
@@ -1564,7 +1620,7 @@ Internet-Draft          P2PSIP Security Overview               July 2009
 
 
 
-Song, et al.             Expires January 3, 2010               [Page 28]
+Song, et al.             Expires January 3, 2010               [Page 29]
 
 Internet-Draft          P2PSIP Security Overview               July 2009
 
@@ -1620,7 +1676,7 @@ Internet-Draft          P2PSIP Security Overview               July 2009
 
 
 
-Song, et al.             Expires January 3, 2010               [Page 29]
+Song, et al.             Expires January 3, 2010               [Page 30]
 
 Internet-Draft          P2PSIP Security Overview               July 2009
 
@@ -1676,7 +1732,7 @@ Internet-Draft          P2PSIP Security Overview               July 2009
 
 
 
-Song, et al.             Expires January 3, 2010               [Page 30]
+Song, et al.             Expires January 3, 2010               [Page 31]
 
 Internet-Draft          P2PSIP Security Overview               July 2009
 
@@ -1732,7 +1788,7 @@ Internet-Draft          P2PSIP Security Overview               July 2009
 
 
 
-Song, et al.             Expires January 3, 2010               [Page 31]
+Song, et al.             Expires January 3, 2010               [Page 32]
 
 Internet-Draft          P2PSIP Security Overview               July 2009
 
@@ -1788,7 +1844,7 @@ Internet-Draft          P2PSIP Security Overview               July 2009
 
 
 
-Song, et al.             Expires January 3, 2010               [Page 32]
+Song, et al.             Expires January 3, 2010               [Page 33]
 
 Internet-Draft          P2PSIP Security Overview               July 2009
 
@@ -1844,7 +1900,7 @@ Internet-Draft          P2PSIP Security Overview               July 2009
 
 
 
-Song, et al.             Expires January 3, 2010               [Page 33]
+Song, et al.             Expires January 3, 2010               [Page 34]
 
 Internet-Draft          P2PSIP Security Overview               July 2009
 
@@ -1900,5 +1956,5 @@ Authors' Addresses
 
 
 
-Song, et al.             Expires January 3, 2010               [Page 34]
+Song, et al.             Expires January 3, 2010               [Page 35]
 
