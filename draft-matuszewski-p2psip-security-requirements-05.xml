@@ -925,7 +925,7 @@ Figure 6 Possible Attacks on the Untrusted Overlay Base Scenarios</artwork>
 	 Providers to achieve PSTN connectivity, others might opt for direct
 	 connectivity to the PSTN through local gateways such as hardware cards.
 	 For instance, a small office might have a PC or other device with a
-	 hardware card that provided connectivity to a a traditional analog line
+	 hardware card that provided connectivity to a traditional analog line
 	 to the PSTN. Similarly, a desk phone may be created with both an IP
 	 connection and an analog line connection. </t>
 	 <t>In these cases, one or more of the P2PSIP Peers may have these
