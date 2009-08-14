@@ -13,6 +13,7 @@
 <!ENTITY RFC3427 PUBLIC "" "http://xml.resource.org/public/rfc/bibxml/reference.RFC.3427.xml">
 <!ENTITY RFC3455 PUBLIC "" "http://xml.resource.org/public/rfc/bibxml/reference.RFC.3455.xml">
 <!ENTITY RFC3603 PUBLIC "" "http://xml.resource.org/public/rfc/bibxml/reference.RFC.3603.xml">
+<!ENTITY RFC3968 PUBLIC "" "http://xml.resource.org/public/rfc/bibxml/reference.RFC.3968.xml">
 
 ]>
 <?xml-stylesheet type='text/xsl' href='rfc2629.xslt' ?>
@@ -24,11 +25,7 @@
 <?rfc compact="yes" ?>
 <?rfc subcompact="no" ?>
 <rfc category="info" docName="draft-york-sipping-p-charge-info-06"
-ipr="trust200811">
-  <!-- category values: std, bcp, info, exp, and historic
-     ipr values: full3667, noModification3667, noDerivatives3667
-     you can add the attributes updates="NNNN" and obsoletes="NNNN" 
-     they will automatically be output with "(if approved)" -->
+ipr="trust200902">
 
   <!-- ***** FRONT MATTER ***** -->
 
@@ -84,9 +81,9 @@ ipr="trust200811">
        about the party to be charged.  This P-Header is currently
        in production usage by a number of equipment vendors and carriers
        and this document is submitted to request the registration of
-       this header with IANA as required by section 4.2 of RFC 3427. This
-       P-Header may also be used in some situations to carry the ISUP
-       Charge Number parameter for PSTN interconnection.</t>
+       this header with IANA as required by section 4.2 of RFC 3427 and 
+       RFC 3968. This P-Header may also be used in some situations to carry 
+       the ISUP Charge Number parameter for PSTN interconnection.</t>
     </abstract>
   </front>
 
@@ -98,7 +95,8 @@ ipr="trust200811">
 	document describes the current usage of 'P-Charge-Info', a private
 	SIP header, to provide simple billing information and requests the
 	registration of this header with IANA as required by section 4.2 of
-	 <xref target="RFC3427">RFC 3427</xref>.</t>
+	 <xref target="RFC3427">RFC 3427</xref> and section 3 of 
+	  <xref target="RFC3968">RFC 3968</xref>..</t>
 	
 	<t>In a typical configuration, the identity of the caller, commonly
 	referred to as "Caller ID" by end users, is derived from one of the
@@ -475,6 +473,9 @@ section RFC 3427 Section 4.1 and the registration requirements in Section
     <section anchor="Changes" title="Changes">
       <t>NOTE TO RFC EDITOR - Please remove this "Changes" section prior to
       publication. Thank you.</t>
+      <t>Revision -07 was updated to the "trust200902" IPR statement and added
+      references to RFC 3968.  At this point all comments have been incorporated
+      and publication will be requested.</t>
       <t>Revision -06 had only a minor correction to the second usage
       example. The IPR statement was also updated to comply with RFC 5378.</t>
       <t>Revision -05 included the following modifications:<list
@@ -508,6 +509,7 @@ section RFC 3427 Section 4.1 and the registration requirements in Section
     <references title="Normative References">
 
     &RFC3427;
+    &RFC3968;
 
     </references>
 

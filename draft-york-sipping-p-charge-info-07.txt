@@ -4,8 +4,8 @@
 SIPPING                                                          D. York
 Internet-Draft                                                     Voxeo
 Intended status: Informational                                T. Asveren
-Expires: August 8, 2009                                            Sonus
-                                                        February 4, 2009
+Expires: February 15, 2010                                         Sonus
+                                                         August 14, 2009
 
 
   P-Charge-Info - A Private Header (P-Header) Extension to the Session
@@ -33,7 +33,7 @@ Status of this Memo
    The list of Internet-Draft Shadow Directories can be accessed at
    http://www.ietf.org/shadow.html.
 
-   This Internet-Draft will expire on August 8, 2009.
+   This Internet-Draft will expire on February 15, 2010.
 
 Copyright Notice
 
@@ -41,32 +41,29 @@ Copyright Notice
    document authors.  All rights reserved.
 
    This document is subject to BCP 78 and the IETF Trust's Legal
-   Provisions Relating to IETF Documents
-   (http://trustee.ietf.org/license-info) in effect on the date of
-   publication of this document.  Please review these documents
-   carefully, as they describe your rights and restrictions with respect
-   to this document.
-
-
-
-
-
-
-York & Asveren           Expires August 8, 2009                 [Page 1]
-
-Internet-Draft     P-Charge-Info, a SIP Private Header     February 2009
-
+   Provisions Relating to IETF Documents in effect on the date of
+   publication of this document (http://trustee.ietf.org/license-info).
+   Please review these documents carefully, as they describe your rights
+   and restrictions with respect to this document.
 
 Abstract
 
    This document describes 'P-Charge-Info', a private Session Initiation
+
+
+
+York & Asveren          Expires February 15, 2010               [Page 1]
+
+Internet-Draft     P-Charge-Info, a SIP Private Header       August 2009
+
+
    Protocol (SIP) header (P-header) used to convey billing information
    about the party to be charged.  This P-Header is currently in
    production usage by a number of equipment vendors and carriers and
    this document is submitted to request the registration of this header
-   with IANA as required by section 4.2 of RFC 3427.  This P-Header may
-   also be used in some situations to carry the ISUP Charge Number
-   parameter for PSTN interconnection.
+   with IANA as required by section 4.2 of RFC 3427 and RFC 3968.  This
+   P-Header may also be used in some situations to carry the ISUP Charge
+   Number parameter for PSTN interconnection.
 
 
 Table of Contents
@@ -98,8 +95,8 @@ Table of Contents
        9.2.2.  Egress to Untrusted Peers  . . . . . . . . . . . . . . 10
    10. Acknowledgements . . . . . . . . . . . . . . . . . . . . . . . 10
    11. Changes  . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
-   12. References . . . . . . . . . . . . . . . . . . . . . . . . . . 11
-     12.1. Normative References . . . . . . . . . . . . . . . . . . . 11
+   12. References . . . . . . . . . . . . . . . . . . . . . . . . . . 12
+     12.1. Normative References . . . . . . . . . . . . . . . . . . . 12
      12.2. Informative References . . . . . . . . . . . . . . . . . . 12
    Authors' Addresses . . . . . . . . . . . . . . . . . . . . . . . . 12
 
@@ -108,9 +105,12 @@ Table of Contents
 
 
 
-York & Asveren           Expires August 8, 2009                 [Page 2]
+
+
+
+York & Asveren          Expires February 15, 2010               [Page 2]
 
-Internet-Draft     P-Charge-Info, a SIP Private Header     February 2009
+Internet-Draft     P-Charge-Info, a SIP Private Header       August 2009
 
 
 1.  Overview
@@ -121,7 +121,7 @@ Internet-Draft     P-Charge-Info, a SIP Private Header     February 2009
    describes the current usage of 'P-Charge-Info', a private SIP header,
    to provide simple billing information and requests the registration
    of this header with IANA as required by section 4.2 of RFC 3427
-   [RFC3427].
+   [RFC3427] and section 3 of RFC 3968 [RFC3968]..
 
    In a typical configuration, the identity of the caller, commonly
    referred to as "Caller ID" by end users, is derived from one of the
@@ -164,9 +164,9 @@ Internet-Draft     P-Charge-Info, a SIP Private Header     February 2009
 
 
 
-York & Asveren           Expires August 8, 2009                 [Page 3]
+York & Asveren          Expires February 15, 2010               [Page 3]
 
-Internet-Draft     P-Charge-Info, a SIP Private Header     February 2009
+Internet-Draft     P-Charge-Info, a SIP Private Header       August 2009
 
 
 2.  Requirements Language
@@ -220,9 +220,9 @@ Internet-Draft     P-Charge-Info, a SIP Private Header     February 2009
 
 
 
-York & Asveren           Expires August 8, 2009                 [Page 4]
+York & Asveren          Expires February 15, 2010               [Page 4]
 
-Internet-Draft     P-Charge-Info, a SIP Private Header     February 2009
+Internet-Draft     P-Charge-Info, a SIP Private Header       August 2009
 
 
    interconnection occurs.  Consider an enterprise with a work force and
@@ -276,9 +276,9 @@ Internet-Draft     P-Charge-Info, a SIP Private Header     February 2009
 
 
 
-York & Asveren           Expires August 8, 2009                 [Page 5]
+York & Asveren          Expires February 15, 2010               [Page 5]
 
-Internet-Draft     P-Charge-Info, a SIP Private Header     February 2009
+Internet-Draft     P-Charge-Info, a SIP Private Header       August 2009
 
 
 5.  Alternatives
@@ -332,9 +332,9 @@ Internet-Draft     P-Charge-Info, a SIP Private Header     February 2009
 
 
 
-York & Asveren           Expires August 8, 2009                 [Page 6]
+York & Asveren          Expires February 15, 2010               [Page 6]
 
-Internet-Draft     P-Charge-Info, a SIP Private Header     February 2009
+Internet-Draft     P-Charge-Info, a SIP Private Header       August 2009
 
 
    telephone service environment for which this header is designed.  In
@@ -388,9 +388,9 @@ Internet-Draft     P-Charge-Info, a SIP Private Header     February 2009
 
 
 
-York & Asveren           Expires August 8, 2009                 [Page 7]
+York & Asveren          Expires February 15, 2010               [Page 7]
 
-Internet-Draft     P-Charge-Info, a SIP Private Header     February 2009
+Internet-Draft     P-Charge-Info, a SIP Private Header       August 2009
 
 
 6.2.1.  Procedures at the UA
@@ -444,9 +444,9 @@ Internet-Draft     P-Charge-Info, a SIP Private Header     February 2009
 
 
 
-York & Asveren           Expires August 8, 2009                 [Page 8]
+York & Asveren          Expires February 15, 2010               [Page 8]
 
-Internet-Draft     P-Charge-Info, a SIP Private Header     February 2009
+Internet-Draft     P-Charge-Info, a SIP Private Header       August 2009
 
 
    Any other applicable SIP URI could be used.
@@ -500,9 +500,9 @@ Internet-Draft     P-Charge-Info, a SIP Private Header     February 2009
 
 
 
-York & Asveren           Expires August 8, 2009                 [Page 9]
+York & Asveren          Expires February 15, 2010               [Page 9]
 
-Internet-Draft     P-Charge-Info, a SIP Private Header     February 2009
+Internet-Draft     P-Charge-Info, a SIP Private Header       August 2009
 
 
    Compact Form: none
@@ -556,9 +556,9 @@ Internet-Draft     P-Charge-Info, a SIP Private Header     February 2009
 
 
 
-York & Asveren           Expires August 8, 2009                [Page 10]
+York & Asveren          Expires February 15, 2010              [Page 10]
 
-Internet-Draft     P-Charge-Info, a SIP Private Header     February 2009
+Internet-Draft     P-Charge-Info, a SIP Private Header       August 2009
 
 
    For revision -05, the authors thank John Haluska who provided a range
@@ -570,6 +570,10 @@ Internet-Draft     P-Charge-Info, a SIP Private Header     February 2009
 
    NOTE TO RFC EDITOR - Please remove this "Changes" section prior to
    publication.  Thank you.
+
+   Revision -07 was updated to the "trust200902" IPR statement and added
+   references to RFC 3968.  At this point all comments have been
+   incorporated and publication will be requested.
 
    Revision -06 had only a minor correction to the second usage example.
    The IPR statement was also updated to comply with RFC 5378.
@@ -603,19 +607,26 @@ Internet-Draft     P-Charge-Info, a SIP Private Header     February 2009
 
 12.  References
 
+
+
+
+
+
+York & Asveren          Expires February 15, 2010              [Page 11]
+
+Internet-Draft     P-Charge-Info, a SIP Private Header       August 2009
+
+
 12.1.  Normative References
 
    [RFC3427]  Mankin, A., Bradner, S., Mahy, R., Willis, D., Ott, J.,
               and B. Rosen, "Change Process for the Session Initiation
               Protocol (SIP)", BCP 67, RFC 3427, December 2002.
 
-
-
-
-York & Asveren           Expires August 8, 2009                [Page 11]
-
-Internet-Draft     P-Charge-Info, a SIP Private Header     February 2009
-
+   [RFC3968]  Camarillo, G., "The Internet Assigned Number Authority
+              (IANA) Header Field Parameter Registry for the Session
+              Initiation Protocol (SIP)", BCP 98, RFC 3968,
+              December 2004.
 
 12.2.  Informative References
 
@@ -647,6 +658,21 @@ Authors' Addresses
    URI:   http://www.voxeo.com/
 
 
+
+
+
+
+
+
+
+
+
+
+York & Asveren          Expires February 15, 2010              [Page 12]
+
+Internet-Draft     P-Charge-Info, a SIP Private Header       August 2009
+
+
    Tolga Asveren
    Sonus Networks
    3 Paragon Way
@@ -668,5 +694,35 @@ Authors' Addresses
 
 
 
-York & Asveren           Expires August 8, 2009                [Page 12]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+York & Asveren          Expires February 15, 2010              [Page 13]
 
