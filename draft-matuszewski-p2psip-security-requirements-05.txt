@@ -4,10 +4,10 @@
 P2PSIP Working Group                                             H. Song
 Internet-Draft                                                    Huawei
 Intended status: Informational                            M. Matuszewski
-Expires: January 7, 2010                                           Nokia
+Expires: January 11, 2010                                          Nokia
                                                                  D. York
                                                                    Voxeo
-                                                            July 6, 2009
+                                                           July 10, 2009
 
 
                P2PSIP Security Overview and Risk Analysis
@@ -34,7 +34,7 @@ Status of this Memo
    The list of Internet-Draft Shadow Directories can be accessed at
    http://www.ietf.org/shadow.html.
 
-   This Internet-Draft will expire on January 7, 2010.
+   This Internet-Draft will expire on January 11, 2010.
 
 Copyright Notice
 
@@ -52,7 +52,7 @@ Copyright Notice
 
 
 
-Song, et al.             Expires January 7, 2010                [Page 1]
+Song, et al.            Expires January 11, 2010                [Page 1]
 
 Internet-Draft          P2PSIP Security Overview               July 2009
 
@@ -108,7 +108,7 @@ Table of Contents
 
 
 
-Song, et al.             Expires January 7, 2010                [Page 2]
+Song, et al.            Expires January 11, 2010                [Page 2]
 
 Internet-Draft          P2PSIP Security Overview               July 2009
 
@@ -164,7 +164,7 @@ Internet-Draft          P2PSIP Security Overview               July 2009
 
 
 
-Song, et al.             Expires January 7, 2010                [Page 3]
+Song, et al.            Expires January 11, 2010                [Page 3]
 
 Internet-Draft          P2PSIP Security Overview               July 2009
 
@@ -220,7 +220,7 @@ Internet-Draft          P2PSIP Security Overview               July 2009
 
 
 
-Song, et al.             Expires January 7, 2010                [Page 4]
+Song, et al.            Expires January 11, 2010                [Page 4]
 
 Internet-Draft          P2PSIP Security Overview               July 2009
 
@@ -276,7 +276,7 @@ Internet-Draft          P2PSIP Security Overview               July 2009
 
 
 
-Song, et al.             Expires January 7, 2010                [Page 5]
+Song, et al.            Expires January 11, 2010                [Page 5]
 
 Internet-Draft          P2PSIP Security Overview               July 2009
 
@@ -332,7 +332,7 @@ Internet-Draft          P2PSIP Security Overview               July 2009
 
 
 
-Song, et al.             Expires January 7, 2010                [Page 6]
+Song, et al.            Expires January 11, 2010                [Page 6]
 
 Internet-Draft          P2PSIP Security Overview               July 2009
 
@@ -388,7 +388,7 @@ Internet-Draft          P2PSIP Security Overview               July 2009
 
 
 
-Song, et al.             Expires January 7, 2010                [Page 7]
+Song, et al.            Expires January 11, 2010                [Page 7]
 
 Internet-Draft          P2PSIP Security Overview               July 2009
 
@@ -444,7 +444,7 @@ Internet-Draft          P2PSIP Security Overview               July 2009
 
 
 
-Song, et al.             Expires January 7, 2010                [Page 8]
+Song, et al.            Expires January 11, 2010                [Page 8]
 
 Internet-Draft          P2PSIP Security Overview               July 2009
 
@@ -500,7 +500,7 @@ Internet-Draft          P2PSIP Security Overview               July 2009
 
 
 
-Song, et al.             Expires January 7, 2010                [Page 9]
+Song, et al.            Expires January 11, 2010                [Page 9]
 
 Internet-Draft          P2PSIP Security Overview               July 2009
 
@@ -556,7 +556,7 @@ Internet-Draft          P2PSIP Security Overview               July 2009
 
 
 
-Song, et al.             Expires January 7, 2010               [Page 10]
+Song, et al.            Expires January 11, 2010               [Page 10]
 
 Internet-Draft          P2PSIP Security Overview               July 2009
 
@@ -612,7 +612,7 @@ Internet-Draft          P2PSIP Security Overview               July 2009
 
 
 
-Song, et al.             Expires January 7, 2010               [Page 11]
+Song, et al.            Expires January 11, 2010               [Page 11]
 
 Internet-Draft          P2PSIP Security Overview               July 2009
 
@@ -668,7 +668,7 @@ Internet-Draft          P2PSIP Security Overview               July 2009
 
 
 
-Song, et al.             Expires January 7, 2010               [Page 12]
+Song, et al.            Expires January 11, 2010               [Page 12]
 
 Internet-Draft          P2PSIP Security Overview               July 2009
 
@@ -724,7 +724,7 @@ Internet-Draft          P2PSIP Security Overview               July 2009
 
 
 
-Song, et al.             Expires January 7, 2010               [Page 13]
+Song, et al.            Expires January 11, 2010               [Page 13]
 
 Internet-Draft          P2PSIP Security Overview               July 2009
 
@@ -780,7 +780,7 @@ Internet-Draft          P2PSIP Security Overview               July 2009
 
 
 
-Song, et al.             Expires January 7, 2010               [Page 14]
+Song, et al.            Expires January 11, 2010               [Page 14]
 
 Internet-Draft          P2PSIP Security Overview               July 2009
 
@@ -836,7 +836,7 @@ Internet-Draft          P2PSIP Security Overview               July 2009
 
 
 
-Song, et al.             Expires January 7, 2010               [Page 15]
+Song, et al.            Expires January 11, 2010               [Page 15]
 
 Internet-Draft          P2PSIP Security Overview               July 2009
 
@@ -892,7 +892,7 @@ Internet-Draft          P2PSIP Security Overview               July 2009
 
 
 
-Song, et al.             Expires January 7, 2010               [Page 16]
+Song, et al.            Expires January 11, 2010               [Page 16]
 
 Internet-Draft          P2PSIP Security Overview               July 2009
 
@@ -948,7 +948,7 @@ Internet-Draft          P2PSIP Security Overview               July 2009
 
 
 
-Song, et al.             Expires January 7, 2010               [Page 17]
+Song, et al.            Expires January 11, 2010               [Page 17]
 
 Internet-Draft          P2PSIP Security Overview               July 2009
 
@@ -957,7 +957,8 @@ Internet-Draft          P2PSIP Security Overview               July 2009
 
 5.6.  Usage Layer Security
 
-   The SIP usage security analysis is TBD.
+   The SIP usage security analysis is briefly discussed in the Security
+   Considerations section of [I-D.ietf-p2psip-sip].
 
 
 
@@ -1003,8 +1004,7 @@ Internet-Draft          P2PSIP Security Overview               July 2009
 
 
 
-
-Song, et al.             Expires January 7, 2010               [Page 18]
+Song, et al.            Expires January 11, 2010               [Page 18]
 
 Internet-Draft          P2PSIP Security Overview               July 2009
 
@@ -1060,7 +1060,7 @@ Internet-Draft          P2PSIP Security Overview               July 2009
 
 
 
-Song, et al.             Expires January 7, 2010               [Page 19]
+Song, et al.            Expires January 11, 2010               [Page 19]
 
 Internet-Draft          P2PSIP Security Overview               July 2009
 
@@ -1116,7 +1116,7 @@ Internet-Draft          P2PSIP Security Overview               July 2009
 
 
 
-Song, et al.             Expires January 7, 2010               [Page 20]
+Song, et al.            Expires January 11, 2010               [Page 20]
 
 Internet-Draft          P2PSIP Security Overview               July 2009
 
@@ -1172,7 +1172,7 @@ Internet-Draft          P2PSIP Security Overview               July 2009
 
 
 
-Song, et al.             Expires January 7, 2010               [Page 21]
+Song, et al.            Expires January 11, 2010               [Page 21]
 
 Internet-Draft          P2PSIP Security Overview               July 2009
 
@@ -1228,7 +1228,7 @@ Internet-Draft          P2PSIP Security Overview               July 2009
 
 
 
-Song, et al.             Expires January 7, 2010               [Page 22]
+Song, et al.            Expires January 11, 2010               [Page 22]
 
 Internet-Draft          P2PSIP Security Overview               July 2009
 
@@ -1284,7 +1284,7 @@ Internet-Draft          P2PSIP Security Overview               July 2009
 
 
 
-Song, et al.             Expires January 7, 2010               [Page 23]
+Song, et al.            Expires January 11, 2010               [Page 23]
 
 Internet-Draft          P2PSIP Security Overview               July 2009
 
@@ -1340,7 +1340,7 @@ Internet-Draft          P2PSIP Security Overview               July 2009
 
 
 
-Song, et al.             Expires January 7, 2010               [Page 24]
+Song, et al.            Expires January 11, 2010               [Page 24]
 
 Internet-Draft          P2PSIP Security Overview               July 2009
 
@@ -1396,7 +1396,7 @@ Internet-Draft          P2PSIP Security Overview               July 2009
 
 
 
-Song, et al.             Expires January 7, 2010               [Page 25]
+Song, et al.            Expires January 11, 2010               [Page 25]
 
 Internet-Draft          P2PSIP Security Overview               July 2009
 
@@ -1452,7 +1452,7 @@ Internet-Draft          P2PSIP Security Overview               July 2009
 
 
 
-Song, et al.             Expires January 7, 2010               [Page 26]
+Song, et al.            Expires January 11, 2010               [Page 26]
 
 Internet-Draft          P2PSIP Security Overview               July 2009
 
@@ -1508,7 +1508,7 @@ Internet-Draft          P2PSIP Security Overview               July 2009
 
 
 
-Song, et al.             Expires January 7, 2010               [Page 27]
+Song, et al.            Expires January 11, 2010               [Page 27]
 
 Internet-Draft          P2PSIP Security Overview               July 2009
 
@@ -1564,7 +1564,7 @@ Internet-Draft          P2PSIP Security Overview               July 2009
 
 
 
-Song, et al.             Expires January 7, 2010               [Page 28]
+Song, et al.            Expires January 11, 2010               [Page 28]
 
 Internet-Draft          P2PSIP Security Overview               July 2009
 
@@ -1620,7 +1620,7 @@ Internet-Draft          P2PSIP Security Overview               July 2009
 
 
 
-Song, et al.             Expires January 7, 2010               [Page 29]
+Song, et al.            Expires January 11, 2010               [Page 29]
 
 Internet-Draft          P2PSIP Security Overview               July 2009
 
@@ -1676,7 +1676,7 @@ Internet-Draft          P2PSIP Security Overview               July 2009
 
 
 
-Song, et al.             Expires January 7, 2010               [Page 30]
+Song, et al.            Expires January 11, 2010               [Page 30]
 
 Internet-Draft          P2PSIP Security Overview               July 2009
 
@@ -1732,7 +1732,7 @@ Internet-Draft          P2PSIP Security Overview               July 2009
 
 
 
-Song, et al.             Expires January 7, 2010               [Page 31]
+Song, et al.            Expires January 11, 2010               [Page 31]
 
 Internet-Draft          P2PSIP Security Overview               July 2009
 
@@ -1788,7 +1788,7 @@ Internet-Draft          P2PSIP Security Overview               July 2009
 
 
 
-Song, et al.             Expires January 7, 2010               [Page 32]
+Song, et al.            Expires January 11, 2010               [Page 32]
 
 Internet-Draft          P2PSIP Security Overview               July 2009
 
@@ -1844,7 +1844,7 @@ Internet-Draft          P2PSIP Security Overview               July 2009
 
 
 
-Song, et al.             Expires January 7, 2010               [Page 33]
+Song, et al.            Expires January 11, 2010               [Page 33]
 
 Internet-Draft          P2PSIP Security Overview               July 2009
 
@@ -1900,7 +1900,7 @@ Internet-Draft          P2PSIP Security Overview               July 2009
 
 
 
-Song, et al.             Expires January 7, 2010               [Page 34]
+Song, et al.            Expires January 11, 2010               [Page 34]
 
 Internet-Draft          P2PSIP Security Overview               July 2009
 
@@ -1956,5 +1956,5 @@ Authors' Addresses
 
 
 
-Song, et al.             Expires January 7, 2010               [Page 35]
+Song, et al.            Expires January 11, 2010               [Page 35]
 

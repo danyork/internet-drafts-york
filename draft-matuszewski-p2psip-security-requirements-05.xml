@@ -693,7 +693,9 @@ Figure 1    Comparison between C/S and P2P security</artwork>
       </section>
 
       <section title="Usage Layer Security">
-        <t>The SIP usage security analysis is TBD.</t>
+        <t>The SIP usage security analysis is briefly discussed in the Security
+	Considerations section of <xref target="I-D.ietf-p2psip-sip">
+	</xref>.</t>        
       </section>
     </section>
 
