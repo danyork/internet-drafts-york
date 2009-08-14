@@ -10,7 +10,7 @@ Expires: February 15, 2010                                         Sonus
 
   P-Charge-Info - A Private Header (P-Header) Extension to the Session
                        Initiation Protocol (SIP)
-                  draft-york-sipping-p-charge-info-06
+                  draft-york-sipping-p-charge-info-07
 
 Status of this Memo
 
