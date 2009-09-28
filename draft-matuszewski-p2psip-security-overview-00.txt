@@ -283,10 +283,6 @@ Internet-Draft          P2PSIP Security Overview          September 2009
 
 2.  Terminology
 
-   The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
-   "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
-   document are to be interpreted as described in RFC 2119 [RFC2119].
-
    We use the terminology and definitions from the Concepts and
    Terminology for Peer to Peer SIP [I-D.ietf-p2psip-concepts] draft
    extensively in this document.  Other terms used in this document are
@@ -316,6 +312,10 @@ Internet-Draft          P2PSIP Security Overview          September 2009
    O Untrusted P2P Overlay Base: Peers in a Untrusted P2P Overlay Base
    are not all trusted.  There may exist some malicious behaving nodes
    in the P2P Overlay Base.
+
+
+
+
 
 
 
@@ -508,7 +508,7 @@ Internet-Draft          P2PSIP Security Overview          September 2009
 3.5.  Unauthorized Usage
 
    The basic notions of authentication and authorization, when
-   implemented correctly and consistently SHOULD protect against
+   implemented correctly and consistently should protect against
    unauthorized usage of the P2PSIP system.  However, the
    trustworthiness of an identity may be weak i.e. the enrollment system
    might be fairly open and allow devices and persons that wish to
@@ -877,7 +877,7 @@ Internet-Draft          P2PSIP Security Overview          September 2009
    Given that a P2PSIP overlay can run on top of the Internet or other
    untrusted network, messages between associated nodes should be
    protected against attacks(such as Man-in-the-Middle).  In order to
-   establish the identity trust association, nodes MUST authenticate
+   establish the identity trust association, nodes must authenticate
    each other with e.g.  TLS and DTLS.  If transport service security is
    provided, we can prevent nodes without valid identities to
    participate in the overlay.  This layer must provides reliable and
@@ -904,7 +904,7 @@ Internet-Draft          P2PSIP Security Overview          September 2009
    identities, the overlay may still be attacked by responding with fake
    routing table to UPDATE requests.  If the routing table is false, the
    routing determination based on it will be false too.  So,
-   verification mechanisms SHOULD be adopted to verify if the routing
+   verification mechanisms should be adopted to verify if the routing
    table received by the peer correct or not.  A correct routing table
    is important for hop by hop forwarding security.
 
@@ -1466,7 +1466,7 @@ Internet-Draft          P2PSIP Security Overview          September 2009
 
    The user wants available and reliable service that enables him to
    interact with other users and resources in a secure way.  This means
-   that the P2PSIP system MUST provide:
+   that the P2PSIP system must provide:
 
    o  lookup and discovery of users and resources that is secure and
       reliable,
@@ -1487,7 +1487,7 @@ Internet-Draft          P2PSIP Security Overview          September 2009
 8.2.1.  Dependence of reachability of a centralized server
 
    Considering the nature of P2P in general, the dependence of
-   reachability of a centralized server SHOULD be minimized.  There may
+   reachability of a centralized server should be minimized.  There may
    be unavoidable situations such as the enrollment process, where this
    is not possible.  However, the normal functioning of the P2PSIP
    overlay such as join and leave operations, modification, retrieval
@@ -1496,7 +1496,7 @@ Internet-Draft          P2PSIP Security Overview          September 2009
 
 8.2.2.  Scalability
 
-   P2PSIP security SHOULD scale from a small ad-hoc network to a network
+   P2PSIP security should scale from a small ad-hoc network to a network
    with hundred millions of network nodes and users.
 
 8.2.3.  Preference of existing security mechanisms
@@ -1522,7 +1522,7 @@ Internet-Draft          P2PSIP Security Overview          September 2009
    All of the security operations should be specified in such a way that
    they do not impose new unnecessary requirements on a base P2P
    algorithm (e.g., DHT implementations) and limit its scalability.  The
-   security issues that are not introduced by the P2P algorithm MUST not
+   security issues that are not introduced by the P2P algorithm must not
    be left to the P2P algorithm to solve.
 
    A P2PSIP system should provide methods to support various level of
@@ -1535,8 +1535,8 @@ Internet-Draft          P2PSIP Security Overview          September 2009
 
 8.2.5.  Node and user identification
 
-   The P2PSIP system MUST preserve user and resource identities.  It
-   MUST NOT be possible to steal a P2PSIP identity from another user.
+   The P2PSIP system must preserve user and resource identities.  It
+   must NOT be possible to steal a P2PSIP identity from another user.
 
    Because some attackers may try to use identities of another P2PSIP
    network entities it should be possible to verify the identity of
@@ -1590,9 +1590,9 @@ Internet-Draft          P2PSIP Security Overview          September 2009
 
 8.2.8.  Unauthorized data access
 
-   An attacker MUST NOT be able to easily corrupt, delete, or overwrite
+   An attacker must NOT be able to easily corrupt, delete, or overwrite
    other user's or resource's data stored in P2PSIP resource (user)
-   records as well as routing tables.  Only authorized users MUST be
+   records as well as routing tables.  Only authorized users must be
    able to modify, delete or overwrite their P2PSIP resource (user)
    records in the P2PSIP system.  P2PSIP security should allow users and
    P2PSIP network entities to register the same resources (e.g.
@@ -1601,17 +1601,17 @@ Internet-Draft          P2PSIP Security Overview          September 2009
    able to perform the same operations on its part of a resource record
    as on its own resource (user) records.
 
-   The owner of the P2PSIP resource (user) records SHOULD be able to
+   The owner of the P2PSIP resource (user) records should be able to
    authorize other users and network entities to modify, delete their
    P2PSIP resource (user) records.
 
 8.2.9.  Data validation
 
-   First and foremost it MUST be possible to verify that the data stored
+   First and foremost it must be possible to verify that the data stored
    in or retrieved from the P2PSIP overlay is authentic, i.e. was not
    tampered by unauthorized P2PSIP network entities.
 
-   The peer that stores P2PSIP resource (user) records MUST be able to
+   The peer that stores P2PSIP resource (user) records must be able to
    validate the data received in the process of P2PSIP resource (user)
    record insertion and modification.
 
@@ -1627,40 +1627,40 @@ Internet-Draft          P2PSIP Security Overview          September 2009
 
 8.2.10.  Denial of Service (DOS) attacks
 
-   It MUST NOT be possible to obtain control of the location in the
+   It must NOT be possible to obtain control of the location in the
    overlay where the attacked user's or resource's records are
    registered.  In order to prevent so-called Sybil or join-leave
-   attacks the attacker SHOULD NOT be able to easily register a
+   attacks the attacker should NOT be able to easily register a
    unlimited number of IDs of his choice in the P2SIP overlay.  The
-   P2PSIP system SHOULD be able to control ID assignment.  Once
-   assigned, an ID or a set of IDs SHOULD be difficult to change.
+   P2PSIP system should be able to control ID assignment.  Once
+   assigned, an ID or a set of IDs should be difficult to change.
 
-   In addition the P2PSIP architecture SHOULD make sure that data stored
+   In addition the P2PSIP architecture should make sure that data stored
    in a P2PSIP overlay is persistent, meaning that even if a number of
    nodes (but not all of nodes in the overlay) fails the data stored by
-   those nodes is not lost.  In addition the attacker MUST NOT be able
+   those nodes is not lost.  In addition the attacker must NOT be able
    to register unlimited number of resources in the overlay.
 
 8.2.11.  Privacy Protection
 
-   The security of P2PSIP systems MUST guarantee privacy of the P2PSIP
-   network participants.  The P2PSIP security SHOULD allow the users and
+   The security of P2PSIP systems must guarantee privacy of the P2PSIP
+   network participants.  The P2PSIP security should allow the users and
    P2PSIP network entities to indicate which other users or P2PSIP
    network entities can retrieve, modify, and delete data stored in
    their P2PSIP resource (user) records.  The owner of a P2PSIP resource
-   (user) record SHOULD be able to limit the access to his own resource
+   (user) record should be able to limit the access to his own resource
    (user) records, and this feature should be enforced by the P2P
    network.
 
-   It MUST also be difficult to monitor who is communicating with a
+   It must also be difficult to monitor who is communicating with a
    particular user, or retrieve any contextual data about the user
    without the user's explicit consent.  The P2PSIP network entities
-   MUST be provided with option to encrypt data exchanged with other
+   must be provided with option to encrypt data exchanged with other
    P2PSIP network entities.
 
 8.2.12.  Badly behaving nodes
 
-   It SHOULD be possible to limit potential damage caused by
+   It should be possible to limit potential damage caused by
    malfunctioning and badly behaving nodes in a P2PSIP system.  As the
    policy taken by the P2PSIP system operator/community may be very
    liberal, any user can obtain the right to be a user of a P2PSIP
@@ -1851,6 +1851,10 @@ Internet-Draft          P2PSIP Security Overview          September 2009
 
 12.  Changes
 
+   NOTE TO RFC EDITOR: Please remove this section prior to publication.
+   It is included only to aid in the discussion and development of the
+   document.
+
 12.1.  Revision 5
 
    This document represents a merge of two drafts:
@@ -1894,16 +1898,17 @@ Internet-Draft          P2PSIP Security Overview          September 2009
    o  IPR declaration changed to 'pre5378Trust200902' based on feedback
       from other authors.
 
-   o  Figures changed to reflect RELOAD protocol.
-
-
-
 
 
 Song, et al.              Expires April 1, 2010                [Page 34]
 
 Internet-Draft          P2PSIP Security Overview          September 2009
 
+
+   o  Removed references to RFC 2119 and began removal of normative
+      language.
+
+   o  Figures changed to reflect RELOAD protocol.
 
    o  Reference to "I-D.zheng-p2psip-diagnose" changed to "I-D.ietf-
       p2psip-diagnostics".
@@ -1912,11 +1917,6 @@ Internet-Draft          P2PSIP Security Overview          September 2009
 
    o  Acknowledgements changed to add notes about Roni Even and Bruce
       Lowekamp.
-
-
-
-
-
 
 
 
@@ -2002,13 +2002,13 @@ Internet-Draft          P2PSIP Security Overview          September 2009
               draft-song-p2psip-security-eval-00 (work in progress),
               February 2008.
 
-   [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
-              Requirement Levels", BCP 14, RFC 2119, March 1997.
-
    [RFC3261]  Rosenberg, J., Schulzrinne, H., Camarillo, G., Johnston,
               A., Peterson, J., Sparks, R., Handley, M., and E.
               Schooler, "SIP: Session Initiation Protocol", RFC 3261,
               June 2002.
+
+
+
 
 
 
