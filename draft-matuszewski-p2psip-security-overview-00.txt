@@ -11,7 +11,7 @@ Expires: April 1, 2010                                     Future Invest
 
 
                P2PSIP Security Overview and Risk Analysis
-           draft-matuszewski-p2psip-security-requirements-06
+             draft-matuszewski-p2psip-security-overview-00
 
 Status of this Memo
 
