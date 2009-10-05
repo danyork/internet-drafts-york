@@ -24,7 +24,7 @@
 <?rfc sortrefs="yes" ?>
 <?rfc compact="yes" ?>
 <?rfc subcompact="no" ?>
-<rfc category="info" docName="draft-york-sipping-p-charge-info-07"
+<rfc category="info" docName="draft-york-sipping-p-charge-info-08"
 ipr="trust200902">
 
   <!-- ***** FRONT MATTER ***** -->
@@ -403,14 +403,13 @@ section RFC 3427 Section 4.1 and the registration requirements in Section
           charge-param = npi-param / noa-param / generic-param
           npi-param = "npi" EQUAL npi-value
               ; generic-param is specifed in RFC 3261
-          npi-value = ("ISDN" / "DATA" / "TELEX" / "PRIVATE" / 
-                 "SPARE0" / "SPARE1" / "SPARE2" / "SPARE3" / 
-                 "SPARE4" / "SPARE5" / "SPARE6" / "SPARE7" / "UNKNOWN" )
+          npi-value = ("UNKNOWN" / "ISDN" / "SPARE2" / "DATA" / 
+              "TELEX" / "PRIVATE" / "SPARE6" / "SPARE7")
           noa-param = "noa" EQUAL noa-value
           noa-value = gen-value
        ]]></artwork></figure>
 
-
+    <t>Additional information about the "npi-value" is in Appendix A.</t>
     </section>
 
     <section anchor="IANA" title="IANA Considerations">
@@ -468,11 +467,19 @@ section RFC 3427 Section 4.1 and the registration requirements in Section
       <t>For revision -05, the authors thank John Haluska who provided a
       range of comments and specific information related to interworking
       with the ISUP Charge Number.</t>
+      <t>For revision -08, the authors thank Glen Wang who helped clarify
+      the NPI parameter values with the reference to ANSI T1.113.</t>
     </section>
 
     <section anchor="Changes" title="Changes">
       <t>NOTE TO RFC EDITOR - Please remove this "Changes" section prior to
       publication. Thank you.</t>
+      <t>Revision -08 included the following modifications:
+      <list style="symbols">
+         <t>The ABNF for the "npi-value" was modified to conform to the 
+	 sequence of possible values stated in ANSI T1.113.</t>
+	 <t>An Appendix A was created listing the values from ANSI T1.113.</t>
+      </list></t>
       <t>Revision -07 was updated to the "trust200902" IPR statement and added
       references to RFC 3968.  At this point all comments have been incorporated
       and publication will be requested.</t>
@@ -499,6 +506,23 @@ section RFC 3427 Section 4.1 and the registration requirements in Section
       parameter was placed inside the angle brackets.  The
       P-DCS-Billing-Info header was also added as an alternative and a few
       minor edits were made.</t>
+    </section>
+
+    <section anchor="appendixa" title="Appendix A: NPI Parameter Values">
+    <t>To better understand the possible values for the optional NPI parameter, 
+    ANSI T1.113 states that the 'numbering plan indicator' may contain the 
+    following values:</t>
+    <figure><artwork><![CDATA[
+       000 unknown (no interpretation)
+       001 ISDN (Telephony) numbering plan (Recommendation E-164)
+       010 spare (no interpretation)
+       011 reserved (CCITT Data numbeting plan)
+       100 reserved (CCITT Telex numbering plan)
+       101 Private numbering plan
+       110 spare (no interpretation)
+       111 spare (no interpretation)
+       ]]></artwork></figure>
+
     </section>
   </middle>
 
