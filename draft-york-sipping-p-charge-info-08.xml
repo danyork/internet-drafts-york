@@ -24,8 +24,7 @@
 <?rfc sortrefs="yes" ?>
 <?rfc compact="yes" ?>
 <?rfc subcompact="no" ?>
-<rfc category="info" docName="draft-york-sipping-p-charge-info-08"
-ipr="trust200902">
+<rfc category="info" docName="draft-york-sipping-p-charge-info-08" ipr="trust200902">
 
   <!-- ***** FRONT MATTER ***** -->
 
@@ -66,7 +65,7 @@ ipr="trust200902">
       </address>
     </author>
     
-    <date year="2009" />
+    <date year="2010" />
 
     <!-- Meta-data Declarations -->
 
