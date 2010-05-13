@@ -55,8 +55,8 @@
                 <organization abbrev="Sonus">Sonus Networks</organization>
       <address>
         <postal>
-          <street> 3 Paragon Way</street>
-          <city>Freehold </city>
+          <street>3 Paragon Way</street>
+          <city>Freehold</city>
           <region>NJ</region>
           <code>07728</code>
           <country>USA</country>
@@ -157,8 +157,7 @@ section RFC 3427 Section 4.1 and the registration requirements in Section
     </section>
 
     <section anchor="ProblemExplanation" title="Examples of the Problem">
-    <section anchor="UseCase-BillingID" title="Use Case - Billing
-    Identifier">
+    <section anchor="UseCase-BillingID" title="Use Case - Billing Identifier">
     <t>The simplest use case for P-Charge-Info could be an enterprise
     environment where each SIP endpoint has a direct number that is passed
     by the enterprise SIP proxy across to a SIP proxy at a SIP Service
@@ -211,7 +210,7 @@ section RFC 3427 Section 4.1 and the registration requirements in Section
       better rates from the SIP service provider.</t>
 
     </section>
-    <section anchor="Use Case-HostedTelephonyProvider" title="Use Case -
+    <section anchor="UseCase-HostedTelephonyProvider" title="Use Case -
     Hosted Telephony Provider">
       <t>Similar to the third use case of a large enterprise, a hosted 
       telephony provider or hosted voice application provider may have a 
@@ -396,7 +395,7 @@ section RFC 3427 Section 4.1 and the registration requirements in Section
    document.</t>
        <t>The syntax of the P-Charge-Info header is described as follows:</t>
        <figure><artwork><![CDATA[
-      P-Charge-Info = "P-Charge-Info" HCOLON (name-addr / addr-spec)* 
+      P-Charge-Info = "P-Charge-Info" HCOLON (name-addr / addr-spec)*
               (SEMI charge-param)
               ; name-addr and addr-spec are specified in RFC 3261
           charge-param = npi-param / noa-param / generic-param
