@@ -24,7 +24,7 @@
 <?rfc sortrefs="yes" ?>
 <?rfc compact="yes" ?>
 <?rfc subcompact="no" ?>
-<rfc category="info" docName="draft-york-sipping-p-charge-info-09" ipr="trust200902">
+<rfc category="info" docName="draft-york-sipping-p-charge-info-10" ipr="trust200902">
 
   <!-- ***** FRONT MATTER ***** -->
 
@@ -75,6 +75,10 @@
 	 <keyword>p-header</keyword>
 
     <abstract>
+       <t>DRAFT - DRAFT - DRAFT - DRAFT - DRAFT - DRAFT</t>
+       <t>This is a draft version posted for discussion that has NOT yet
+       been submitted as an updated version to the IETF.</t>
+       <t>DRAFT - DRAFT - DRAFT - DRAFT - DRAFT - DRAFT</t>
        <t>This document describes 'P-Charge-Info', a private Session
        Initiation Protocol (SIP) header (P-header) used to convey billing information
        about the party to be charged.  This P-Header is currently
@@ -395,9 +399,10 @@ section RFC 3427 Section 4.1 and the registration requirements in Section
    document.</t>
        <t>The syntax of the P-Charge-Info header is described as follows:</t>
        <figure><artwork><![CDATA[
-      P-Charge-Info = "P-Charge-Info" HCOLON (name-addr / addr-spec)*
-              (SEMI charge-param)
+      P-Charge-Info = "P-Charge-Info" HCOLON (name-addr / addr-spec)
               ; name-addr and addr-spec are specified in RFC 3261
+          par = parameter / extension / isdn-subaddress / charge-param
+              ; par is originally specified in RFC 3966
           charge-param = npi-param / noa-param / generic-param
           npi-param = ";npi" EQUAL npi-value
               ; generic-param is specifed in RFC 3261
@@ -472,6 +477,12 @@ section RFC 3427 Section 4.1 and the registration requirements in Section
     <section anchor="Changes" title="Changes">
       <t>NOTE TO RFC EDITOR - Please remove this "Changes" section prior to
       publication. Thank you.</t>
+      <t>Revision -10 included the following modifications:
+      <list style="symbols">
+         <t>Formal syntax modified to incorporate "par" parameter.</t>
+         <t>In formal syntax, semicolons added to npi-param and noa-param
+         definitions.</t>
+      </list></t>
       <t>Revision -09 included the following modifications:
       <list style="symbols">
          <t>Re-submitted with only a date change. Discussions are ongoing to finalize
