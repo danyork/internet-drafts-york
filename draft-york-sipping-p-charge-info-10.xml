@@ -386,7 +386,7 @@ section RFC 3427 Section 4.1 and the registration requirements in Section
        SIP message for scenarios where SIP is used to connect two PSTN segments
        and needs to pass charging information between them. An example of
        the usage of the optional header is:</t>
-       <t>P-Charge-Info: &lt;sip:6835555555@10.10.7.21&gt;;npi=ISDN;noa=3</t>
+       <t>P-Charge-Info: &lt;sip:6835555555;npi=ISDN;noa=3@10.10.7.21&gt;</t>
        </section>
 
     </section>
@@ -482,6 +482,7 @@ section RFC 3427 Section 4.1 and the registration requirements in Section
          <t>Formal syntax modified to incorporate "par" parameter.</t>
          <t>In formal syntax, semicolons added to npi-param and noa-param
          definitions.</t>
+         <t>Corrected example to show proper use of parameters.</t>
       </list></t>
       <t>Revision -09 included the following modifications:
       <list style="symbols">
