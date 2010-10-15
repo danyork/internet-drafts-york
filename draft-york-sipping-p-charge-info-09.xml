@@ -399,11 +399,11 @@ section RFC 3427 Section 4.1 and the registration requirements in Section
               (SEMI charge-param)
               ; name-addr and addr-spec are specified in RFC 3261
           charge-param = npi-param / noa-param / generic-param
-          npi-param = "npi" EQUAL npi-value
+          npi-param = ";npi" EQUAL npi-value
               ; generic-param is specifed in RFC 3261
           npi-value = ("UNKNOWN" / "ISDN" / "SPARE2" / "DATA" / 
               "TELEX" / "PRIVATE" / "SPARE6" / "SPARE7")
-          noa-param = "noa" EQUAL noa-value
+          noa-param = ";noa" EQUAL noa-value
           noa-value = gen-value
        ]]></artwork></figure>
 
@@ -472,6 +472,11 @@ section RFC 3427 Section 4.1 and the registration requirements in Section
     <section anchor="Changes" title="Changes">
       <t>NOTE TO RFC EDITOR - Please remove this "Changes" section prior to
       publication. Thank you.</t>
+      <t>Revision -09 included the following modifications:
+      <list style="symbols">
+         <t>Re-submitted with only a date change. Discussions are ongoing to finalize
+	 this draft and submit it for expert review.</t>
+      </list></t>
       <t>Revision -08 included the following modifications:
       <list style="symbols">
          <t>The ABNF for the "npi-value" was modified to conform to the 
