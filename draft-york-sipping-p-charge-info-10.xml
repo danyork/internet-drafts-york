@@ -10,10 +10,9 @@
 <!ENTITY RFC2119 PUBLIC "" "http://xml.resource.org/public/rfc/bibxml/reference.RFC.2119.xml">
 <!ENTITY RFC2629 PUBLIC "" "http://xml.resource.org/public/rfc/bibxml/reference.RFC.2629.xml">
 <!ENTITY RFC3325 PUBLIC "" "http://xml.resource.org/public/rfc/bibxml/reference.RFC.3325.xml">
-<!ENTITY RFC3427 PUBLIC "" "http://xml.resource.org/public/rfc/bibxml/reference.RFC.3427.xml">
 <!ENTITY RFC3455 PUBLIC "" "http://xml.resource.org/public/rfc/bibxml/reference.RFC.3455.xml">
 <!ENTITY RFC3603 PUBLIC "" "http://xml.resource.org/public/rfc/bibxml/reference.RFC.3603.xml">
-<!ENTITY RFC3968 PUBLIC "" "http://xml.resource.org/public/rfc/bibxml/reference.RFC.3968.xml">
+<!ENTITY RFC5727 PUBLIC "" "http://xml.resource.org/public/rfc/bibxml/reference.RFC.5727.xml">
 
 ]>
 <?xml-stylesheet type='text/xsl' href='rfc2629.xslt' ?>
@@ -75,17 +74,12 @@
 	 <keyword>p-header</keyword>
 
     <abstract>
-       <t>DRAFT - DRAFT - DRAFT - DRAFT - DRAFT - DRAFT</t>
-       <t>This is a draft version posted for discussion that has NOT yet
-       been submitted as an updated version to the IETF.</t>
-       <t>DRAFT - DRAFT - DRAFT - DRAFT - DRAFT - DRAFT</t>
        <t>This document describes 'P-Charge-Info', a private Session
        Initiation Protocol (SIP) header (P-header) used to convey billing information
        about the party to be charged.  This P-Header is currently
        in production usage by a number of equipment vendors and carriers
        and this document is submitted to request the registration of
-       this header with IANA as required by section 4.2 of RFC 3427 and 
-       RFC 3968. This P-Header may also be used in some situations to carry 
+       this header with IANA. This P-Header may also be used in some situations to carry 
        the ISUP Charge Number parameter for PSTN interconnection.</t>
     </abstract>
   </front>
@@ -98,8 +92,7 @@
 	document describes the current usage of 'P-Charge-Info', a private
 	SIP header, to provide simple billing information and requests the
 	registration of this header with IANA as required by section 4.2 of
-	 <xref target="RFC3427">RFC 3427</xref> and section 3 of 
-	  <xref target="RFC3968">RFC 3968</xref>..</t>
+	 <xref target="RFC5727">RFC 5727</xref>.</t>
 	
 	<t>In a typical configuration, the identity of the caller, commonly
 	referred to as "Caller ID" by end users, is derived from one of the
@@ -147,17 +140,14 @@
       </section>
 
     <section anchor="Purpose" title="Purpose of this Document">
-    <t>This document has been prepared to comply with section 4.2 of  
-        <xref target="RFC3427">RFC 3427</xref> which states very clearly:
-       <list hangIndent="5" style="empty">
-<t>All implemented P-headers SHOULD meet the P-Header requirements in 4.1. 
-   Any P-header used outside of a very restricted research or teaching environment
-   (such as a student lab on implementing extensions) MUST meet those
-   requirements and MUST be documented in an RFC and be IANA registered.</t>
-        </list> </t>
-<t>This document is submitted to comply with the process outlined in
-section RFC 3427 Section 4.1 and the registration requirements in Section
-4.2.</t>
+    <t>This document has been prepared to comply with section 4 of  
+    <xref target="RFC5727">RFC 5727</xref> to register this header with IANA.
+    This document was originally prepared to comply with sections 4.1 and 4.2
+    of the now obsoleted RFC 3427.  It is noted that RFC 5727 specifically 
+    deprecates new usage of "P-" headers, but P-Charge-Info has been in 
+    deployment for several years now.  Given this, the authors request that
+    P-Charge-Info be admitted as a "grandfathered case" per section 4 of 
+    RFC 5727.</t>
     </section>
 
     <section anchor="ProblemExplanation" title="Examples of the Problem">
@@ -401,17 +391,15 @@ section RFC 3427 Section 4.1 and the registration requirements in Section
        <figure><artwork><![CDATA[
       P-Charge-Info = "P-Charge-Info" HCOLON (name-addr / addr-spec)
               ; name-addr and addr-spec are specified in RFC 3261
-          par = parameter / extension / isdn-subaddress / charge-param
-              ; par is originally specified in RFC 3966
           charge-param = npi-param / noa-param / generic-param
           npi-param = ";npi" EQUAL npi-value
               ; generic-param is specifed in RFC 3261
-          npi-value = ("UNKNOWN" / "ISDN" / "SPARE2" / "DATA" / 
-              "TELEX" / "PRIVATE" / "SPARE6" / "SPARE7")
+          npi-value = gen-value
           noa-param = ";noa" EQUAL noa-value
           noa-value = gen-value
        ]]></artwork></figure>
 
+    <t>charge-param is used as a userinfo parameter in P-Charge-Info.</t>
     <t>Additional information about the "npi-value" is in Appendix A.</t>
     </section>
 
@@ -472,6 +460,8 @@ section RFC 3427 Section 4.1 and the registration requirements in Section
       with the ISUP Charge Number.</t>
       <t>For revision -08, the authors thank Glen Wang who helped clarify
       the NPI parameter values with the reference to ANSI T1.113.</t>
+      <t>For revision -10, the authors thank both John Haluska and Glen Wang
+      for their assistance.</t>
     </section>
 
     <section anchor="Changes" title="Changes">
@@ -479,10 +469,13 @@ section RFC 3427 Section 4.1 and the registration requirements in Section
       publication. Thank you.</t>
       <t>Revision -10 included the following modifications:
       <list style="symbols">
-         <t>Formal syntax modified to incorporate "par" parameter.</t>
+         <t>Formal ABNF definition updated.</t>
          <t>In formal syntax, semicolons added to npi-param and noa-param
          definitions.</t>
+	 <t>npi-param changed to a 'gen-value' to use digits vs text. Values
+	 npi-param are shown in Appendix A.</t>
          <t>Corrected example to show proper use of parameters.</t>
+	 <t>Updated references to RFC 3427 and RFC 3968 to reference RFC 5727.</t>
       </list></t>
       <t>Revision -09 included the following modifications:
       <list style="symbols">
@@ -547,8 +540,7 @@ section RFC 3427 Section 4.1 and the registration requirements in Section
 
     <references title="Normative References">
 
-    &RFC3427;
-    &RFC3968;
+    &RFC5727;
 
     </references>
 
