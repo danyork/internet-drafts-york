@@ -96,7 +96,7 @@ Table of Contents
    12. Appendix A: NPI Parameter Values . . . . . . . . . . . . . . . 13
    13. References . . . . . . . . . . . . . . . . . . . . . . . . . . 13
      13.1. Normative References . . . . . . . . . . . . . . . . . . . 13
-     13.2. Informative References . . . . . . . . . . . . . . . . . . 14
+     13.2. Informative References . . . . . . . . . . . . . . . . . . 13
    Authors' Addresses . . . . . . . . . . . . . . . . . . . . . . . . 14
 
 
@@ -578,20 +578,13 @@ Internet-Draft     P-Charge-Info, a SIP Private Header        April 2011
    The authors thank the following people for their comments, criticism,
    suggestions and assistance with ABNF notation: Keith Drage, Miguel
    Garcia, Christer Holmberg, Paul Kyzivat, Jonathan Rosenberg, Juha
-   Heinanen and Sumit Garg.
+   Heinanen, Sumit Garg and Tom Taylor.  The authors thank Glen Wang for
+   helping clarify the NPI parameter values with the reference to ANSI
+   T1.113.
 
-   For revision -05, the authors thank John Haluska who provided a range
-   of comments and specific information related to interworking with the
-   ISUP Charge Number.
-
-   For revision -08, the authors thank Glen Wang who helped clarify the
-   NPI parameter values with the reference to ANSI T1.113.
-
-   For revision -10, the authors thank both John Haluska and Glen Wang
-   for their assistance.
-
-   For revision -11, the authors thank Paul Kyzivat for his thorough
-   review and Tom Taylor for helpful ABNF pointers.
+   The authors want to specificially thank John Haluska for a great
+   range of comments and specific information related to interworking
+   with the ISUP Charge Number.
 
 
 11.  Changes
@@ -608,15 +601,6 @@ Internet-Draft     P-Charge-Info, a SIP Private Header        April 2011
 
    o  New section created explicitly mentioning the optional parameters.
 
-
-
-
-
-York & Asveren          Expires October 31, 2011               [Page 11]
-
-Internet-Draft     P-Charge-Info, a SIP Private Header        April 2011
-
-
    o  Example of optional parameters updated to have npi use 3 digits vs
       text.
 
@@ -625,6 +609,13 @@ Internet-Draft     P-Charge-Info, a SIP Private Header        April 2011
       development for 3 years).
 
    Revision -10 included the following modifications:
+
+
+
+York & Asveren          Expires October 31, 2011               [Page 11]
+
+Internet-Draft     P-Charge-Info, a SIP Private Header        April 2011
+
 
    o  Formal ABNF definition updated.
 
@@ -664,15 +655,6 @@ Internet-Draft     P-Charge-Info, a SIP Private Header        April 2011
       revisions had mentioned it as a possible use case but had not
       really explicitly included it.
 
-
-
-
-
-York & Asveren          Expires October 31, 2011               [Page 12]
-
-Internet-Draft     P-Charge-Info, a SIP Private Header        April 2011
-
-
    o  The examples/use cases section was expanded to include further
       examples of where P-Charge-Info may be used.
 
@@ -683,6 +665,13 @@ Internet-Draft     P-Charge-Info, a SIP Private Header        April 2011
    o  The "UNKNOWN" value was added to the ABNF for the "npi-value"
       parameter as that was identified as missing but required for ISUP
       interworking.
+
+
+
+York & Asveren          Expires October 31, 2011               [Page 12]
+
+Internet-Draft     P-Charge-Info, a SIP Private Header        April 2011
+
 
    o  The optional "Nature of Address" parameter was added to support
       interworking with the ISUP Charge Number.
@@ -718,17 +707,6 @@ Internet-Draft     P-Charge-Info, a SIP Private Header        April 2011
               time Applications and Infrastructure Area", BCP 67,
               RFC 5727, March 2010.
 
-
-
-
-
-
-
-York & Asveren          Expires October 31, 2011               [Page 13]
-
-Internet-Draft     P-Charge-Info, a SIP Private Header        April 2011
-
-
 13.2.  Informative References
 
    [RFC3325]  Jennings, C., Peterson, J., and M. Watson, "Private
@@ -743,6 +721,14 @@ Internet-Draft     P-Charge-Info, a SIP Private Header        April 2011
 
    [RFC3603]  Marshall, W. and F. Andreasen, "Private Session Initiation
               Protocol (SIP) Proxy-to-Proxy Extensions for Supporting
+
+
+
+York & Asveren          Expires October 31, 2011               [Page 13]
+
+Internet-Draft     P-Charge-Info, a SIP Private Header        April 2011
+
+
               the PacketCable Distributed Call Signaling Architecture",
               RFC 3603, October 2003.
 
@@ -766,6 +752,20 @@ Authors' Addresses
    USA
 
    Email: tasveren@sonusnet.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

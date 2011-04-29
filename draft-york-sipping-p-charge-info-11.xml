@@ -464,16 +464,12 @@
       <t>The authors thank the following people for their comments,
       criticism, suggestions and assistance with ABNF notation: Keith
       Drage, Miguel Garcia, Christer Holmberg, Paul Kyzivat, Jonathan
-      Rosenberg, Juha Heinanen and Sumit Garg.</t>
-      <t>For revision -05, the authors thank John Haluska who provided a
+      Rosenberg, Juha Heinanen, Sumit Garg and Tom Taylor. The authors 
+      thank Glen Wang for helping clarify the NPI parameter values with 
+      the reference to ANSI T1.113.</t>
+      <t>The authors want to specificially thank John Haluska for a great
       range of comments and specific information related to interworking
       with the ISUP Charge Number.</t>
-      <t>For revision -08, the authors thank Glen Wang who helped clarify
-      the NPI parameter values with the reference to ANSI T1.113.</t>
-      <t>For revision -10, the authors thank both John Haluska and Glen Wang
-      for their assistance.</t>
-      <t>For revision -11, the authors thank Paul Kyzivat for his thorough
-      review and Tom Taylor for helpful ABNF pointers.</t>
     </section>
 
     <section anchor="Changes" title="Changes">
