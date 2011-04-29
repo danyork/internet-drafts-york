@@ -64,7 +64,7 @@
       </address>
     </author>
     
-    <date year="2010" />
+    <date year="2011" />
 
     <!-- Meta-data Declarations -->
 
@@ -363,22 +363,22 @@
 	    </section>
        </section>
 
-       <section anchor="example" title="Examples of Usage">
+       <section anchor="example" title="Example of Usage">
        <t>The content of the P-Charge-Info header is typically simply a SIP URI used
        as a billing indicator.  As such, an example would be as simple as:</t>
        <t>P-Charge-Info: &lt;sip:4075555555@1.2.3.4&gt;</t>
        <t>Any other applicable SIP URI could be used.</t>
        </section>
 
-       <secton anchor="parameters" title="Optional Parameters">
+       <section anchor="parameters" title="Optional Parameters">
        <t>P-Charge-Info optionally includes the additional parameters of
        the "Numbering Plan Indicator" and "Nature of Address".  These are used when 
        the ISUP Charge Number value needs to be passed as part of
        P-Charge-Info. For instance, this might be required in a
        SIP message for scenarios where SIP is used to connect two PSTN segments
-       and needs to pass charging information between them. An example of
-       the usage of the optional header is:</t>
-       <t>P-Charge-Info: &lt;sip:6835555555;npi=ISDN;noa=3@10.10.7.21&gt;</t>
+       and needs to pass charging information between them. </t>
+       <t>An example of the usage of the optional parameters is:</t>
+       <t>P-Charge-Info: &lt;sip:6835555555;npi=001;noa=3@10.10.7.21&gt;</t>
        </section>
 
     </section>
@@ -401,8 +401,8 @@
           noa-value = gen-value
        ]]></artwork></figure>
 
+    <t>The SIP URI is the billing indicator that is passed between the parties.</t>
     <t>charge-param is used as a userinfo parameter in P-Charge-Info.</t>
-    <t>Additional information about the "npi-value" is in Appendix A.</t>
     <t>The two optional parameters for PSTN interoperability are mentioned 
        in the previous section and are:
       <list style="symbols">
@@ -410,6 +410,7 @@
          <t>noa = "Nature of Address"</t>
       </list>
     </t>
+    <t>The "npi-value" is constrained to three digits with the possible values listed in Appendix A.</t>
     </section>
 
     <section anchor="IANA" title="IANA Considerations">
@@ -483,9 +484,10 @@
          <t>ABNF definition updated to constrain npi-value to 3 digits.</t>
 	 <t>Definition of "npi" and "noa" also explicitly stated near definition.</t>
          <t>New section created explicitly mentioning the optional parameters.</t>
+	 <t>Example of optional parameters updated to have npi use 3 digits vs text.</t>
 	 <t>Overview text updated to indicate that P-Charge-Info was been in use
 	 now for over 5 years (given that the draft has been in development for
-	 two years).</t>
+	 3 years).</t>
       </list></t>
       <t>Revision -10 included the following modifications:
       <list style="symbols">
@@ -544,7 +546,7 @@
        000 unknown (no interpretation)
        001 ISDN (Telephony) numbering plan (Recommendation E-164)
        010 spare (no interpretation)
-       011 reserved (CCITT Data numbeting plan)
+       011 reserved (CCITT Data numbering plan)
        100 reserved (CCITT Telex numbering plan)
        101 Private numbering plan
        110 spare (no interpretation)
