@@ -23,7 +23,7 @@
 <?rfc sortrefs="yes" ?>
 <?rfc compact="yes" ?>
 <?rfc subcompact="no" ?>
-<rfc category="info" docName="draft-york-sipping-p-charge-info-11" ipr="trust200902">
+<rfc category="info" docName="draft-york-sipping-p-charge-info-12" ipr="trust200902">
 
   <!-- ***** FRONT MATTER ***** -->
 
@@ -43,9 +43,9 @@
           <country>USA</country>
         </postal>
 
-        <phone>+1-407-455-5859</phone>
+        <phone>+1-802-735-1624</phone>
 
-        <email>dyork@voxeo.com</email>
+        <email>dyork@lodestar2.com</email>
 
 	<uri>http://www.voxeo.com/</uri>
       </address>
@@ -330,7 +330,8 @@
 	      <t>The P-Charge-Info header is not used/interpreted by a
 	      regular UA and should not normally be seen
 	      by such a UA. If the header is transmitted to such a UA, the UA
-	      SHOULD ignore the header.</t>
+	      SHOULD ignore the header.  Similarly, a regular UA originating 
+	      a SIP message should not insert this header.</t>
 
               <t>A PSTN gateway or application server acting as a UA MAY use 
 	      the content of the P-Charge-Info header 
@@ -365,8 +366,11 @@
 
        <section anchor="example" title="Example of Usage">
        <t>The content of the P-Charge-Info header is typically simply a SIP URI used
-       as a billing indicator.  As such, an example would be as simple as:</t>
+       as a billing indicator.  As such, an example would be as simple as one of:</t>
        <t>P-Charge-Info: &lt;sip:4075555555@1.2.3.4&gt;</t>
+       <t>P-Charge-Info: &lt;sip:4075555555@example.com&gt;</t>
+       <t>P-Charge-Info: &lt;sip:1234@example.com&gt;</t>
+       <t>P-Charge-Info: &lt;sip:user22@example.com&gt;</t>
        <t>Any other applicable SIP URI could be used.</t>
        </section>
 
@@ -378,7 +382,9 @@
        SIP message for scenarios where SIP is used to connect two PSTN segments
        and needs to pass charging information between them. </t>
        <t>An example of the usage of the optional parameters is:</t>
-       <t>P-Charge-Info: &lt;sip:6835555555;npi=001;noa=3@10.10.7.21&gt;</t>
+       <t>P-Charge-Info: &lt;sip:6835555555;npi=1;noa=3@10.10.7.21&gt;</t>
+       <t>Values passed in the "npi" and "noa" parameters are expressed as decimal
+       numbers and possible values are defined in Appendix A and Appendix B.</t>
        </section>
 
     </section>
@@ -396,12 +402,13 @@
           charge-param = npi-param / noa-param / generic-param
           npi-param = ";npi" EQUAL npi-value
               ; generic-param is specifed in RFC 3261
-          npi-value = 3DIGIT
+          npi-value = gen-value
           noa-param = ";noa" EQUAL noa-value
           noa-value = gen-value
        ]]></artwork></figure>
 
-    <t>The SIP URI is the billing indicator that is passed between the parties.</t>
+    <t>The SIP URI contained in the name-addr/addr-spec is the billing indicator 
+    that is passed between the parties.</t>
     <t>charge-param is used as a userinfo parameter in P-Charge-Info.</t>
     <t>The two optional parameters for PSTN interoperability are mentioned 
        in the previous section and are:
@@ -410,7 +417,8 @@
          <t>noa = "Nature of Address"</t>
       </list>
     </t>
-    <t>The "npi-value" is constrained to three digits with the possible values listed in Appendix A.</t>
+    <t>Typical values for the "npi-value" are listed in Appendix A.</t>
+    <t>Typical values for the "noa-value" are listed in Appendix B.</t>
     </section>
 
     <section anchor="IANA" title="IANA Considerations">
@@ -475,15 +483,25 @@
     <section anchor="Changes" title="Changes">
       <t>NOTE TO RFC EDITOR - Please remove this "Changes" section prior to
       publication. Thank you.</t>
-      <t>Revision -11 included the following modifications:
+      <t>Revision -12 included the following modifications based on feedback
+      from John Haluska and Glen Wang:
       <list style="symbols">
-         <t>ABNF definition updated to constrain npi-value to 3 digits.</t>
-	 <t>Definition of "npi" and "noa" also explicitly stated near definition.</t>
+       <t>Modification of Appendix B to reflect ANSI T1.113 values.</t>
+      </list></t>
+      <t>Revision -11 represents a fairly significant revision responding
+        to a solid review by Paul Kyzivat and providing additional explanation.
+	A major shift was the move to using decimal values for the npi-value
+	parameter versus the text values of previous drafts. Changes include:
+      <list style="symbols">
+         <t>ABNF definition updated to indicate that npi is now a number vs text.</t>
+	 <t>The "npi" and "noa" acronyms were expanded and stated near the formal syntax definition.</t>
          <t>New section created explicitly mentioning the optional parameters.</t>
-	 <t>Example of optional parameters updated to have npi use 3 digits vs text.</t>
+	 <t>Example of optional parameters updated to have npi use a number vs text.</t>
+	 <t>Appendix B added to give examples of NOA parameter.</t>
 	 <t>Overview text updated to indicate that P-Charge-Info was been in use
 	 now for over 5 years (given that the draft has been in development for
 	 3 years).</t>
+	 <t>Several small fixes for readability.</t>
       </list></t>
       <t>Revision -10 included the following modifications:
       <list style="symbols">
@@ -548,9 +566,54 @@
        110 spare (no interpretation)
        111 spare (no interpretation)
        ]]></artwork></figure>
+    <t>Note that the values shown here are in binary notation per ANSI T1.113, 
+    but when the values are passed in the NPI parameter of P-Charge-Info they
+    are represented in decimal notation.</t>
 
     </section>
+
+    <section anchor="appendixb" title="Appendix B: NOA Parameter Values">
+    <t>To better understand the possible values for the optional NOA parameter, 
+    ANSI T1.113 states that the 'nature of address indicator' may contain the 
+    following values:</t>
+    <figure><artwork><![CDATA[
+       0 0 0 0 0 0 0 spare
+       0 0 0 0 0 0 1 ANI of the calling party; subscriber number
+       0 0 0 0 0 1 0 ANI not available or not provided
+       0 0 0 0 0 1 1 ANI of the calling party; national number
+       0 0 0 0 1 0 0 spare
+       0 0 0 0 1 0 1 ANI of the called party; subscriber number
+       0 0 0 0 1 1 0 ANI of the called party; no number present
+       0 0 0 0 1 1 1 ANI of the called party; national number
+       0 0 0 1 0 0 0
+       to
+       1 1 1 0 1 1 1 spare
+
+       1 1 1 1 0 0 0
+       to
+       1 1 1 1 1 1 0 reserved for network specific use
+
+       1 1 1 1 1 1 1 spare
+       ]]></artwork></figure>
+
+    <t>Note that the values shown in the table here are in binary notation 
+    per ANSI T1.113.  However, when the values are passed in the NOA parameter
+    of P-Charge-Info they are represented in decimal notation.</t>
+    <t>As examples of values in the "reserved for national use" block, the 
+    following values have been defined by ANSI for North American use:</t>
+    <figure><artwork><![CDATA[
+       113 subscriber number, operator requested
+       114 national number, operator requested
+       115 international number, operator requested
+       116 no number present, operator requested
+       117 950+ call from local exchange carrier public station, 
+                hotel/motel, or non-exchange access end office
+       118 test line test code
+    ]]></artwork></figure>
+    </section>
+
   </middle>
+  
 
   <!--  *****BACK MATTER ***** -->
 

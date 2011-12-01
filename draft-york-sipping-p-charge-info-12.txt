@@ -4,13 +4,13 @@
 SIPPING                                                          D. York
 Internet-Draft                                                     Voxeo
 Intended status: Informational                                T. Asveren
-Expires: October 31, 2011                                          Sonus
-                                                          April 29, 2011
+Expires: June 3, 2012                                              Sonus
+                                                        December 1, 2011
 
 
   P-Charge-Info - A Private Header (P-Header) Extension to the Session
                        Initiation Protocol (SIP)
-                  draft-york-sipping-p-charge-info-11
+                  draft-york-sipping-p-charge-info-12
 
 Abstract
 
@@ -37,7 +37,7 @@ Status of this Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on October 31, 2011.
+   This Internet-Draft will expire on June 3, 2012.
 
 Copyright Notice
 
@@ -52,9 +52,9 @@ Copyright Notice
 
 
 
-York & Asveren          Expires October 31, 2011                [Page 1]
+York & Asveren            Expires June 3, 2012                  [Page 1]
 
-Internet-Draft     P-Charge-Info, a SIP Private Header        April 2011
+Internet-Draft     P-Charge-Info, a SIP Private Header     December 2011
 
 
    to this document.  Code Components extracted from this document must
@@ -88,16 +88,17 @@ Table of Contents
    8.  IANA Considerations  . . . . . . . . . . . . . . . . . . . . . 10
    9.  Security Considerations  . . . . . . . . . . . . . . . . . . . 10
      9.1.  Trust Relationship . . . . . . . . . . . . . . . . . . . . 10
-     9.2.  Untrusted Peers  . . . . . . . . . . . . . . . . . . . . . 10
-       9.2.1.  Ingress from Untrusted Peers . . . . . . . . . . . . . 10
+     9.2.  Untrusted Peers  . . . . . . . . . . . . . . . . . . . . . 11
+       9.2.1.  Ingress from Untrusted Peers . . . . . . . . . . . . . 11
        9.2.2.  Egress to Untrusted Peers  . . . . . . . . . . . . . . 11
    10. Acknowledgements . . . . . . . . . . . . . . . . . . . . . . . 11
    11. Changes  . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
    12. Appendix A: NPI Parameter Values . . . . . . . . . . . . . . . 13
-   13. References . . . . . . . . . . . . . . . . . . . . . . . . . . 13
-     13.1. Normative References . . . . . . . . . . . . . . . . . . . 13
-     13.2. Informative References . . . . . . . . . . . . . . . . . . 13
-   Authors' Addresses . . . . . . . . . . . . . . . . . . . . . . . . 14
+   13. Appendix B: NOA Parameter Values . . . . . . . . . . . . . . . 14
+   14. References . . . . . . . . . . . . . . . . . . . . . . . . . . 15
+     14.1. Normative References . . . . . . . . . . . . . . . . . . . 15
+     14.2. Informative References . . . . . . . . . . . . . . . . . . 15
+   Authors' Addresses . . . . . . . . . . . . . . . . . . . . . . . . 15
 
 
 
@@ -107,10 +108,9 @@ Table of Contents
 
 
 
-
-York & Asveren          Expires October 31, 2011                [Page 2]
+York & Asveren            Expires June 3, 2012                  [Page 2]
 
-Internet-Draft     P-Charge-Info, a SIP Private Header        April 2011
+Internet-Draft     P-Charge-Info, a SIP Private Header     December 2011
 
 
 1.  Overview
@@ -164,9 +164,9 @@ Internet-Draft     P-Charge-Info, a SIP Private Header        April 2011
 
 
 
-York & Asveren          Expires October 31, 2011                [Page 3]
+York & Asveren            Expires June 3, 2012                  [Page 3]
 
-Internet-Draft     P-Charge-Info, a SIP Private Header        April 2011
+Internet-Draft     P-Charge-Info, a SIP Private Header     December 2011
 
 
 2.  Requirements Language
@@ -220,9 +220,9 @@ Internet-Draft     P-Charge-Info, a SIP Private Header        April 2011
 
 
 
-York & Asveren          Expires October 31, 2011                [Page 4]
+York & Asveren            Expires June 3, 2012                  [Page 4]
 
-Internet-Draft     P-Charge-Info, a SIP Private Header        April 2011
+Internet-Draft     P-Charge-Info, a SIP Private Header     December 2011
 
 
    sessions, but there may only be a relatively few points in the
@@ -276,9 +276,9 @@ Internet-Draft     P-Charge-Info, a SIP Private Header        April 2011
 
 
 
-York & Asveren          Expires October 31, 2011                [Page 5]
+York & Asveren            Expires June 3, 2012                  [Page 5]
 
-Internet-Draft     P-Charge-Info, a SIP Private Header        April 2011
+Internet-Draft     P-Charge-Info, a SIP Private Header     December 2011
 
 
 5.  Alternatives
@@ -332,9 +332,9 @@ Internet-Draft     P-Charge-Info, a SIP Private Header        April 2011
 
 
 
-York & Asveren          Expires October 31, 2011                [Page 6]
+York & Asveren            Expires June 3, 2012                  [Page 6]
 
-Internet-Draft     P-Charge-Info, a SIP Private Header        April 2011
+Internet-Draft     P-Charge-Info, a SIP Private Header     December 2011
 
 
    telephone service environment for which this header is designed.  In
@@ -388,9 +388,9 @@ Internet-Draft     P-Charge-Info, a SIP Private Header        April 2011
 
 
 
-York & Asveren          Expires October 31, 2011                [Page 7]
+York & Asveren            Expires June 3, 2012                  [Page 7]
 
-Internet-Draft     P-Charge-Info, a SIP Private Header        April 2011
+Internet-Draft     P-Charge-Info, a SIP Private Header     December 2011
 
 
 6.2.1.  Procedures at the UA
@@ -403,6 +403,8 @@ Internet-Draft     P-Charge-Info, a SIP Private Header        April 2011
    The P-Charge-Info header is not used/interpreted by a regular UA and
    should not normally be seen by such a UA.  If the header is
    transmitted to such a UA, the UA SHOULD ignore the header.
+   Similarly, a regular UA originating a SIP message should not insert
+   this header.
 
    A PSTN gateway or application server acting as a UA MAY use the
    content of the P-Charge-Info header present in an INVITE request it
@@ -437,17 +439,23 @@ Internet-Draft     P-Charge-Info, a SIP Private Header        April 2011
 
    The content of the P-Charge-Info header is typically simply a SIP URI
    used as a billing indicator.  As such, an example would be as simple
-   as:
+   as one of:
+
+
+
+
+York & Asveren            Expires June 3, 2012                  [Page 8]
+
+Internet-Draft     P-Charge-Info, a SIP Private Header     December 2011
+
 
    P-Charge-Info: <sip:4075555555@1.2.3.4>
 
+   P-Charge-Info: <sip:4075555555@example.com>
 
+   P-Charge-Info: <sip:1234@example.com>
 
-
-York & Asveren          Expires October 31, 2011                [Page 8]
-
-Internet-Draft     P-Charge-Info, a SIP Private Header        April 2011
-
+   P-Charge-Info: <sip:user22@example.com>
 
    Any other applicable SIP URI could be used.
 
@@ -462,7 +470,11 @@ Internet-Draft     P-Charge-Info, a SIP Private Header        April 2011
 
    An example of the usage of the optional parameters is:
 
-   P-Charge-Info: <sip:6835555555;npi=001;noa=3@10.10.7.21>
+   P-Charge-Info: <sip:6835555555;npi=1;noa=3@10.10.7.21>
+
+   Values passed in the "npi" and "noa" parameters are expressed as
+   decimal numbers and possible values are defined in Appendix A and
+   Appendix B.
 
 
 7.  Formal Syntax
@@ -480,12 +492,20 @@ Internet-Draft     P-Charge-Info, a SIP Private Header        April 2011
              charge-param = npi-param / noa-param / generic-param
              npi-param = ";npi" EQUAL npi-value
                  ; generic-param is specifed in RFC 3261
-             npi-value = 3DIGIT
+             npi-value = gen-value
              noa-param = ";noa" EQUAL noa-value
              noa-value = gen-value
 
-   The SIP URI is the billing indicator that is passed between the
-   parties.
+   The SIP URI contained in the name-addr/addr-spec is the billing
+
+
+
+York & Asveren            Expires June 3, 2012                  [Page 9]
+
+Internet-Draft     P-Charge-Info, a SIP Private Header     December 2011
+
+
+   indicator that is passed between the parties.
 
    charge-param is used as a userinfo parameter in P-Charge-Info.
 
@@ -496,16 +516,9 @@ Internet-Draft     P-Charge-Info, a SIP Private Header        April 2011
 
    o  noa = "Nature of Address"
 
-   The "npi-value" is constrained to three digits with the possible
+   Typical values for the "npi-value" are listed in Appendix A.
 
-
-
-York & Asveren          Expires October 31, 2011                [Page 9]
-
-Internet-Draft     P-Charge-Info, a SIP Private Header        April 2011
-
-
-   values listed in Appendix A.
+   Typical values for the "noa-value" are listed in Appendix B.
 
 
 8.  IANA Considerations
@@ -538,6 +551,16 @@ Internet-Draft     P-Charge-Info, a SIP Private Header        April 2011
    should be used to protect the information.  One such mechanism could
    be TLS-encryption of the SIP signaling stream.
 
+
+
+
+
+
+York & Asveren            Expires June 3, 2012                 [Page 10]
+
+Internet-Draft     P-Charge-Info, a SIP Private Header     December 2011
+
+
 9.2.  Untrusted Peers
 
 9.2.1.  Ingress from Untrusted Peers
@@ -549,17 +572,6 @@ Internet-Draft     P-Charge-Info, a SIP Private Header        April 2011
 
    Therefore a SIP entity MUST remove and ignore the P-Charge-Info
    header when it is received from an untrusted entity.
-
-
-
-
-
-
-
-York & Asveren          Expires October 31, 2011               [Page 10]
-
-Internet-Draft     P-Charge-Info, a SIP Private Header        April 2011
-
 
 9.2.2.  Egress to Untrusted Peers
 
@@ -592,30 +604,45 @@ Internet-Draft     P-Charge-Info, a SIP Private Header        April 2011
    NOTE TO RFC EDITOR - Please remove this "Changes" section prior to
    publication.  Thank you.
 
-   Revision -11 included the following modifications:
+   Revision -12 included the following modifications based on feedback
+   from John Haluska and Glen Wang:
 
-   o  ABNF definition updated to constrain npi-value to 3 digits.
+   o  Modification of Appendix B to reflect ANSI T1.113 values.
 
-   o  Definition of "npi" and "noa" also explicitly stated near
-      definition.
+
+
+
+York & Asveren            Expires June 3, 2012                 [Page 11]
+
+Internet-Draft     P-Charge-Info, a SIP Private Header     December 2011
+
+
+   Revision -11 represents a fairly significant revision responding to a
+   solid review by Paul Kyzivat and providing additional explanation.  A
+   major shift was the move to using decimal values for the npi-value
+   parameter versus the text values of previous drafts.  Changes
+   include:
+
+   o  ABNF definition updated to indicate that npi is now a number vs
+      text.
+
+   o  The "npi" and "noa" acronyms were expanded and stated near the
+      formal syntax definition.
 
    o  New section created explicitly mentioning the optional parameters.
 
-   o  Example of optional parameters updated to have npi use 3 digits vs
+   o  Example of optional parameters updated to have npi use a number vs
       text.
+
+   o  Appendix B added to give examples of NOA parameter.
 
    o  Overview text updated to indicate that P-Charge-Info was been in
       use now for over 5 years (given that the draft has been in
       development for 3 years).
 
+   o  Several small fixes for readability.
+
    Revision -10 included the following modifications:
-
-
-
-York & Asveren          Expires October 31, 2011               [Page 11]
-
-Internet-Draft     P-Charge-Info, a SIP Private Header        April 2011
-
 
    o  Formal ABNF definition updated.
 
@@ -638,6 +665,13 @@ Internet-Draft     P-Charge-Info, a SIP Private Header        April 2011
 
    o  The ABNF for the "npi-value" was modified to conform to the
       sequence of possible values stated in ANSI T1.113.
+
+
+
+York & Asveren            Expires June 3, 2012                 [Page 12]
+
+Internet-Draft     P-Charge-Info, a SIP Private Header     December 2011
+
 
    o  An Appendix A was created listing the values from ANSI T1.113.
 
@@ -666,13 +700,6 @@ Internet-Draft     P-Charge-Info, a SIP Private Header        April 2011
       parameter as that was identified as missing but required for ISUP
       interworking.
 
-
-
-York & Asveren          Expires October 31, 2011               [Page 12]
-
-Internet-Draft     P-Charge-Info, a SIP Private Header        April 2011
-
-
    o  The optional "Nature of Address" parameter was added to support
       interworking with the ISUP Charge Number.
 
@@ -688,6 +715,20 @@ Internet-Draft     P-Charge-Info, a SIP Private Header        April 2011
    parameter, ANSI T1.113 states that the 'numbering plan indicator' may
    contain the following values:
 
+
+
+
+
+
+
+
+
+
+York & Asveren            Expires June 3, 2012                 [Page 13]
+
+Internet-Draft     P-Charge-Info, a SIP Private Header     December 2011
+
+
           000 unknown (no interpretation)
           001 ISDN (Telephony) numbering plan (Recommendation E-164)
           010 spare (no interpretation)
@@ -697,17 +738,72 @@ Internet-Draft     P-Charge-Info, a SIP Private Header        April 2011
           110 spare (no interpretation)
           111 spare (no interpretation)
 
+   Note that the values shown here are in binary notation per ANSI
+   T1.113, but when the values are passed in the NPI parameter of
+   P-Charge-Info they are represented in decimal notation.
 
-13.  References
 
-13.1.  Normative References
+13.  Appendix B: NOA Parameter Values
+
+   To better understand the possible values for the optional NOA
+   parameter, ANSI T1.113 states that the 'nature of address indicator'
+   may contain the following values:
+
+          0 0 0 0 0 0 0 spare
+          0 0 0 0 0 0 1 ANI of the calling party; subscriber number
+          0 0 0 0 0 1 0 ANI not available or not provided
+          0 0 0 0 0 1 1 ANI of the calling party; national number
+          0 0 0 0 1 0 0 spare
+          0 0 0 0 1 0 1 ANI of the called party; subscriber number
+          0 0 0 0 1 1 0 ANI of the called party; no number present
+          0 0 0 0 1 1 1 ANI of the called party; national number
+          0 0 0 1 0 0 0
+          to
+          1 1 1 0 1 1 1 spare
+
+          1 1 1 1 0 0 0
+          to
+          1 1 1 1 1 1 0 reserved for network specific use
+
+          1 1 1 1 1 1 1 spare
+
+   Note that the values shown in the table here are in binary notation
+   per ANSI T1.113.  However, when the values are passed in the NOA
+   parameter of P-Charge-Info they are represented in decimal notation.
+
+   As examples of values in the "reserved for national use" block, the
+   following values have been defined by ANSI for North American use:
+
+
+
+
+
+
+
+York & Asveren            Expires June 3, 2012                 [Page 14]
+
+Internet-Draft     P-Charge-Info, a SIP Private Header     December 2011
+
+
+          113 subscriber number, operator requested
+          114 national number, operator requested
+          115 international number, operator requested
+          116 no number present, operator requested
+          117 950+ call from local exchange carrier public station,
+                   hotel/motel, or non-exchange access end office
+          118 test line test code
+
+
+14.  References
+
+14.1.  Normative References
 
    [RFC5727]  Peterson, J., Jennings, C., and R. Sparks, "Change Process
               for the Session Initiation Protocol (SIP) and the Real-
               time Applications and Infrastructure Area", BCP 67,
               RFC 5727, March 2010.
 
-13.2.  Informative References
+14.2.  Informative References
 
    [RFC3325]  Jennings, C., Peterson, J., and M. Watson, "Private
               Extensions to the Session Initiation Protocol (SIP) for
@@ -721,14 +817,6 @@ Internet-Draft     P-Charge-Info, a SIP Private Header        April 2011
 
    [RFC3603]  Marshall, W. and F. Andreasen, "Private Session Initiation
               Protocol (SIP) Proxy-to-Proxy Extensions for Supporting
-
-
-
-York & Asveren          Expires October 31, 2011               [Page 13]
-
-Internet-Draft     P-Charge-Info, a SIP Private Header        April 2011
-
-
               the PacketCable Distributed Call Signaling Architecture",
               RFC 3603, October 2003.
 
@@ -740,9 +828,17 @@ Authors' Addresses
    Keene, NH
    USA
 
-   Phone: +1-407-455-5859
-   Email: dyork@voxeo.com
+   Phone: +1-802-735-1624
+   Email: dyork@lodestar2.com
    URI:   http://www.voxeo.com/
+
+
+
+
+
+York & Asveren            Expires June 3, 2012                 [Page 15]
+
+Internet-Draft     P-Charge-Info, a SIP Private Header     December 2011
 
 
    Tolga Asveren
@@ -780,5 +876,21 @@ Authors' Addresses
 
 
 
-York & Asveren          Expires October 31, 2011               [Page 14]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+York & Asveren            Expires June 3, 2012                 [Page 16]
 
