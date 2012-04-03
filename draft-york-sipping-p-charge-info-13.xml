@@ -23,7 +23,7 @@
 <?rfc sortrefs="yes" ?>
 <?rfc compact="yes" ?>
 <?rfc subcompact="no" ?>
-<rfc category="info" docName="draft-york-sipping-p-charge-info-12" ipr="trust200902">
+<rfc category="info" docName="draft-york-sipping-p-charge-info-13" ipr="trust200902">
 
   <!-- ***** FRONT MATTER ***** -->
 
@@ -32,7 +32,6 @@
       Protocol (SIP)</title>
 
     <author fullname="Dan York" initials="D." surname="York">
-	    <organization abbrev="Voxeo">Voxeo Corporation</organization>
 
       <address>
         <postal>
@@ -47,7 +46,6 @@
 
         <email>dyork@lodestar2.com</email>
 
-	<uri>http://www.voxeo.com/</uri>
       </address>
     </author>
     <author fullname="Tolga Asveren" initials="T." surname="Asveren">
@@ -64,7 +62,7 @@
       </address>
     </author>
     
-    <date year="2011" />
+    <date year="2012" />
 
     <!-- Meta-data Declarations -->
 
@@ -483,6 +481,11 @@
     <section anchor="Changes" title="Changes">
       <t>NOTE TO RFC EDITOR - Please remove this "Changes" section prior to
       publication. Thank you.</t>
+      <t>Revision -13 has no changes to content and was issued as -12 expired.
+      Discussions are under way coming out of IETF 83 on a plan to move 
+      this draft forward. As the SIPPING working group no longer exists, the
+      draft name needs to change and there are a couple of other required
+      changes.</t>
       <t>Revision -12 included the following modifications based on feedback
       from John Haluska and Glen Wang:
       <list style="symbols">
