@@ -365,8 +365,8 @@
        <section anchor="example" title="Example of Usage">
        <t>The content of the P-Charge-Info header is typically simply a SIP URI used
        as a billing indicator.  As such, an example would be as simple as one of:</t>
-       <t>P-Charge-Info: &lt;sip:4075555555@1.2.3.4&gt;</t>
-       <t>P-Charge-Info: &lt;sip:4075555555@example.com&gt;</t>
+       <t>P-Charge-Info: &lt;sip:+14072344567@operator.net; user=phone&gt;</t>
+       <t>P-Charge-Info: &lt;sip:+12349874567@example.com&gt;</t>
        <t>P-Charge-Info: &lt;sip:1234@example.com&gt;</t>
        <t>P-Charge-Info: &lt;sip:user22@example.com&gt;</t>
        <t>Any other applicable SIP URI could be used.</t>
@@ -397,12 +397,14 @@
        <figure><artwork><![CDATA[
       P-Charge-Info = "P-Charge-Info" HCOLON (name-addr / addr-spec)
               ; name-addr and addr-spec are specified in RFC 3261
-          charge-param = npi-param / noa-param / generic-param
+          charge-param = npi-param / noa-param 
+		         / oli-param / generic-param
           npi-param = ";npi" EQUAL npi-value
               ; generic-param is specifed in RFC 3261
           npi-value = gen-value
           noa-param = ";noa" EQUAL noa-value
           noa-value = gen-value
+	  oli-param = 2*(DIGIT)
        ]]></artwork></figure>
 
     <t>The SIP URI contained in the name-addr/addr-spec is the billing indicator 
@@ -476,6 +478,8 @@
       <t>The authors want to specificially thank John Haluska for a great
       range of comments and specific information related to interworking
       with the ISUP Charge Number.</t>
+	  <t>The oli parameter is first defined in draft-patel-dispatch-cpc-oli-parameter
+	  and the description about oli values is taken from that draft.</t>
     </section>
 
     <section anchor="Changes" title="Changes">
@@ -613,6 +617,14 @@
                 hotel/motel, or non-exchange access end office
        118 test line test code
     ]]></artwork></figure>
+    </section>
+	
+	 <section anchor="appendixc" title="Appendix C: OLI Parameter Values">
+    <t>The decimal coded values for "oli" are assigned and administered
+   NANPA and are the decimal codes used in the ANI II digits of the ANI
+   sequence for in-band signalling system
+   http://www.nanpa.com/number_resource_info/ani_ii_assignments.html.</t>
+
     </section>
 
   </middle>
