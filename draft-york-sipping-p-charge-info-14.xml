@@ -1,26 +1,25 @@
 <?xml version="1.0" encoding="US-ASCII"?>
 <?xml-stylesheet type='text/xsl'
              href='http://xml.resource.org/authoring/rfc2629.xslt' ?>
-<!-- This template is for creating an Internet Draft using xml2rfc,
-     which is available here: http://xml.resource.org. -->
+             
 <!DOCTYPE rfc SYSTEM "http://xml.resource.org/authoring/rfc2629.dtd" [
-<!-- One method to get references from the online citation libraries.
-     There has to be one entity for each item to be referenced. 
-     An alternate method (rfc include) is described in the references. -->
 <!ENTITY RFC2119 PUBLIC "" "http://xml.resource.org/public/rfc/bibxml/reference.RFC.2119.xml">
+<!ENTITY RFC2234 PUBLIC "" "http://xml.resource.org/public/rfc/bibxml/reference.RFC.2234.xml">
 <!ENTITY RFC2629 PUBLIC "" "http://xml.resource.org/public/rfc/bibxml/reference.RFC.2629.xml">
+<!ENTITY RFC3261 PUBLIC "" "http://xml.resource.org/public/rfc/bibxml/reference.RFC.3261.xml">
 <!ENTITY RFC3325 PUBLIC "" "http://xml.resource.org/public/rfc/bibxml/reference.RFC.3325.xml">
 <!ENTITY RFC3455 PUBLIC "" "http://xml.resource.org/public/rfc/bibxml/reference.RFC.3455.xml">
 <!ENTITY RFC3603 PUBLIC "" "http://xml.resource.org/public/rfc/bibxml/reference.RFC.3603.xml">
 <!ENTITY RFC5727 PUBLIC "" "http://xml.resource.org/public/rfc/bibxml/reference.RFC.5727.xml">
-
+<!ENTITY I-D.patel-dispatch-cpc-oli-parameter SYSTEM 
+"http://xml.resource.org/public/rfc/bibxml3/reference.I-D.patel-dispatch-cpc-oli-parameter.xml">
 ]>
 <?xml-stylesheet type='text/xsl' href='rfc2629.xslt' ?>
 <?rfc strict="yes" ?>
 <?rfc toc="yes"?>
 <?rfc tocdepth="4"?>
 <?rfc symrefs="yes"?>
-<?rfc sortrefs="yes" ?>
+<?rfc sortrefs="no" ?>
 <?rfc compact="yes" ?>
 <?rfc subcompact="no" ?>
 <rfc category="info" docName="draft-york-sipping-p-charge-info-14" ipr="trust200902">
@@ -32,7 +31,7 @@
       Protocol (SIP)</title>
 
     <author fullname="Dan York" initials="D." surname="York">
-
+        <organization abbrev="Individual">Individual</organization>
       <address>
         <postal>
           <street></street>
@@ -72,13 +71,19 @@
 	 <keyword>p-header</keyword>
 
     <abstract>
-       <t>This document describes 'P-Charge-Info', a private Session
-       Initiation Protocol (SIP) header (P-header) used to convey billing information
+       <t>This text documents 'P-Charge-Info', an existing private 
+       Session Initiation Protocol (SIP) header (P-header) used to 
+       convey billing information
        about the party to be charged.  This P-Header is currently
        in production usage by a number of equipment vendors and carriers
        and this document is submitted to request the registration of
-       this header with IANA. This P-Header may also be used in some situations to carry 
+       this header with IANA. This P-Header may also be used in some 
+       situations to carry 
        the ISUP Charge Number parameter for PSTN interconnection.</t>
+       <t>NOTE: This version of the Internet Draft is expected to be the 
+       last with this name, as the SIPPING Working Group no longer exists.  The
+       next version of this Internet Draft is expected to include 
+       the DISPATCH Working Group in the Internet Draft name.</t>
     </abstract>
   </front>
 
@@ -87,7 +92,7 @@
         <t>In certain network configurations, it is desirable to decouple
 	the identity of the caller (what is normally thought of as "Caller
 	ID") from the identity/number used for billing purposes.  This
-	document describes the current usage of 'P-Charge-Info', a private
+	document records the current usage of 'P-Charge-Info', a private
 	SIP header, to provide simple billing information and requests the
 	registration of this header with IANA as required by section 4.2 of
 	 <xref target="RFC5727">RFC 5727</xref>.</t>
@@ -99,8 +104,9 @@
 	   <t>From (in the absence of P-Asserted-Identity)</t>
 	</list>(NOTE: Some service providers today also use the
 	"Remote-Party-ID" header but this was replaced by
-	P-Asserted-Identity in RFC 3325.)</t>
-	<t>This identity/number is typically presented to the receiving UA where
+	P-Asserted-Identity in <xref target="RFC3325">RFC 3325</xref>.)</t>
+	<t>This identity/number is typically presented to the receiving user
+	agent (UA) where
 	it is usually displayed for the end user.  It is also typically
 	used for billing purposes by the network entities involved in
 	carrying the session.  </t>
@@ -123,9 +129,10 @@
 	<t>In both these examples, there exists a need for a way to pass 
 	an additional billing
 	identifier that can be used between network entities in order to
-	correctly bill for services.  At least one equipment provider,
-	Sonus Networks, and several carriers have been using the
-	"P-Charge-Info" header for the last 5 years as a simple 
+	correctly bill for services.  </t>
+	<t>Several carriers and at least one 
+	equipment provider, Sonus Networks, have been using the
+	"P-Charge-Info" header for the last 7 years as a simple 
 	mechanism to exchange this billing identifier.</t>
 
 
@@ -138,12 +145,14 @@
       </section>
 
     <section anchor="Purpose" title="Purpose of this Document">
-    <t>This document has been prepared to comply with section 4 of  
+    <t>This document has been prepared to document the existing deployed
+    usage of the P-Charge-Info header and to comply with section 4 of  
     <xref target="RFC5727">RFC 5727</xref> to register this header with IANA.
     This document was originally prepared to comply with sections 4.1 and 4.2
-    of the now obsoleted RFC 3427.  It is noted that RFC 5727 specifically 
+    of the now obsolete RFC 3427.  It is noted that RFC 5727 specifically 
     deprecates new usage of "P-" headers, but P-Charge-Info has been in 
-    deployment for several years now.  Given this, the authors request that
+    deployment for over seven years now and pre-dates RFC 5727. Given this, 
+    the authors request that
     P-Charge-Info be admitted as a "grandfathered case" per section 4 of 
     RFC 5727.</t>
     </section>
@@ -255,7 +264,7 @@
       <list style="symbols">
          <t>Billing-Correlation-ID, a globally unique identifier</t>
 	 <t>Financial-Entity-ID</t>
-	 <t>RKS-Group-ID (record keeping server</t>
+	 <t>RKS-Group-ID (record keeping server)</t>
       </list>
       and may include a variety of additional parameters.</t>
 
@@ -365,7 +374,7 @@
        <section anchor="example" title="Example of Usage">
        <t>The content of the P-Charge-Info header is typically simply a SIP URI used
        as a billing indicator.  As such, an example would be as simple as one of:</t>
-       <t>P-Charge-Info: &lt;sip:+14072344567@operator.net; user=phone&gt;</t>
+       <t>P-Charge-Info: &lt;sip:+14075551234@example.net; user=phone&gt;</t>
        <t>P-Charge-Info: &lt;sip:+12349874567@example.com&gt;</t>
        <t>P-Charge-Info: &lt;sip:1234@example.com&gt;</t>
        <t>P-Charge-Info: &lt;sip:user22@example.com&gt;</t>
@@ -374,15 +383,20 @@
 
        <section anchor="parameters" title="Optional Parameters">
        <t>P-Charge-Info optionally includes the additional parameters of
-       the "Numbering Plan Indicator" and "Nature of Address".  These are used when 
+       <list style="symbols">
+         <t>Numbering Plan Indicator (NPI)</t>
+	 <t>Nature of Address (NOA)</t>
+	 <t>Originating Line Information (OLI)</t>
+      </list>
+       These are used when 
        the ISUP Charge Number value needs to be passed as part of
        P-Charge-Info. For instance, this might be required in a
        SIP message for scenarios where SIP is used to connect two PSTN segments
        and needs to pass charging information between them. </t>
        <t>An example of the usage of the optional parameters is:</t>
        <t>P-Charge-Info: &lt;sip:6835555555;npi=1;noa=3@10.10.7.21&gt;</t>
-       <t>Values passed in the "npi" and "noa" parameters are expressed as decimal
-       numbers and possible values are defined in Appendix A and Appendix B.</t>
+       <t>Values passed in the "npi," "noa" and "oli" parameters are expressed as decimal
+       numbers and possible values are defined in Appendices A, B and C.</t>
        </section>
 
     </section>
@@ -391,34 +405,38 @@
    both prose and an augmented Backus-Naur Form (BNF) defined in RFC
    2234.  Further, several BNF definitions are inherited from SIP
    and are not repeated here.  Implementors need to be familiar with the
-   notation and contents of SIP [1] and RFC 2234 [3] to understand this
+   notation and contents of <xref target="RFC3261">SIP</xref> and 
+   <xref target="RFC2234">RFC 2234</xref> to understand this
    document.</t>
        <t>The syntax of the P-Charge-Info header is described as follows:</t>
        <figure><artwork><![CDATA[
       P-Charge-Info = "P-Charge-Info" HCOLON (name-addr / addr-spec)
               ; name-addr and addr-spec are specified in RFC 3261
-          charge-param = npi-param / noa-param 
-		         / oli-param / generic-param
+          charge-param = npi-param / noa-param / 
+              oli-param / generic-param
           npi-param = ";npi" EQUAL npi-value
               ; generic-param is specifed in RFC 3261
           npi-value = gen-value
           noa-param = ";noa" EQUAL noa-value
           noa-value = gen-value
-	  oli-param = 2*(DIGIT)
+          oli-param = ";oli" EQUAL oli-value
+          oli-value = 2*(DIGIT)
        ]]></artwork></figure>
 
     <t>The SIP URI contained in the name-addr/addr-spec is the billing indicator 
     that is passed between the parties.</t>
     <t>charge-param is used as a userinfo parameter in P-Charge-Info.</t>
-    <t>The two optional parameters for PSTN interoperability are mentioned 
+    <t>The three optional parameters for PSTN interoperability are mentioned 
        in the previous section and are:
       <list style="symbols">
          <t>npi = "Numbering Plan Indicator"</t>
          <t>noa = "Nature of Address"</t>
+         <t>oli = "Originating Line Information"</t>
       </list>
     </t>
     <t>Typical values for the "npi-value" are listed in Appendix A.</t>
     <t>Typical values for the "noa-value" are listed in Appendix B.</t>
+    <t>The source of the values for the "oli-value" is listed in Appendix C.</t>
     </section>
 
     <section anchor="IANA" title="IANA Considerations">
@@ -440,7 +458,7 @@
        <t>If an untrusted entity were inserted between the trusted
        entities, it could potentially interfere with the billing records
        for the call.  If the SIP connections are not made over a private
-       WAN, a mechanism for securing the confidentiality and integrity of
+       network, a mechanism for securing the confidentiality and integrity of
        the SIP connection should be used to protect the information. One
        such mechanism could be TLS-encryption of the SIP signaling stream.</t>
        </section>
@@ -478,13 +496,39 @@
       <t>The authors want to specificially thank John Haluska for a great
       range of comments and specific information related to interworking
       with the ISUP Charge Number.</t>
-	  <t>The oli parameter is first defined in draft-patel-dispatch-cpc-oli-parameter
-	  and the description about oli values is taken from that draft.</t>
+	  <t>The OLI parameter was first defined in the now expired
+	  <xref target="I-D.patel-dispatch-cpc-oli-parameter">
+	  draft-patel-dispatch-cpc-oli-parameter</xref> 
+	  and the description about OLI values is taken from that draft.</t>
     </section>
 
     <section anchor="Changes" title="Changes">
       <t>NOTE TO RFC EDITOR - Please remove this "Changes" section prior to
       publication. Thank you.</t>
+      <t>Revision -14 incorporates the following changes:
+      <list style="symbols">
+         <t>The OLI parameter was added by request of Brian Somes of 
+         Verizon. This meant changes to several sections including the ABNF, 
+         as well as the addition of Appendix C.</t>
+         <t>An informative reference was added to the expired 
+         draft-patel-dispatch-cpc-oli-parameter as the source for OLI 
+         information.</t>
+         <t>Two examples were updated to include a "+1" at the beginning
+         of the SIP URI.</t>
+         <t>An example was changed to use "example.net" to be compliant
+         with RFC 2606.</t>
+	     <t>Dan York's organization was updated to "Individual" (from empty)
+	     to indicate that his involvement with this draft is purely as an
+	     individual with no connection to his employer (ISOC).</t>
+         <t>The length of time the header has been used in the Introduction
+         was changed to 7 years, to reflect the first usage around 2005.</t>
+	     <t>A note was added to the abstract indicating that this is 
+	     expected to be the last version using the name 
+	     'draft-york-sipping-p-charge-info'.</t>
+	     <t>Informative references were added to RFC 3261 and RFC 2234
+	     to address missing references in the text.</t>
+	     <t>Numerous other tweaks to the text for readability.</t>
+      </list></t>
       <t>Revision -13 has no changes to content and was issued as -12 expired.
       Discussions are under way coming out of IETF 83 on a plan to move 
       this draft forward. As the SIPPING working group no longer exists, the
@@ -620,10 +664,12 @@
     </section>
 	
 	 <section anchor="appendixc" title="Appendix C: OLI Parameter Values">
-    <t>The decimal coded values for "oli" are assigned and administered
-   NANPA and are the decimal codes used in the ANI II digits of the ANI
-   sequence for in-band signalling system
-   http://www.nanpa.com/number_resource_info/ani_ii_assignments.html.</t>
+    <t>The decimal coded values for "originating line information" are assigned 
+    and administered by
+    the North American Numbering Plan Administration (NANPA) and are 
+    the decimal codes used in the ANI II digits of the ANI sequence for 
+    in-band signalling system. The list of possible values can be found at:
+    http://www.nanpa.com/number_resource_info/ani_ii_assignments.html.</t>
 
     </section>
 
@@ -642,10 +688,13 @@
 
     <references title="Informative References">
 
+    &RFC3261;
     &RFC3455;
     &RFC3325;
     &RFC3603;
-
+    &RFC2234;
+    &I-D.patel-dispatch-cpc-oli-parameter;
+    
     </references>
 
   </back>
