@@ -1,4 +1,4 @@
-I am trying an experiment in using this repository for Internet-Drafts that I am involved with editing.
+This repository contains Internet-Drafts that I am involved with writing or editing.
 
 The main directory contains the I-Ds that I am currently actively editing.
 
@@ -9,10 +9,10 @@ in case the XML file may be useful to others who are writing Internet-Drafts (an
 
 The "archive" directory contains older drafts I worked on, including (as of December 2011):
 
-draft-matuszewski-p2psip-security-overview-00.xml   (Sept 28, 2009)
-draft-matuszewski-p2psip-security-requirements-05.xml  (July 10, 2009)
-draft-york-sip-visual-identifier-trusted-identity-01.xml  (Nov 3, 2008)
-draft-york-sipping-spit-similarity-scenarios-01.xml  (July 14, 2008)
+* draft-matuszewski-p2psip-security-overview-00.xml   (Sept 28, 2009)
+* draft-matuszewski-p2psip-security-requirements-05.xml  (July 10, 2009)
+* draft-york-sip-visual-identifier-trusted-identity-01.xml  (Nov 3, 2008)
+* draft-york-sipping-spit-similarity-scenarios-01.xml  (July 14, 2008)
 
 draft-york-sipping-p-charge-info-10.xml is also in the archive folder to maintain the commit history
 of previous versions of p-charge-info.  I was using "git mv" to rename the ID up to -10, and then for 
