@@ -9,7 +9,7 @@ Expires: March 02, 2013                                            Sonus
 
   P-Charge-Info - A Private Header (P-Header) Extension to the Session
                        Initiation Protocol (SIP)
-                  draft-york-sipping-p-charge-info-14
+                  draft-york-sipping-p-charge-info-15
 
 Abstract
 
@@ -22,10 +22,10 @@ Abstract
    situations to carry the ISUP Charge Number parameter for PSTN
    interconnection.
 
-   NOTE: This version of the Internet Draft will be the last with this
-   name, as the SIPPING Working Group no longer exists.  The next
-   version of this Internet Draft is will include the DISPATCH Working
-   Group and be draft-york-dispatch-p-charge-info-00.
+   IMPORTANT NOTE: This version of the Internet Draft will be the last
+   with this name, as the SIPPING Working Group no longer exists.  The
+   next version of this Internet Draft will be through the DISPATCH
+   Working Group and will be draft-york-dispatch-p-charge-info-00.
 
 Status of this Memo
 
@@ -606,6 +606,11 @@ Internet-Draft    P-Charge-Info, a SIP Private Header        August 2012
    NOTE TO RFC EDITOR - Please remove this "Changes" section prior to
    publication.  Thank you.
 
+   Revision -15 simply fixes a wording error in the abstract in the
+   previous revision.  This will also be the last version of 'draft-
+   york-sipping-p-charge-info'. The next version will be 'draft-york-
+   dispatch-p-charge-info'.
+
    Revision -14 incorporates the following changes:
 
    o  Two examples were updated to include a "+1" at the beginning of
@@ -639,15 +644,12 @@ Internet-Draft    P-Charge-Info, a SIP Private Header        August 2012
    Revision -12 included the following modifications based on feedback
    from John Haluska and Glen Wang:
 
-   o  Modification of Appendix B to reflect ANSI T1.113 values.
-
-
-
-
 York & Asveren           Expires March 02, 2013                [Page 11]
 
 Internet-Draft    P-Charge-Info, a SIP Private Header        August 2012
 
+
+   o  Modification of Appendix B to reflect ANSI T1.113 values.
 
    Revision -11 represents a fairly significant revision responding to a
    solid review by Paul Kyzivat and providing additional explanation.  A
@@ -699,8 +701,6 @@ Internet-Draft    P-Charge-Info, a SIP Private Header        August 2012
       sequence of possible values stated in ANSI T1.113.
 
    o  An Appendix A was created listing the values from ANSI T1.113.
-
-
 
 
 York & Asveren           Expires March 02, 2013                [Page 12]

@@ -20,7 +20,7 @@
 <?rfc sortrefs="no" ?>
 <?rfc compact="yes" ?>
 <?rfc subcompact="no" ?>
-<rfc category="info" docName="draft-york-sipping-p-charge-info-14" ipr="trust200902">
+<rfc category="info" docName="draft-york-sipping-p-charge-info-15" ipr="trust200902">
 
   <!-- ***** FRONT MATTER ***** -->
 
@@ -78,10 +78,10 @@
        this header with IANA. This P-Header may also be used in some 
        situations to carry 
        the ISUP Charge Number parameter for PSTN interconnection.</t>
-       <t>NOTE: This version of the Internet Draft will be the 
+       <t>IMPORTANT NOTE: This version of the Internet Draft will be the 
        last with this name, as the SIPPING Working Group no longer exists.  The
-       next version of this Internet Draft is will include 
-       the DISPATCH Working Group and be draft-york-dispatch-p-charge-info-00.</t>
+       next version of this Internet Draft will be through the 
+       DISPATCH Working Group and will be draft-york-dispatch-p-charge-info-00.</t>
     </abstract>
   </front>
 
@@ -492,6 +492,10 @@
     <section anchor="Changes" title="Changes">
       <t>NOTE TO RFC EDITOR - Please remove this "Changes" section prior to
       publication. Thank you.</t>
+      <t>Revision -15 simply fixes a wording error in the abstract in 
+      the previous revision.  This will also be the last version of 
+      'draft-york-sipping-p-charge-info'. The next version will be
+      'draft-york-dispatch-p-charge-info'.</t>
       <t>Revision -14 incorporates the following changes:
       <list style="symbols">
          <t>Two examples were updated to include a "+1" at the beginning
