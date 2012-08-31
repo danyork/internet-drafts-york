@@ -11,8 +11,6 @@
 <!ENTITY RFC3455 PUBLIC "" "http://xml.resource.org/public/rfc/bibxml/reference.RFC.3455.xml">
 <!ENTITY RFC3603 PUBLIC "" "http://xml.resource.org/public/rfc/bibxml/reference.RFC.3603.xml">
 <!ENTITY RFC5727 PUBLIC "" "http://xml.resource.org/public/rfc/bibxml/reference.RFC.5727.xml">
-<!ENTITY I-D.patel-dispatch-cpc-oli-parameter SYSTEM 
-"http://xml.resource.org/public/rfc/bibxml3/reference.I-D.patel-dispatch-cpc-oli-parameter.xml">
 ]>
 <?xml-stylesheet type='text/xsl' href='rfc2629.xslt' ?>
 <?rfc strict="yes" ?>
@@ -80,10 +78,10 @@
        this header with IANA. This P-Header may also be used in some 
        situations to carry 
        the ISUP Charge Number parameter for PSTN interconnection.</t>
-       <t>NOTE: This version of the Internet Draft is expected to be the 
+       <t>NOTE: This version of the Internet Draft will be the 
        last with this name, as the SIPPING Working Group no longer exists.  The
-       next version of this Internet Draft is expected to include 
-       the DISPATCH Working Group in the Internet Draft name.</t>
+       next version of this Internet Draft is will include 
+       the DISPATCH Working Group and be draft-york-dispatch-p-charge-info-00.</t>
     </abstract>
   </front>
 
@@ -386,7 +384,6 @@
        <list style="symbols">
          <t>Numbering Plan Indicator (NPI)</t>
 	 <t>Nature of Address (NOA)</t>
-	 <t>Originating Line Information (OLI)</t>
       </list>
        These are used when 
        the ISUP Charge Number value needs to be passed as part of
@@ -395,8 +392,8 @@
        and needs to pass charging information between them. </t>
        <t>An example of the usage of the optional parameters is:</t>
        <t>P-Charge-Info: &lt;sip:6835555555;npi=1;noa=3@10.10.7.21&gt;</t>
-       <t>Values passed in the "npi," "noa" and "oli" parameters are expressed as decimal
-       numbers and possible values are defined in Appendices A, B and C.</t>
+       <t>Values passed in the "npi" and "noa" parameters are expressed as decimal
+       numbers and possible values are defined in Appendices A and B.</t>
        </section>
 
     </section>
@@ -412,36 +409,30 @@
        <figure><artwork><![CDATA[
       P-Charge-Info = "P-Charge-Info" HCOLON (name-addr / addr-spec)
               ; name-addr and addr-spec are specified in RFC 3261
-          charge-param = npi-param / noa-param / 
-              oli-param / generic-param
+          charge-param = npi-param / noa-param / generic-param
           npi-param = ";npi" EQUAL npi-value
               ; generic-param is specifed in RFC 3261
           npi-value = gen-value
           noa-param = ";noa" EQUAL noa-value
           noa-value = gen-value
-          oli-param = ";oli" EQUAL oli-value
-          oli-value = 2*(DIGIT)
        ]]></artwork></figure>
 
     <t>The SIP URI contained in the name-addr/addr-spec is the billing indicator 
     that is passed between the parties.</t>
     <t>charge-param is used as a userinfo parameter in P-Charge-Info.</t>
-    <t>The three optional parameters for PSTN interoperability are mentioned 
+    <t>The two optional parameters for PSTN interoperability are mentioned 
        in the previous section and are:
       <list style="symbols">
          <t>npi = "Numbering Plan Indicator"</t>
          <t>noa = "Nature of Address"</t>
-         <t>oli = "Originating Line Information"</t>
       </list>
     </t>
     <t>Typical values for the "npi-value" are listed in Appendix A.</t>
     <t>Typical values for the "noa-value" are listed in Appendix B.</t>
-    <t>The source of the values for the "oli-value" is listed in Appendix C.</t>
     </section>
 
     <section anchor="IANA" title="IANA Considerations">
-      <t>This document defines a private SIP extension header field
-      (beginning with the prefixe "P-").</t>
+      <t>This document defines a private SIP extension header field.</t>
       <t>The extension is registered as a private extension field:</t>
       <t>RFC Number:	RFCXXXX [Note to IANA: Please fill in with the RFC number
       of this specification.</t>
@@ -496,10 +487,6 @@
       <t>The authors want to specificially thank John Haluska for a great
       range of comments and specific information related to interworking
       with the ISUP Charge Number.</t>
-	  <t>The OLI parameter was first defined in the now expired
-	  <xref target="I-D.patel-dispatch-cpc-oli-parameter">
-	  draft-patel-dispatch-cpc-oli-parameter</xref> 
-	  and the description about OLI values is taken from that draft.</t>
     </section>
 
     <section anchor="Changes" title="Changes">
@@ -507,19 +494,13 @@
       publication. Thank you.</t>
       <t>Revision -14 incorporates the following changes:
       <list style="symbols">
-         <t>The OLI parameter was added by request of Brian Somes of 
-         Verizon. This meant changes to several sections including the ABNF, 
-         as well as the addition of Appendix C.</t>
-         <t>An informative reference was added to the expired 
-         draft-patel-dispatch-cpc-oli-parameter as the source for OLI 
-         information.</t>
          <t>Two examples were updated to include a "+1" at the beginning
          of the SIP URI.</t>
          <t>An example was changed to use "example.net" to be compliant
          with RFC 2606.</t>
 	     <t>Dan York's organization was updated to "Individual" (from empty)
 	     to indicate that his involvement with this draft is purely as an
-	     individual with no connection to his employer (ISOC).</t>
+	     individual with no connection to his employer.</t>
          <t>The length of time the header has been used in the Introduction
          was changed to 7 years, to reflect the first usage around 2005.</t>
 	     <t>A note was added to the abstract indicating that this is 
@@ -663,16 +644,6 @@
     ]]></artwork></figure>
     </section>
 	
-	 <section anchor="appendixc" title="Appendix C: OLI Parameter Values">
-    <t>The decimal coded values for "originating line information" are assigned 
-    and administered by
-    the North American Numbering Plan Administration (NANPA) and are 
-    the decimal codes used in the ANI II digits of the ANI sequence for 
-    in-band signalling system. The list of possible values can be found at:
-    http://www.nanpa.com/number_resource_info/ani_ii_assignments.html.</t>
-
-    </section>
-
   </middle>
   
 
@@ -693,7 +664,6 @@
     &RFC3325;
     &RFC3603;
     &RFC2234;
-    &I-D.patel-dispatch-cpc-oli-parameter;
     
     </references>
 

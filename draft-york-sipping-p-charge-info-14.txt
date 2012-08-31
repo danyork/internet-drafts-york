@@ -4,9 +4,8 @@
 SIPPING                                                          D. York
 Internet-Draft                                                Individual
 Intended status: Informational                                T. Asveren
-Expires: January 17, 2013                                          Sonus
-                                                           July 16, 2012
-
+Expires: March 02, 2013                                            Sonus
+                                                         August 31, 2012
 
   P-Charge-Info - A Private Header (P-Header) Extension to the Session
                        Initiation Protocol (SIP)
@@ -19,14 +18,14 @@ Abstract
    information about the party to be charged.  This P-Header is
    currently in production usage by a number of equipment vendors and
    carriers and this document is submitted to request the registration
-   of this header with IANA.  This P-Header may also be used in some
+   of this header with IANA. This P-Header may also be used in some
    situations to carry the ISUP Charge Number parameter for PSTN
    interconnection.
 
-   NOTE: This version of the Internet Draft is expected to be the last
-   with this name, as the SIPPING Working Group no longer exists.  The
-   next version of this Internet Draft is expected to include the
-   DISPATCH Working Group in the Internet Draft name.
+   NOTE: This version of the Internet Draft will be the last with this
+   name, as the SIPPING Working Group no longer exists.  The next
+   version of this Internet Draft is will include the DISPATCH Working
+   Group and be draft-york-dispatch-p-charge-info-00.
 
 Status of this Memo
 
@@ -43,7 +42,7 @@ Status of this Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on January 17, 2013.
+   This Internet-Draft will expire on March 02, 2013.
 
 Copyright Notice
 
@@ -52,68 +51,72 @@ Copyright Notice
 
 
 
-York & Asveren          Expires January 17, 2013                [Page 1]
+
+
+
+York & Asveren           Expires March 02, 2013                 [Page 1]
 
-Internet-Draft     P-Charge-Info, a SIP Private Header         July 2012
+Internet-Draft    P-Charge-Info, a SIP Private Header        August 2012
 
 
    This document is subject to BCP 78 and the IETF Trust's Legal
-   Provisions Relating to IETF Documents
-   (http://trustee.ietf.org/license-info) in effect on the date of
-   publication of this document.  Please review these documents
-   carefully, as they describe your rights and restrictions with respect
-   to this document.  Code Components extracted from this document must
-   include Simplified BSD License text as described in Section 4.e of
-   the Trust Legal Provisions and are provided without warranty as
-   described in the Simplified BSD License.
-
+   Provisions Relating to IETF Documents (http://trustee.ietf.org/
+   license-info) in effect on the date of publication of this document.
+   Please review these documents carefully, as they describe your rights
+   and restrictions with respect to this document.  Code Components
+   extracted from this document must include Simplified BSD License text
+   as described in Section 4.e of the Trust Legal Provisions and are
+   provided without warranty as described in the Simplified BSD License.
 
 Table of Contents
 
-   1.  Overview . . . . . . . . . . . . . . . . . . . . . . . . . . .  3
-   2.  Requirements Language  . . . . . . . . . . . . . . . . . . . .  4
+   1.  Overview . . . . . . . . . . . . . . . . . . . . . . . . . . .  2
+   2.  Requirements Language  . . . . . . . . . . . . . . . . . . . .  3
    3.  Purpose of this Document . . . . . . . . . . . . . . . . . . .  4
    4.  Examples of the Problem  . . . . . . . . . . . . . . . . . . .  4
      4.1.  Use Case - Billing Identifier  . . . . . . . . . . . . . .  4
-     4.2.  Use Case - ISUP Charge Number  . . . . . . . . . . . . . .  4
-     4.3.  Use Case - Distributed Enterprise  . . . . . . . . . . . .  5
-     4.4.  Use Case - Hosted Telephony Provider . . . . . . . . . . .  5
-   5.  Alternatives . . . . . . . . . . . . . . . . . . . . . . . . .  6
-     5.1.  P-Charging-Vector  . . . . . . . . . . . . . . . . . . . .  6
+     4.2.  Use Case - ISUP     Charge Number  . . . . . . . . . . . .  4
+     4.3.  Use Case -     Distributed Enterprise  . . . . . . . . . .  4
+     4.4.  Use Case -     Hosted Telephony Provider . . . . . . . . .  5
+   5.  Alternatives . . . . . . . . . . . . . . . . . . . . . . . . .  5
+     5.1.  P-Charging-Vector  . . . . . . . . . . . . . . . . . . . .  5
      5.2.  P-DCS-Billing-Info . . . . . . . . . . . . . . . . . . . .  6
-     5.3.  P-Asserted-Identity  . . . . . . . . . . . . . . . . . . .  7
+     5.3.  P-Asserted-Identity  . . . . . . . . . . . . . . . . . . .  6
    6.  The P-Charge-Info Header . . . . . . . . . . . . . . . . . . .  7
      6.1.  Applicability Statement for the P-Charge-Info header . . .  7
      6.2.  Usage of the P-Charge-Info header  . . . . . . . . . . . .  7
-       6.2.1.  Procedures at the UA . . . . . . . . . . . . . . . . .  8
+       6.2.1.  Procedures at the UA . . . . . . . . . . . . . . . . .  7
        6.2.2.  Procedures at the Proxy  . . . . . . . . . . . . . . .  8
-     6.3.  Example of Usage . . . . . . . . . . . . . . . . . . . . .  9
-     6.4.  Optional Parameters  . . . . . . . . . . . . . . . . . . .  9
+     6.3.  Example of Usage . . . . . . . . . . . . . . . . . . . . .  8
+     6.4.  Optional Parameters  . . . . . . . . . . . . . . . . . . .  8
    7.  Formal Syntax  . . . . . . . . . . . . . . . . . . . . . . . .  9
-   8.  IANA Considerations  . . . . . . . . . . . . . . . . . . . . . 10
-   9.  Security Considerations  . . . . . . . . . . . . . . . . . . . 11
-     9.1.  Trust Relationship . . . . . . . . . . . . . . . . . . . . 11
-     9.2.  Untrusted Peers  . . . . . . . . . . . . . . . . . . . . . 11
-       9.2.1.  Ingress from Untrusted Peers . . . . . . . . . . . . . 11
-       9.2.2.  Egress to Untrusted Peers  . . . . . . . . . . . . . . 11
-   10. Acknowledgements . . . . . . . . . . . . . . . . . . . . . . . 11
-   11. Changes  . . . . . . . . . . . . . . . . . . . . . . . . . . . 12
-   12. Appendix A: NPI Parameter Values . . . . . . . . . . . . . . . 15
-   13. Appendix B: NOA Parameter Values . . . . . . . . . . . . . . . 15
-   14. Appendix C: OLI Parameter Values . . . . . . . . . . . . . . . 16
-   15. References . . . . . . . . . . . . . . . . . . . . . . . . . . 16
-     15.1. Normative References . . . . . . . . . . . . . . . . . . . 16
-     15.2. Informative References . . . . . . . . . . . . . . . . . . 16
-   Authors' Addresses . . . . . . . . . . . . . . . . . . . . . . . . 17
-
-
-
-York & Asveren          Expires January 17, 2013                [Page 2]
-
-Internet-Draft     P-Charge-Info, a SIP Private Header         July 2012
-
+   8.  IANA Considerations  . . . . . . . . . . . . . . . . . . . . .  9
+   9.  Security Considerations  . . . . . . . . . . . . . . . . . . . 10
+     9.1.  Trust Relationship . . . . . . . . . . . . . . . . . . . . 10
+     9.2.  Untrusted Peers  . . . . . . . . . . . . . . . . . . . . . 10
+       9.2.1.  Ingress from        Untrusted Peers  . . . . . . . . . 10
+       9.2.2.  Egress to        Untrusted Peers . . . . . . . . . . . 10
+   10. Acknowledgements . . . . . . . . . . . . . . . . . . . . . . . 10
+   11. Changes  . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
+   12. Appendix A: NPI Parameter Values . . . . . . . . . . . . . . . 13
+   13. Appendix B: NOA Parameter Values . . . . . . . . . . . . . . . 13
+   14. References . . . . . . . . . . . . . . . . . . . . . . . . . . 14
+     14.1.  Normative References  . . . . . . . . . . . . . . . . . . 14
+     14.2.  Informative References  . . . . . . . . . . . . . . . . . 14
+   Authors' Addresses . . . . . . . . . . . . . . . . . . . . . . . . 15
 
 1.  Overview
+
+
+
+
+
+
+
+York & Asveren           Expires March 02, 2013                 [Page 2]
+
+Internet-Draft    P-Charge-Info, a SIP Private Header        August 2012
+
 
    In certain network configurations, it is desirable to decouple the
    identity of the caller (what is normally thought of as "Caller ID")
@@ -145,7 +148,7 @@ Internet-Draft     P-Charge-Info, a SIP Private Header         July 2012
    for billing purposes.
 
    For example, the "Caller ID" may not reflect the actual reality of
-   the underlying network in terms of costs incurred on the PSTN.  This
+   the underlying network in terms of costs incurred on the PSTN. This
    may result in excessive charging of one carrier by another based on
    the erroneous assumption that the call was originating from a
    different point on the PSTN.
@@ -161,24 +164,22 @@ Internet-Draft     P-Charge-Info, a SIP Private Header         July 2012
    entities in order to correctly bill for services.
 
    Several carriers and at least one equipment provider, Sonus Networks,
-
-
-
-York & Asveren          Expires January 17, 2013                [Page 3]
-
-Internet-Draft     P-Charge-Info, a SIP Private Header         July 2012
-
-
    have been using the "P-Charge-Info" header for the last 7 years as a
    simple mechanism to exchange this billing identifier.
 
-
 2.  Requirements Language
+
+
+
+
+York & Asveren           Expires March 02, 2013                 [Page 3]
+
+Internet-Draft    P-Charge-Info, a SIP Private Header        August 2012
+
 
    The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
    "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
    document are to be interpreted as described in RFC 2119.
-
 
 3.  Purpose of this Document
 
@@ -188,10 +189,9 @@ Internet-Draft     P-Charge-Info, a SIP Private Header         July 2012
    originally prepared to comply with sections 4.1 and 4.2 of the now
    obsolete RFC 3427.  It is noted that RFC 5727 specifically deprecates
    new usage of "P-" headers, but P-Charge-Info has been in deployment
-   for over seven years now and pre-dates RFC 5727.  Given this, the
+   for over seven years now and pre-dates RFC 5727. Given this, the
    authors request that P-Charge-Info be admitted as a "grandfathered
    case" per section 4 of RFC 5727.
-
 
 4.  Examples of the Problem
 
@@ -206,7 +206,7 @@ Internet-Draft     P-Charge-Info, a SIP Private Header         July 2012
    the P-Charge-Info header a single billing identifier that the SIP
    Service Provider uses for billing purposes.
 
-4.2.  Use Case - ISUP Charge Number
+4.2.  Use Case - ISUP     Charge Number
 
    A second use case is one in which a PSTN gateway receives PSTN
    signaling that includes an ISUP Charge Number parameter and the PSTN
@@ -214,18 +214,7 @@ Internet-Draft     P-Charge-Info, a SIP Private Header         July 2012
    servers.  In this instance, the PSTN gateway will insert the ISUP
    Charge Number into the P-Charge-Info SIP header.
 
-
-
-
-
-
-
-York & Asveren          Expires January 17, 2013                [Page 4]
-
-Internet-Draft     P-Charge-Info, a SIP Private Header         July 2012
-
-
-4.3.  Use Case - Distributed Enterprise
+4.3.  Use Case -     Distributed Enterprise
 
    A third and common use case is a large enterprise with a widely
    distributed SIP network to designate the specific point at which PSTN
@@ -240,14 +229,20 @@ Internet-Draft     P-Charge-Info, a SIP Private Header         July 2012
    o  A branch office in Massachusetts has a series of IP phones that
       are connected via SIP to systems in the main office in Colorado
       and from there via SIP connections to the PSTN through a SIP
+
+
+York & Asveren           Expires March 02, 2013                 [Page 4]
+
+Internet-Draft    P-Charge-Info, a SIP Private Header        August 2012
+
       service provider.
 
    o  The phones in the Massachusetts office have each been assigned a
       direct, local phone number in the US area code of 617.
 
    o  This local 617 phone number is presented to callers on the PSTN as
-      the "Caller ID" based on its inclusion in the From and/or
-      P-Asserted-Identity SIP headers.
+      the "Caller ID" based on its inclusion in the From and/or P
+      -Asserted-Identity SIP headers.
 
    o  This local 617 phone number may also be used by the SIP service
       provider as the billing identifier and the call will be charged to
@@ -258,11 +253,11 @@ Internet-Draft     P-Charge-Info, a SIP Private Header         July 2012
 
    Rather than use the direct numbers of each SIP endpoint for
    generating the billing information, the enterprise might choose to
-   instead pass the SIP URI of the PSTN interconnection point in the
-   P-Charge-Info header, either for simplicity or potentially to obtain
+   instead pass the SIP URI of the PSTN interconnection point in the P
+   -Charge-Info header, either for simplicity or potentially to obtain
    better rates from the SIP service provider.
 
-4.4.  Use Case - Hosted Telephony Provider
+4.4.  Use Case -     Hosted Telephony Provider
 
    Similar to the third use case of a large enterprise, a hosted
    telephony provider or hosted voice application provider may have a
@@ -273,23 +268,32 @@ Internet-Draft     P-Charge-Info, a SIP Private Header         July 2012
    As with the branch office earlier, the customer may have all local
    phone numbers yet outgoing calls are actually being routed across a
    SIP network and out specific PSTN gateways or across specific SIP
-
-
-
-York & Asveren          Expires January 17, 2013                [Page 5]
-
-Internet-Draft     P-Charge-Info, a SIP Private Header         July 2012
-
-
    connections to SIP service providers.  The hosted provider may want
    to pass a billing identifier to its SIP service providers again
    either for the purpose of simplicity in billing or to obtain better
    rates from the SIP service providers.
 
-
 5.  Alternatives
 
 5.1.  P-Charging-Vector
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+York & Asveren           Expires March 02, 2013                 [Page 5]
+
+Internet-Draft    P-Charge-Info, a SIP Private Header        August 2012
+
 
    P-Charging-Vector is defined in section 4.6 of RFC 3455 [RFC3455] and
    used by the 3GPP to carry information related to the charging of a
@@ -329,26 +333,26 @@ Internet-Draft     P-Charge-Info, a SIP Private Header         July 2012
    billing scenarios that do not at all need this level of complexity.
    In those simpler scenarios all that is needed is simply a number to
    use for billing.  P-Charge-Info provides this simple solution for
-
-
-
-York & Asveren          Expires January 17, 2013                [Page 6]
-
-Internet-Draft     P-Charge-Info, a SIP Private Header         July 2012
-
-
    simple billing scenarios.
 
    Additionally, section 7.3 of RFC 3603 mandates that a UA MUST create
    a Billing-Correlation-ID and insert this into the P-DCS-Billing-Info
    header (along with the other required information) sent in the
-   initial SIP INVITE.  This again makes sense for the residential
+   initial SIP INVITE. This again makes sense for the residential
    telephone service environment for which this header is designed.  In
    contrast, P-Charge-Info is designed to be used among proxies and not
    to be used at all by normal user agents.  (P-Charge-Info may, though,
    by used by user agents associated with PSTN gateways.)
 
 5.3.  P-Asserted-Identity
+
+
+
+
+York & Asveren           Expires March 02, 2013                 [Page 6]
+
+Internet-Draft    P-Charge-Info, a SIP Private Header        August 2012
+
 
    Early reviewers of this document asked why the "P-Asserted-Identity"
    header documented in RFC 3325 [RFC3325] could not be used.  As
@@ -362,7 +366,6 @@ Internet-Draft     P-Charge-Info, a SIP Private Header         July 2012
    provide the caller identity which would be displayed to the end user
    as "Caller ID" while P-Charge-Info would provide the billing
    identifier used for the billing associated with the call.
-
 
 6.  The P-Charge-Info Header
 
@@ -385,18 +388,10 @@ Internet-Draft     P-Charge-Info, a SIP Private Header         July 2012
    o  an application server generating billing information.
 
    P-Charge-Info is to be consumed by the SIP entity that provides
-
-
-
-York & Asveren          Expires January 17, 2013                [Page 7]
-
-Internet-Draft     P-Charge-Info, a SIP Private Header         July 2012
-
-
    billing services for a session.  This could be an entity generating
    billing records or an entity interacting with another enitity
-   generating billing records.  Upon receipt of an INVITE request with
-   P-Charge-Info header, such an entity SHOULD use the value present in
+   generating billing records.  Upon receipt of an INVITE request with P
+   -Charge-Info header, such an entity SHOULD use the value present in
    the P-Charge-Info as indicating the party responsible for the charges
    associated with the session.
 
@@ -404,18 +399,25 @@ Internet-Draft     P-Charge-Info, a SIP Private Header         July 2012
 
    The P-Charge-Info header may be inserted by PSTN gateways or
    application servers acting as a SIP UA, either through local policy
-   or as a result of information received via PSTN signaling, e.g. the
+   or as a result of information received via PSTN signaling, e.g.  the
    Charge Number parameter in an ISUP IAM message.
 
    The P-Charge-Info header is not used/interpreted by a regular UA and
-   should not normally be seen by such a UA.  If the header is
+   should not normally be seen by such a UA. If the header is
    transmitted to such a UA, the UA SHOULD ignore the header.
+
+
+
+York & Asveren           Expires March 02, 2013                 [Page 7]
+
+Internet-Draft    P-Charge-Info, a SIP Private Header        August 2012
+
    Similarly, a regular UA originating a SIP message should not insert
    this header.
 
    A PSTN gateway or application server acting as a UA MAY use the
    content of the P-Charge-Info header present in an INVITE request it
-   received for billing related procedures, e.g. in a billing record or
+   received for billing related procedures, e.g.  in a billing record or
    during interaction with another entity generating billing records, as
    the identity of the party to be charged for the session.  A PSTN
    gateway or application server acting as a UA MAY use the content of
@@ -431,7 +433,7 @@ Internet-Draft     P-Charge-Info, a SIP Private Header         July 2012
    determine the identity of the party to be charged.
 
    A proxy MAY use the content of the P-Charge-Info header present in an
-   INVITE request it received for billing related procedures, e.g. in a
+   INVITE request it received for billing related procedures, e.g.  in a
    billing record or during interaction with another entity generating
    billing records.
 
@@ -441,13 +443,6 @@ Internet-Draft     P-Charge-Info, a SIP Private Header         July 2012
    A proxy supporting this extension SHOULD remove the P-Charge-Info
    header before sending a request to a UA that is not acting as a PSTN
    gateway or appropriate application server.
-
-
-
-York & Asveren          Expires January 17, 2013                [Page 8]
-
-Internet-Draft     P-Charge-Info, a SIP Private Header         July 2012
-
 
 6.3.  Example of Usage
 
@@ -471,9 +466,13 @@ Internet-Draft     P-Charge-Info, a SIP Private Header         July 2012
 
    o  Numbering Plan Indicator (NPI)
 
-   o  Nature of Address (NOA)
 
-   o  Originating Line Information (OLI)
+York & Asveren           Expires March 02, 2013                 [Page 8]
+
+Internet-Draft    P-Charge-Info, a SIP Private Header        August 2012
+
+
+   o  Nature of Address (NOA)
 
    These are used when the ISUP Charge Number value needs to be passed
    as part of P-Charge-Info.  For instance, this might be required in a
@@ -484,10 +483,9 @@ Internet-Draft     P-Charge-Info, a SIP Private Header         July 2012
 
    P-Charge-Info: <sip:6835555555;npi=1;noa=3@10.10.7.21>
 
-   Values passed in the "npi," "noa" and "oli" parameters are expressed
-   as decimal numbers and possible values are defined in Appendices A, B
-   and C.
-
+   Values passed in the "npi" and "noa" parameters are expressed as
+   decimal numbers and possible values are defined in Appendices A and
+   B.
 
 7.  Formal Syntax
 
@@ -498,68 +496,51 @@ Internet-Draft     P-Charge-Info, a SIP Private Header         July 2012
    and contents of SIP [RFC3261] and RFC 2234 [RFC2234] to understand
    this document.
 
-
-
-York & Asveren          Expires January 17, 2013                [Page 9]
-
-Internet-Draft     P-Charge-Info, a SIP Private Header         July 2012
-
-
    The syntax of the P-Charge-Info header is described as follows:
 
-         P-Charge-Info = "P-Charge-Info" HCOLON (name-addr / addr-spec)
-                 ; name-addr and addr-spec are specified in RFC 3261
-             charge-param = npi-param / noa-param /
-                 oli-param / generic-param
-             npi-param = ";npi" EQUAL npi-value
-                 ; generic-param is specifed in RFC 3261
-             npi-value = gen-value
-             noa-param = ";noa" EQUAL noa-value
-             noa-value = gen-value
-             oli-param = ";oli" EQUAL oli-value
-             oli-value = 2*(DIGIT)
+      P-Charge-Info = "P-Charge-Info" HCOLON (name-addr / addr-spec)
+              ; name-addr and addr-spec are specified in RFC 3261
+          charge-param = npi-param / noa-param / generic-param
+          npi-param = ";npi" EQUAL npi-value
+              ; generic-param is specifed in RFC 3261
+          npi-value = gen-value
+          noa-param = ";noa" EQUAL noa-value
+          noa-value = gen-value
 
    The SIP URI contained in the name-addr/addr-spec is the billing
    indicator that is passed between the parties.
 
    charge-param is used as a userinfo parameter in P-Charge-Info.
 
-   The three optional parameters for PSTN interoperability are mentioned
+   The two optional parameters for PSTN interoperability are mentioned
    in the previous section and are:
 
    o  npi = "Numbering Plan Indicator"
 
    o  noa = "Nature of Address"
 
-   o  oli = "Originating Line Information"
-
    Typical values for the "npi-value" are listed in Appendix A.
 
    Typical values for the "noa-value" are listed in Appendix B.
 
-   The source of the values for the "oli-value" is listed in Appendix C.
-
-
 8.  IANA Considerations
 
-   This document defines a private SIP extension header field (beginning
-   with the prefixe "P-").
+
+York & Asveren           Expires March 02, 2013                 [Page 9]
+
+Internet-Draft    P-Charge-Info, a SIP Private Header        August 2012
+
+
+   This document defines a private SIP extension header field.
 
    The extension is registered as a private extension field:
 
-   RFC Number: RFCXXXX [Note to IANA: Please fill in with the RFC number
-   of this specification.
+   RFC Number:     RFCXXXX [Note to IANA: Please fill in with the RFC
+   number of this specification.
 
-   Header Field Name: P-Charge-Info
+   Header Field Name:  P-Charge-Info
 
-   Compact Form: none
-
-
-
-York & Asveren          Expires January 17, 2013               [Page 10]
-
-Internet-Draft     P-Charge-Info, a SIP Private Header         July 2012
-
+   Compact Form:  none
 
 9.  Security Considerations
 
@@ -578,7 +559,7 @@ Internet-Draft     P-Charge-Info, a SIP Private Header         July 2012
 
 9.2.  Untrusted Peers
 
-9.2.1.  Ingress from Untrusted Peers
+9.2.1.  Ingress from        Untrusted Peers
 
    If the P-Charge-Info header was accepted by a SIP entity from an
    untrusted peer, there is the potential for fraud if the untrusted
@@ -588,7 +569,7 @@ Internet-Draft     P-Charge-Info, a SIP Private Header         July 2012
    Therefore a SIP entity MUST remove and ignore the P-Charge-Info
    header when it is received from an untrusted entity.
 
-9.2.2.  Egress to Untrusted Peers
+9.2.2.  Egress to        Untrusted Peers
 
    If the P-Charge-Info header was sent by a SIP entity to an untrusted
    peer, there is the potential exposure of network information that is
@@ -599,8 +580,15 @@ Internet-Draft     P-Charge-Info, a SIP Private Header         July 2012
    Therefore a SIP entity MUST remove the P-Charge-Info header when it
    is sent to an untrusted entity.
 
-
 10.  Acknowledgements
+
+
+
+
+York & Asveren           Expires March 02, 2013                [Page 10]
+
+Internet-Draft    P-Charge-Info, a SIP Private Header        August 2012
+
 
    The authors thank the following people for their comments, criticism,
    suggestions and assistance with ABNF notation: Keith Drage, Miguel
@@ -609,23 +597,9 @@ Internet-Draft     P-Charge-Info, a SIP Private Header         July 2012
    helping clarify the NPI parameter values with the reference to ANSI
    T1.113.
 
-
-
-
-York & Asveren          Expires January 17, 2013               [Page 11]
-
-Internet-Draft     P-Charge-Info, a SIP Private Header         July 2012
-
-
    The authors want to specificially thank John Haluska for a great
    range of comments and specific information related to interworking
    with the ISUP Charge Number.
-
-   The OLI parameter was first defined in the now expired
-   draft-patel-dispatch-cpc-oli-parameter
-   [I-D.patel-dispatch-cpc-oli-parameter] and the description about OLI
-   values is taken from that draft.
-
 
 11.  Changes
 
@@ -633,14 +607,6 @@ Internet-Draft     P-Charge-Info, a SIP Private Header         July 2012
    publication.  Thank you.
 
    Revision -14 incorporates the following changes:
-
-   o  The OLI parameter was added by request of Brian Somes of Verizon.
-      This meant changes to several sections including the ABNF, as well
-      as the addition of Appendix C.
-
-   o  An informative reference was added to the expired
-      draft-patel-dispatch-cpc-oli-parameter as the source for OLI
-      information.
 
    o  Two examples were updated to include a "+1" at the beginning of
       the SIP URI.
@@ -650,14 +616,14 @@ Internet-Draft     P-Charge-Info, a SIP Private Header         July 2012
 
    o  Dan York's organization was updated to "Individual" (from empty)
       to indicate that his involvement with this draft is purely as an
-      individual with no connection to his employer (ISOC).
+      individual with no connection to his employer.
 
    o  The length of time the header has been used in the Introduction
       was changed to 7 years, to reflect the first usage around 2005.
 
    o  A note was added to the abstract indicating that this is expected
-      to be the last version using the name
-      'draft-york-sipping-p-charge-info'.
+      to be the last version using the name 'draft-york-sipping-p
+      -charge-info'.
 
    o  Informative references were added to RFC 3261 and RFC 2234 to
       address missing references in the text.
@@ -665,14 +631,6 @@ Internet-Draft     P-Charge-Info, a SIP Private Header         July 2012
    o  Numerous other tweaks to the text for readability.
 
    Revision -13 has no changes to content and was issued as -12 expired.
-
-
-
-York & Asveren          Expires January 17, 2013               [Page 12]
-
-Internet-Draft     P-Charge-Info, a SIP Private Header         July 2012
-
-
    Discussions are under way coming out of IETF 83 on a plan to move
    this draft forward.  As the SIPPING working group no longer exists,
    the draft name needs to change and there are a couple of other
@@ -682,6 +640,14 @@ Internet-Draft     P-Charge-Info, a SIP Private Header         July 2012
    from John Haluska and Glen Wang:
 
    o  Modification of Appendix B to reflect ANSI T1.113 values.
+
+
+
+
+York & Asveren           Expires March 02, 2013                [Page 11]
+
+Internet-Draft    P-Charge-Info, a SIP Private Header        August 2012
+
 
    Revision -11 represents a fairly significant revision responding to a
    solid review by Paul Kyzivat and providing additional explanation.  A
@@ -720,15 +686,6 @@ Internet-Draft     P-Charge-Info, a SIP Private Header         July 2012
 
    o  Corrected example to show proper use of parameters.
 
-
-
-
-
-York & Asveren          Expires January 17, 2013               [Page 13]
-
-Internet-Draft     P-Charge-Info, a SIP Private Header         July 2012
-
-
    o  Updated references to RFC 3427 and RFC 3968 to reference RFC 5727.
 
    Revision -09 included the following modifications:
@@ -742,6 +699,14 @@ Internet-Draft     P-Charge-Info, a SIP Private Header         July 2012
       sequence of possible values stated in ANSI T1.113.
 
    o  An Appendix A was created listing the values from ANSI T1.113.
+
+
+
+
+York & Asveren           Expires March 02, 2013                [Page 12]
+
+Internet-Draft    P-Charge-Info, a SIP Private Header        August 2012
+
 
    Revision -07 was updated to the "trust200902" IPR statement and added
    references to RFC 3968.  At this point all comments have been
@@ -776,36 +741,31 @@ Internet-Draft     P-Charge-Info, a SIP Private Header         July 2012
    Info header was also added as an alternative and a few minor edits
    were made.
 
-
-
-
-
-York & Asveren          Expires January 17, 2013               [Page 14]
-
-Internet-Draft     P-Charge-Info, a SIP Private Header         July 2012
-
-
 12.  Appendix A: NPI Parameter Values
 
    To better understand the possible values for the optional NPI
    parameter, ANSI T1.113 states that the 'numbering plan indicator' may
    contain the following values:
 
-          000 unknown (no interpretation)
-          001 ISDN (Telephony) numbering plan (Recommendation E-164)
-          010 spare (no interpretation)
-          011 reserved (CCITT Data numbering plan)
-          100 reserved (CCITT Telex numbering plan)
-          101 Private numbering plan
-          110 spare (no interpretation)
-          111 spare (no interpretation)
+       000 unknown (no interpretation)
+       001 ISDN (Telephony) numbering plan (Recommendation E-164)
+       010 spare (no interpretation)
+       011 reserved (CCITT Data numbering plan)
+       100 reserved (CCITT Telex numbering plan)
+       101 Private numbering plan
+       110 spare (no interpretation)
+       111 spare (no interpretation)
 
    Note that the values shown here are in binary notation per ANSI
-   T1.113, but when the values are passed in the NPI parameter of
-   P-Charge-Info they are represented in decimal notation.
-
+   T1.113, but when the values are passed in the NPI parameter of P
+   -Charge-Info they are represented in decimal notation.
 
 13.  Appendix B: NOA Parameter Values
+
+York & Asveren           Expires March 02, 2013                [Page 13]
+
+Internet-Draft    P-Charge-Info, a SIP Private Header        August 2012
+
 
    To better understand the possible values for the optional NOA
    parameter, ANSI T1.113 states that the 'nature of address indicator'
@@ -822,96 +782,67 @@ Internet-Draft     P-Charge-Info, a SIP Private Header         July 2012
           0 0 0 1 0 0 0
           to
           1 1 1 0 1 1 1 spare
-
+   
           1 1 1 1 0 0 0
           to
           1 1 1 1 1 1 0 reserved for network specific use
-
+   
           1 1 1 1 1 1 1 spare
 
    Note that the values shown in the table here are in binary notation
    per ANSI T1.113.  However, when the values are passed in the NOA
    parameter of P-Charge-Info they are represented in decimal notation.
 
-
-
-
-York & Asveren          Expires January 17, 2013               [Page 15]
-
-Internet-Draft     P-Charge-Info, a SIP Private Header         July 2012
-
-
    As examples of values in the "reserved for national use" block, the
    following values have been defined by ANSI for North American use:
 
-          113 subscriber number, operator requested
-          114 national number, operator requested
-          115 international number, operator requested
-          116 no number present, operator requested
-          117 950+ call from local exchange carrier public station,
-                   hotel/motel, or non-exchange access end office
-          118 test line test code
+       113 subscriber number, operator requested
+       114 national number, operator requested
+       115 international number, operator requested
+       116 no number present, operator requested
+       117 950+ call from local exchange carrier public station,
+                hotel/motel, or non-exchange access end office
+       118 test line test code
 
+14.  References
 
-14.  Appendix C: OLI Parameter Values
+14.1.  Normative References
 
-   The decimal coded values for "originating line information" are
-   assigned and administered by the North American Numbering Plan
-   Administration (NANPA) and are the decimal codes used in the ANI II
-   digits of the ANI sequence for in-band signalling system.  The list
-   of possible values can be found at:
-   http://www.nanpa.com/number_resource_info/ani_ii_assignments.html.
-
-
-15.  References
-
-15.1.  Normative References
-
-   [RFC5727]  Peterson, J., Jennings, C., and R. Sparks, "Change Process
+   [RFC5727]  Peterson, J., Jennings, C. and R. Sparks, "Change Process
               for the Session Initiation Protocol (SIP) and the Real-
-              time Applications and Infrastructure Area", BCP 67,
-              RFC 5727, March 2010.
+              time Applications and Infrastructure Area", BCP 67, RFC
+              5727, March 2010.
 
-15.2.  Informative References
+14.2.  Informative References
 
    [RFC3261]  Rosenberg, J., Schulzrinne, H., Camarillo, G., Johnston,
-              A., Peterson, J., Sparks, R., Handley, M., and E.
-              Schooler, "SIP: Session Initiation Protocol", RFC 3261,
-              June 2002.
+              A., Peterson, J., Sparks, R., Handley, M. and E. Schooler,
+              "SIP: Session Initiation Protocol", RFC 3261, June 2002.
 
-   [RFC3455]  Garcia-Martin, M., Henrikson, E., and D. Mills, "Private
+
+
+York & Asveren           Expires March 02, 2013                [Page 14]
+
+Internet-Draft    P-Charge-Info, a SIP Private Header        August 2012
+
+
+   [RFC3455]  Garcia-Martin, M., Henrikson, E. and D. Mills, "Private
               Header (P-Header) Extensions to the Session Initiation
               Protocol (SIP) for the 3rd-Generation Partnership Project
               (3GPP)", RFC 3455, January 2003.
 
-   [RFC3325]  Jennings, C., Peterson, J., and M. Watson, "Private
+   [RFC3325]  Jennings, C., Peterson, J. and M. Watson, "Private
               Extensions to the Session Initiation Protocol (SIP) for
               Asserted Identity within Trusted Networks", RFC 3325,
               November 2002.
-
-
-
-
-York & Asveren          Expires January 17, 2013               [Page 16]
-
-Internet-Draft     P-Charge-Info, a SIP Private Header         July 2012
-
 
    [RFC3603]  Marshall, W. and F. Andreasen, "Private Session Initiation
               Protocol (SIP) Proxy-to-Proxy Extensions for Supporting
               the PacketCable Distributed Call Signaling Architecture",
               RFC 3603, October 2003.
 
-   [RFC2234]  Crocker, D., Ed. and P. Overell, "Augmented BNF for Syntax
+   [RFC2234]  Crocker, D.Ed.,  and P. Overell, "Augmented BNF for Syntax
               Specifications: ABNF", RFC 2234, November 1997.
-
-   [I-D.patel-dispatch-cpc-oli-parameter]
-              Patel, M., Jesske, R., and M. Dolly, "Uniform Resource
-              Identifier (URI) Parameters for indicating the Calling
-              Party's Category and Originating Line Information",
-              draft-patel-dispatch-cpc-oli-parameter-03 (work in
-              progress), June 2010.
-
 
 Authors' Addresses
 
@@ -919,7 +850,7 @@ Authors' Addresses
    Individual
    Keene, NH
    USA
-
+   
    Phone: +1-802-735-1624
    Email: dyork@lodestar2.com
 
@@ -927,9 +858,9 @@ Authors' Addresses
    Tolga Asveren
    Sonus Networks
    3 Paragon Way
-   Freehold, NJ  07728
+   Freehold, NJ 07728
    USA
-
+   
    Email: tasveren@sonusnet.com
 
 
@@ -948,5 +879,4 @@ Authors' Addresses
 
 
 
-York & Asveren          Expires January 17, 2013               [Page 17]
-
+York & Asveren           Expires March 02, 2013                [Page 15]
