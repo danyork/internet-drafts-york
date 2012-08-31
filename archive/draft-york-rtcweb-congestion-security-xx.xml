@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="US-ASCII"?>
+
+<!DOCTYPE rfc SYSTEM "http://xml.resource.org/authoring/rfc2629.dtd" [
+<!ENTITY RFC2914 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.2914.xml">
+<!ENTITY RFC5405 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.5405.xml">
+<!ENTITY I-D.ietf-rtcweb-overview SYSTEM 
+"http://xml.resource.org/public/rfc/bibxml3/reference.I-D.ietf-rtcweb-overview.xml">
+]>
+<?xml-stylesheet type='text/xsl'
+             href='http://xml.resource.org/authoring/rfc2629.xslt' ?>
+<?rfc strict="yes" ?>
+<?rfc toc="yes"?>
+<?rfc tocdepth="4"?>
+<?rfc symrefs="yes"?>
+<?rfc sortrefs="no" ?>
+<?rfc compact="yes" ?>
+<?rfc subcompact="no" ?>
+
+<rfc category="info" docName="draft-york-rtcweb-congestion-security-xx" ipr="trust200902">
+  
+  <front>
+    
+    <title abbrev="Abbreviated Title">Security Concerns For RTCWEB Congestion Control</title>
+
+    <author fullname="Dan York" initials="D." surname="York">
+      <organization>Internet Society</organization>
+      <address>
+        <postal>
+          <street></street>
+          <city>Keene</city>
+          <region>N.H.</region>
+          <country>USA</country>
+        </postal>
+        <phone>+1-802-735-1624</phone>
+        <email>york@isoc.org</email>
+      </address>
+    </author>
+
+    <date year="2012" />
+
+    <area>Real-time Applications and Infrastructure</area>
+
+    <workgroup>RTCWEB</workgroup>
+
+    <keyword>security</keyword>
+
+    <abstract>
+      <t>As the Real-Time Communication in WEB-browsers (RTCWEB) working group explores
+      options for congestion control to ensure that browser-based voice, video and data 
+      communication do not overwhelm a network, care must be taken to ensure that the
+      congestion controls have appropriate security mechanisms to prevent mis-use by 
+      potential attackers.</t>
+      <t>This document explores potential security concerns and attacks that could be 
+      made against congestion controls.</t>
+      <t>NOTE: While this document is in the form of an Internet-Draft, it has been 
+      created for the IAB/IRTF Congestion Control Workshop on July 28, 2012, and has
+      NOT yet been submitted as an I-D.  It is written in this style, though, with the
+      intent that it may be submitted as an I-D in the future.</t>
+   </abstract>
+  </front>
+
+  <middle>
+    <section title="Introduction">
+      <t>The Real-Time Communication in WEB-browsers (RTCWEB) working group is working
+      to standardize protocols that can be used to enable interoperability between
+      web browsers for interactive real-time communication using audio, video, 
+      chat, collaboration, games, etc.. See <xref
+        target="I-D.ietf-rtcweb-overview">draft-ietf-rtcweb-overview</xref> for an
+      overview of the goals of the overall RTCWEB initiative.</t>
+      
+      <t>The RTCWEB working group is now exploring how best to provide "congestion control" 
+      along the lines described in <xref target="RFC2914">RFC 2914</xref> and expanded 
+      upon for UDP in <xref target="RFC5405">RFC 5405</xref>. The primary objectives are:
+      <list style="symbols">
+          <t>Prevent the collapse of a network due to congestion.</t>
+
+          <t>Provide a level of fairness to all traffic flows on the network.</t>
+        </list>
+        It is expected that as RTCWEB is implemented in common web browsers the amount
+        of real-time communication traffic could be quite substantial and thus the
+        need for adequate congestion control is critical. </t>
+
+        <t>Security concerns for RTCWEB have already been well-documented in <xref
+        target="I-D.ietf-rtcweb-security">draft-ietf-rtcweb-security</xref> and <xref
+        target="I-D.ietf-rtcweb-security-arch">draft-ietf-rtcweb-security-arch</xref>.
+        However, the potential addition of congestion control mechanisms introduces 
+        additional possible avenues of attack.</t>
+        <t>While some of these attacks may be adequately mitigated by security 
+        mechanisms already required for RTCWEB implementations, this document outlines 
+        these potential security concerns for discussion and consideration.</t>
+    </section>
+
+    <section title="Potential Attacks Against Congestion Control Mechanisms">
+      <t>As no congestion control mechanism is yet defined for RTCWEB, the potential
+      attacks below are hypothetical and are raised as questions to be discussed.  Some
+      of the proposed congestion control mechanisms may turn out not to be susceptible
+      to some or all of these attacks.  Other proposed mechanisms may be vulnerable.
+      This document does not make assumptions about whether the congestion control 
+      mechanism might be implemented in the media stream, signaling stream or by
+      some other means.</t>
+       <section title="Denial of Service To An Individual User">
+          <t>An attacker may want to disrupt the communication flow from a specific
+          user or set of users. This could be to target a specific user or to disrupt
+          a certain set of communication exchanges.	</t>
+          <t>Can the attacker maliciously modify congestion control signals
+          in such a way that the traffic flow from a user or set of users is significantly
+          degraded to the point where communication is no longer useful?  Perhaps by
+          tricking the sender into believing there is great congestion and 
+          introducing excessive latency? Or signaling to a RTCWEB endpoint that it 
+          repeatedly needs to switch to a different media codec? Or signaling to the 
+          target endpoint that there is simply
+          too much congestion for any RTCWEB communication to occur?</t>
+       </section>
+       <section title="Elevation of Service For An Individual User">
+          <t>Conversely, an attacker might want to give higher priority to a specific
+          traffic flow (including his or her own) to the detriment of other users.</t> 
+          <t>Can the
+          attacker maliciously modify the congestion control signals so that a particular
+          traffic flow can be given higher priority? Perhaps by signaling to all other
+          RTCWEB streams that there is too much congestion?</t>
+       </section>
+       <section title="Denial of Service For A Network">
+          <t>If there is a large volume of RTCWEB traffic on a given network and a
+          congestion control mechanism ensures that the traffic does not overwhelm the
+          network, an attacker may find that an easy way to perform a denial of 
+          service (DoS) against the entire network may be to simply remove all congestion
+          control signals or convince all RTCWEB endpoints that there is no congestion.</t>
+          <t>Can an attacker maliciously modify the congestion control signals to strip 
+          out any such signaling? Or perhaps modify the congestion control signals in 
+          such a way that sending endpoints believe there is no congestion and that they 
+          can send at their highest available volumes?</t>
+       </section>
+       <section title="Change of Communication Mode">
+          <t>RTCWEB communication is expected to allow multiple modes of communication,
+          i.e. voice, video, chat, data collaboration, etc.  A RTCWEB session between two
+          users might involve all of the above.  A congestion control mechanism could
+          allow specification of which traffic flows receive priority and how the different 
+          flows are addressed when faced with congestion.  For instance, when congestion 
+          levels become too high, a video flow may be dropped while an audio or chat flow 
+          may continue.</t>
+          <t>Could an attacker maliciously modify congestion control signals to force such
+          a downgrade?  For one or both users? </t>
+       </section>
+    </section>
+    <section title="Inter-Domain Considerations">
+    <t>A RTCWEB communication session is not expected to take place entirely within one
+    network or administrative domain.  It may take place across multiple networks or even 
+    more likely take place across the public Internet.</t>
+    <t>Can the confidentiality and integrity of the congestion control signals be ensured
+    across all the various networks through which the session travels?</t>
+    </section>
+
+    <section title="Next Steps">
+    <t>The potential attacks outlined here need to be further explored to determine if 
+    they are, in fact, valid attacks against potential RTCWEB congestion control
+    mechanisms. Discussion needs to be held to understand if there are additional potential
+    attacks beyond those listed here.</t>    
+    <t>The potential attacks that are valid then need to be compared against the security 
+    mechanisms defined 
+    in <xref
+        target="I-D.ietf-rtcweb-security">draft-ietf-rtcweb-security</xref> and <xref
+        target="I-D.ietf-rtcweb-security-arch">draft-ietf-rtcweb-security-arch</xref> to 
+    understand whether or not the attacks may be mitigated or eliminated by already-required 
+    security mechanisms.</t>
+    <t>Any congestion control mechanisms brought for consideration to the RTCWEB working
+    group need to indicate how they address these and other security considerations.</t>
+    </section>
+
+
+    <section anchor="Security" title="Security Considerations">
+      <t>This entire document is about security considerations.</t>
+    </section>
+  </middle>
+
+  <!--  *****BACK MATTER ***** -->
+
+  <back>
+  
+      <references title="Normative References">
+
+      &RFC2914;
+      
+      &RFC5405;
+
+    </references>
+  
+   <references title="Informative References">
+    
+      &I-D.ietf-rtcweb-overview;
+
+      <?rfc include="http://xml.resource.org/public/rfc/bibxml3/reference.I-D.ietf-rtcweb-security.xml"?>
+
+      <?rfc include="http://xml.resource.org/public/rfc/bibxml3/reference.I-D.ietf-rtcweb-security-arch.xml"?>
+
+      <?rfc include="http://xml.resource.org/public/rfc/bibxml3/reference.I-D.alvestrand-rtcweb-congestion.xml"?>
+
+   </references>
+
+    <!-- Change Log
+
+v00 2012-06-22  DY   Initial version
+
+  -->
+  </back>
+</rfc>
