@@ -24,7 +24,7 @@ Abstract
 
    NOTE: This document has been in development since 2008 under the name
    draft-york-sipping-p-charge-info.  This -00 document is identical to
-   draft-york-sipping-p-charge-info-14 except for edits to the text to
+   draft-york-sipping-p-charge-info-15 except for edits to the text to
    indicate this is now for the DISPATCH working group.
 
 Status of this Memo
@@ -99,10 +99,10 @@ Table of Contents
    10. Acknowledgements . . . . . . . . . . . . . . . . . . . . . . . 10
    11. Changes  . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
    12. Appendix A: NPI Parameter Values . . . . . . . . . . . . . . . 13
-   13. Appendix B: NOA Parameter Values . . . . . . . . . . . . . . . 13
+   13. Appendix B: NOA Parameter Values . . . . . . . . . . . . . . . 14
    14. References . . . . . . . . . . . . . . . . . . . . . . . . . . 14
-     14.1.  Normative References  . . . . . . . . . . . . . . . . . . 14
-     14.2.  Informative References  . . . . . . . . . . . . . . . . . 14
+     14.1.  Normative References  . . . . . . . . . . . . . . . . . . 15
+     14.2.  Informative References  . . . . . . . . . . . . . . . . . 15
    Authors' Addresses . . . . . . . . . . . . . . . . . . . . . . . . 15
 
 1.  Overview
@@ -606,6 +606,19 @@ Internet-Draft    P-Charge-Info, a SIP Private Header        August 2012
    NOTE TO RFC EDITOR - Please remove this "Changes" section prior to
    publication.  Thank you.
 
+   Revision -00 is the initial release of "draft-york-dispatch-p-charge-
+   info" and is identical to "draft-york-sipping-p-charge-info-15"
+   except for changes to wording to reflect the change to the DISPATCH
+   working group.
+
+   NAME CHANGE - The document is now "draft-york-dispatch-p-charge-
+   info".
+
+   Revision -15 simply fixes a wording error in the abstract in the
+   previous revision.  This will also be the last version of 'draft-
+   york-sipping-p-charge-info'. The next version will be 'draft-york-
+   dispatch-p-charge-info'.
+
    Revision -14 incorporates the following changes:
 
    o  Two examples were updated to include a "+1" at the beginning of
@@ -630,6 +643,12 @@ Internet-Draft    P-Charge-Info, a SIP Private Header        August 2012
 
    o  Numerous other tweaks to the text for readability.
 
+
+York & Asveren           Expires March 02, 2013                [Page 11]
+
+Internet-Draft    P-Charge-Info, a SIP Private Header        August 2012
+
+
    Revision -13 has no changes to content and was issued as -12 expired.
    Discussions are under way coming out of IETF 83 on a plan to move
    this draft forward.  As the SIPPING working group no longer exists,
@@ -640,14 +659,6 @@ Internet-Draft    P-Charge-Info, a SIP Private Header        August 2012
    from John Haluska and Glen Wang:
 
    o  Modification of Appendix B to reflect ANSI T1.113 values.
-
-
-
-
-York & Asveren           Expires March 02, 2013                [Page 11]
-
-Internet-Draft    P-Charge-Info, a SIP Private Header        August 2012
-
 
    Revision -11 represents a fairly significant revision responding to a
    solid review by Paul Kyzivat and providing additional explanation.  A
@@ -690,6 +701,13 @@ Internet-Draft    P-Charge-Info, a SIP Private Header        August 2012
 
    Revision -09 included the following modifications:
 
+
+
+York & Asveren           Expires March 02, 2013                [Page 12]
+
+Internet-Draft    P-Charge-Info, a SIP Private Header        August 2012
+
+
    o  Re-submitted with only a date change.  Discussions are ongoing to
       finalize this draft and submit it for expert review.
 
@@ -699,14 +717,6 @@ Internet-Draft    P-Charge-Info, a SIP Private Header        August 2012
       sequence of possible values stated in ANSI T1.113.
 
    o  An Appendix A was created listing the values from ANSI T1.113.
-
-
-
-
-York & Asveren           Expires March 02, 2013                [Page 12]
-
-Internet-Draft    P-Charge-Info, a SIP Private Header        August 2012
-
 
    Revision -07 was updated to the "trust200902" IPR statement and added
    references to RFC 3968.  At this point all comments have been
@@ -747,6 +757,16 @@ Internet-Draft    P-Charge-Info, a SIP Private Header        August 2012
    parameter, ANSI T1.113 states that the 'numbering plan indicator' may
    contain the following values:
 
+
+
+
+
+
+York & Asveren           Expires March 02, 2013                [Page 13]
+
+Internet-Draft    P-Charge-Info, a SIP Private Header        August 2012
+
+
        000 unknown (no interpretation)
        001 ISDN (Telephony) numbering plan (Recommendation E-164)
        010 spare (no interpretation)
@@ -761,11 +781,6 @@ Internet-Draft    P-Charge-Info, a SIP Private Header        August 2012
    -Charge-Info they are represented in decimal notation.
 
 13.  Appendix B: NOA Parameter Values
-
-York & Asveren           Expires March 02, 2013                [Page 13]
-
-Internet-Draft    P-Charge-Info, a SIP Private Header        August 2012
-
 
    To better understand the possible values for the optional NOA
    parameter, ANSI T1.113 states that the 'nature of address indicator'
@@ -806,6 +821,11 @@ Internet-Draft    P-Charge-Info, a SIP Private Header        August 2012
 
 14.  References
 
+York & Asveren           Expires March 02, 2013                [Page 14]
+
+Internet-Draft    P-Charge-Info, a SIP Private Header        August 2012
+
+
 14.1.  Normative References
 
    [RFC5727]  Peterson, J., Jennings, C. and R. Sparks, "Change Process
@@ -818,13 +838,6 @@ Internet-Draft    P-Charge-Info, a SIP Private Header        August 2012
    [RFC3261]  Rosenberg, J., Schulzrinne, H., Camarillo, G., Johnston,
               A., Peterson, J., Sparks, R., Handley, M. and E. Schooler,
               "SIP: Session Initiation Protocol", RFC 3261, June 2002.
-
-
-
-York & Asveren           Expires March 02, 2013                [Page 14]
-
-Internet-Draft    P-Charge-Info, a SIP Private Header        August 2012
-
 
    [RFC3455]  Garcia-Martin, M., Henrikson, E. and D. Mills, "Private
               Header (P-Header) Extensions to the Session Initiation
@@ -862,19 +875,6 @@ Authors' Addresses
    USA
    
    Email: tasveren@sonusnet.com
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
