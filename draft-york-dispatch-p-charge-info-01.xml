@@ -79,10 +79,10 @@
        situations to carry 
        the ISUP Charge Number parameter for PSTN interconnection.</t>
        <t>NOTE: This document has been in development since 2008 under
-       the name draft-york-sipping-p-charge-info. This -00 document is
+       the name draft-york-sipping-p-charge-info. This -01 document is
        identical to draft-york-sipping-p-charge-info-15 except for 
        edits to the text to indicate this is now for the DISPATCH
-       working group.</t>
+       working group as the SIPPING working group no longer exists.</t>
     </abstract>
   </front>
 

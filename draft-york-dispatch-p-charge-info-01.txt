@@ -23,9 +23,10 @@ Abstract
    interconnection.
 
    NOTE: This document has been in development since 2008 under the name
-   draft-york-sipping-p-charge-info.  This -00 document is identical to
+   draft-york-sipping-p-charge-info.  This -01 document is identical to
    draft-york-sipping-p-charge-info-15 except for edits to the text to
-   indicate this is now for the DISPATCH working group.
+   indicate this is now for the DISPATCH working group as the SIPPING
+   working group no longer exists.
 
 Status of this Memo
 
@@ -48,7 +49,6 @@ Copyright Notice
 
    Copyright (c) 2013 IETF Trust and the persons identified as the
    document authors.  All rights reserved.
-
 
 
 
@@ -228,13 +228,14 @@ Internet-Draft    P-Charge-Info, a SIP Private Header         March 2013
 
    o  A branch office in Massachusetts has a series of IP phones that
       are connected via SIP to systems in the main office in Colorado
-      and from there via SIP connections to the PSTN through a SIP
+
 
 
 York & Asveren         Expires September 14, 2013               [Page 4]
 
 Internet-Draft    P-Charge-Info, a SIP Private Header         March 2013
 
+      and from there via SIP connections to the PSTN through a SIP
       service provider.
 
    o  The phones in the Massachusetts office have each been assigned a
@@ -276,7 +277,6 @@ Internet-Draft    P-Charge-Info, a SIP Private Header         March 2013
 5.  Alternatives
 
 5.1.  P-Charging-Vector
-
 
 
 
@@ -405,15 +405,13 @@ Internet-Draft    P-Charge-Info, a SIP Private Header         March 2013
    The P-Charge-Info header is not used/interpreted by a regular UA and
    should not normally be seen by such a UA. If the header is
    transmitted to such a UA, the UA SHOULD ignore the header.
-
-
+   Similarly, a regular UA originating a SIP message should not insert
+   this header.
 
 York & Asveren         Expires September 14, 2013               [Page 7]
 
 Internet-Draft    P-Charge-Info, a SIP Private Header         March 2013
 
-   Similarly, a regular UA originating a SIP message should not insert
-   this header.
 
    A PSTN gateway or application server acting as a UA MAY use the
    content of the P-Charge-Info header present in an INVITE request it
@@ -464,16 +462,15 @@ Internet-Draft    P-Charge-Info, a SIP Private Header         March 2013
 
    P-Charge-Info optionally includes the additional parameters of
 
+   o  Numbering Plan Indicator (NPI)
 
+   o  Nature of Address (NOA)
 
 
 York & Asveren         Expires September 14, 2013               [Page 8]
 
 Internet-Draft    P-Charge-Info, a SIP Private Header         March 2013
 
-   o  Numbering Plan Indicator (NPI)
-
-   o  Nature of Address (NOA)
 
    These are used when the ISUP Charge Number value needs to be passed
    as part of P-Charge-Info.  For instance, this might be required in a
@@ -526,10 +523,12 @@ Internet-Draft    P-Charge-Info, a SIP Private Header         March 2013
 
 8.  IANA Considerations
 
+
+
+
 York & Asveren         Expires September 14, 2013               [Page 9]
 
 Internet-Draft    P-Charge-Info, a SIP Private Header         March 2013
-
 
    This document defines a private SIP extension header field.
 
@@ -581,6 +580,7 @@ Internet-Draft    P-Charge-Info, a SIP Private Header         March 2013
    is sent to an untrusted entity.
 
 10.  Acknowledgements
+
 
 
 
