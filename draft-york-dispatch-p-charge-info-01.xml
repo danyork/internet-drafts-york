@@ -20,7 +20,7 @@
 <?rfc sortrefs="no" ?>
 <?rfc compact="yes" ?>
 <?rfc subcompact="no" ?>
-<rfc category="info" docName="draft-york-dispatch-p-charge-info-00" ipr="trust200902">
+<rfc category="info" docName="draft-york-dispatch-p-charge-info-01" ipr="trust200902">
 
   <!-- ***** FRONT MATTER ***** -->
 
@@ -29,7 +29,7 @@
       Protocol (SIP)</title>
 
     <author fullname="Dan York" initials="D." surname="York">
-        <organization abbrev="Individual">Individual</organization>
+        <organization abbrev="DisTel Research">DisTel Research</organization>
       <address>
         <postal>
           <street></street>
@@ -59,7 +59,7 @@
       </address>
     </author>
     
-    <date year="2012" />
+    <date year="2013" />
 
     <!-- Meta-data Declarations -->
 
@@ -493,6 +493,7 @@
     <section anchor="Changes" title="Changes">
       <t>NOTE TO RFC EDITOR - Please remove this "Changes" section prior to
       publication. Thank you.</t>
+      <t>Revision -01 is purely a refresh as -00 expired. No text changes.</t>
       <t>Revision -00 is the initial release of "draft-york-dispatch-p-charge-info"
       and is identical to "draft-york-sipping-p-charge-info-15" except for changes
       to wording to reflect the change to the DISPATCH working group.</t>
