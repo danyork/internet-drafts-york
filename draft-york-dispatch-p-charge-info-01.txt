@@ -4,12 +4,12 @@
 DISPATCH                                                         D. York
 Internet-Draft                                           DisTel Research
 Intended status: Informational                                T. Asveren
-Expires: April 15, 2013                                            Sonus
-                                                        October 14, 2012
+Expires: September 14, 2013                                        Sonus
+                                                          March 15, 2013
 
   P-Charge-Info - A Private Header (P-Header) Extension to the Session
                        Initiation Protocol (SIP)
-                  draft-york-dispatch-p-charge-info-00
+                  draft-york-dispatch-p-charge-info-01
 
 Abstract
 
@@ -42,11 +42,11 @@ Status of this Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on April 15, 2013.
+   This Internet-Draft will expire on September 14, 2013.
 
 Copyright Notice
 
-   Copyright (c) 2012 IETF Trust and the persons identified as the
+   Copyright (c) 2013 IETF Trust and the persons identified as the
    document authors.  All rights reserved.
 
 
@@ -54,9 +54,9 @@ Copyright Notice
 
 
 
-York & Asveren           Expires April 15, 2013                 [Page 1]
+York & Asveren         Expires September 14, 2013               [Page 1]
 
-Internet-Draft    P-Charge-Info, a SIP Private Header       October 2012
+Internet-Draft    P-Charge-Info, a SIP Private Header         March 2013
 
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -113,9 +113,9 @@ Table of Contents
 
 
 
-York & Asveren           Expires April 15, 2013                 [Page 2]
+York & Asveren         Expires September 14, 2013               [Page 2]
 
-Internet-Draft    P-Charge-Info, a SIP Private Header       October 2012
+Internet-Draft    P-Charge-Info, a SIP Private Header         March 2013
 
 
    In certain network configurations, it is desirable to decouple the
@@ -172,9 +172,9 @@ Internet-Draft    P-Charge-Info, a SIP Private Header       October 2012
 
 
 
-York & Asveren           Expires April 15, 2013                 [Page 3]
+York & Asveren         Expires September 14, 2013               [Page 3]
 
-Internet-Draft    P-Charge-Info, a SIP Private Header       October 2012
+Internet-Draft    P-Charge-Info, a SIP Private Header         March 2013
 
 
    The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
@@ -231,9 +231,9 @@ Internet-Draft    P-Charge-Info, a SIP Private Header       October 2012
       and from there via SIP connections to the PSTN through a SIP
 
 
-York & Asveren           Expires April 15, 2013                 [Page 4]
+York & Asveren         Expires September 14, 2013               [Page 4]
 
-Internet-Draft    P-Charge-Info, a SIP Private Header       October 2012
+Internet-Draft    P-Charge-Info, a SIP Private Header         March 2013
 
       service provider.
 
@@ -290,9 +290,9 @@ Internet-Draft    P-Charge-Info, a SIP Private Header       October 2012
 
 
 
-York & Asveren           Expires April 15, 2013                 [Page 5]
+York & Asveren         Expires September 14, 2013               [Page 5]
 
-Internet-Draft    P-Charge-Info, a SIP Private Header       October 2012
+Internet-Draft    P-Charge-Info, a SIP Private Header         March 2013
 
 
    P-Charging-Vector is defined in section 4.6 of RFC 3455 [RFC3455] and
@@ -349,9 +349,9 @@ Internet-Draft    P-Charge-Info, a SIP Private Header       October 2012
 
 
 
-York & Asveren           Expires April 15, 2013                 [Page 6]
+York & Asveren         Expires September 14, 2013               [Page 6]
 
-Internet-Draft    P-Charge-Info, a SIP Private Header       October 2012
+Internet-Draft    P-Charge-Info, a SIP Private Header         March 2013
 
 
    Early reviewers of this document asked why the "P-Asserted-Identity"
@@ -408,9 +408,9 @@ Internet-Draft    P-Charge-Info, a SIP Private Header       October 2012
 
 
 
-York & Asveren           Expires April 15, 2013                 [Page 7]
+York & Asveren         Expires September 14, 2013               [Page 7]
 
-Internet-Draft    P-Charge-Info, a SIP Private Header       October 2012
+Internet-Draft    P-Charge-Info, a SIP Private Header         March 2013
 
    Similarly, a regular UA originating a SIP message should not insert
    this header.
@@ -467,9 +467,9 @@ Internet-Draft    P-Charge-Info, a SIP Private Header       October 2012
    o  Numbering Plan Indicator (NPI)
 
 
-York & Asveren           Expires April 15, 2013                 [Page 8]
+York & Asveren         Expires September 14, 2013               [Page 8]
 
-Internet-Draft    P-Charge-Info, a SIP Private Header       October 2012
+Internet-Draft    P-Charge-Info, a SIP Private Header         March 2013
 
 
    o  Nature of Address (NOA)
@@ -523,13 +523,14 @@ Internet-Draft    P-Charge-Info, a SIP Private Header       October 2012
 
    Typical values for the "noa-value" are listed in Appendix B.
 
-8.  IANA Considerations
 
 
-York & Asveren           Expires April 15, 2013                 [Page 9]
+
+York & Asveren         Expires September 14, 2013               [Page 9]
 
-Internet-Draft    P-Charge-Info, a SIP Private Header       October 2012
+Internet-Draft    P-Charge-Info, a SIP Private Header         March 2013
 
+8.  IANA Considerations
 
    This document defines a private SIP extension header field.
 
@@ -584,10 +585,9 @@ Internet-Draft    P-Charge-Info, a SIP Private Header       October 2012
 
 
 
-
-York & Asveren           Expires April 15, 2013                [Page 10]
+York & Asveren         Expires September 14, 2013              [Page 10]
 
-Internet-Draft    P-Charge-Info, a SIP Private Header       October 2012
+Internet-Draft    P-Charge-Info, a SIP Private Header         March 2013
 
 
    The authors thank the following people for their comments, criticism,
@@ -605,6 +605,8 @@ Internet-Draft    P-Charge-Info, a SIP Private Header       October 2012
 
    NOTE TO RFC EDITOR - Please remove this "Changes" section prior to
    publication.  Thank you.
+
+   Revision -01 is purely a refresh as -00 expired.  No text changes.
 
    Revision -00 is the initial release of "draft-york-dispatch-p-charge-
    info" and is identical to "draft-york-sipping-p-charge-info-15"
@@ -641,13 +643,13 @@ Internet-Draft    P-Charge-Info, a SIP Private Header       October 2012
    o  Informative references were added to RFC 3261 and RFC 2234 to
       address missing references in the text.
 
-   o  Numerous other tweaks to the text for readability.
 
-
-York & Asveren           Expires April 15, 2013                [Page 11]
+York & Asveren         Expires September 14, 2013              [Page 11]
 
-Internet-Draft    P-Charge-Info, a SIP Private Header       October 2012
+Internet-Draft    P-Charge-Info, a SIP Private Header         March 2013
 
+
+   o  Numerous other tweaks to the text for readability.
 
    Revision -13 has no changes to content and was issued as -12 expired.
    Discussions are under way coming out of IETF 83 on a plan to move
@@ -701,11 +703,9 @@ Internet-Draft    P-Charge-Info, a SIP Private Header       October 2012
 
    Revision -09 included the following modifications:
 
-
-
-York & Asveren           Expires April 15, 2013                [Page 12]
+York & Asveren         Expires September 14, 2013              [Page 12]
 
-Internet-Draft    P-Charge-Info, a SIP Private Header       October 2012
+Internet-Draft    P-Charge-Info, a SIP Private Header         March 2013
 
 
    o  Re-submitted with only a date change.  Discussions are ongoing to
@@ -762,9 +762,9 @@ Internet-Draft    P-Charge-Info, a SIP Private Header       October 2012
 
 
 
-York & Asveren           Expires April 15, 2013                [Page 13]
+York & Asveren         Expires September 14, 2013              [Page 13]
 
-Internet-Draft    P-Charge-Info, a SIP Private Header       October 2012
+Internet-Draft    P-Charge-Info, a SIP Private Header         March 2013
 
 
        000 unknown (no interpretation)
@@ -821,9 +821,9 @@ Internet-Draft    P-Charge-Info, a SIP Private Header       October 2012
 
 14.  References
 
-York & Asveren           Expires April 15, 2013                [Page 14]
+York & Asveren         Expires September 14, 2013              [Page 14]
 
-Internet-Draft    P-Charge-Info, a SIP Private Header       October 2012
+Internet-Draft    P-Charge-Info, a SIP Private Header         March 2013
 
 
 14.1.  Normative References
@@ -879,4 +879,4 @@ Authors' Addresses
 
 
 
-York & Asveren           Expires April 15, 2013                [Page 15]
+York & Asveren         Expires September 14, 2013              [Page 15]
