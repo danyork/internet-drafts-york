@@ -493,11 +493,16 @@
     <section anchor="Changes" title="Changes">
       <t>NOTE TO RFC EDITOR - Please remove this "Changes" section prior to
       publication. Thank you.</t>
-      <t>Revision -01 is purely a refresh as -00 expired. No text changes.</t>
+      <t>Revision -01 is purely a refresh as -00 expired. Only a few minor
+      tweaks to this "Changes" section of the document.</t>
       <t>Revision -00 is the initial release of "draft-york-dispatch-p-charge-info"
       and is identical to "draft-york-sipping-p-charge-info-15" except for changes
-      to wording to reflect the change to the DISPATCH working group.</t>
-      <t>NAME CHANGE - The document is now "draft-york-dispatch-p-charge-info".</t>
+      to wording to reflect the change to the DISPATCH working group.  The 
+      "organization" name for Dan York was also changed from blank to "DisTel
+      Research" to remove the confusion that it looked like he was also employed
+      by Sonus Networks.</t>
+      <t>NAME CHANGE - The document is now "draft-york-dispatch-p-charge-info" to
+      reflect the fact that the SIPPING Working Group no longer exists.</t>
       <t>Revision -15 simply fixes a wording error in the abstract in 
       the previous revision.  This will also be the last version of 
       'draft-york-sipping-p-charge-info'. The next version will be
