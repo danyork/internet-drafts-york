@@ -20,7 +20,7 @@
 <?rfc sortrefs="no" ?>
 <?rfc compact="yes" ?>
 <?rfc subcompact="no" ?>
-<rfc category="info" docName="draft-york-dispatch-p-charge-info-01" ipr="trust200902">
+<rfc category="info" docName="draft-york-dispatch-p-charge-info-02" ipr="trust200902">
 
   <!-- ***** FRONT MATTER ***** -->
 
@@ -79,7 +79,7 @@
        situations to carry 
        the ISUP Charge Number parameter for PSTN interconnection.</t>
        <t>NOTE: This document has been in development since 2008 under
-       the name draft-york-sipping-p-charge-info. This -01 document is
+       the name draft-york-sipping-p-charge-info. This -02 document is
        identical to draft-york-sipping-p-charge-info-15 except for 
        edits to the text to indicate this is now for the DISPATCH
        working group as the SIPPING working group no longer exists.</t>
@@ -493,6 +493,8 @@
     <section anchor="Changes" title="Changes">
       <t>NOTE TO RFC EDITOR - Please remove this "Changes" section prior to
       publication. Thank you.</t>
+      <t>Revision -02 is purely a refresh as -01 expired. My hope is to move
+      this document forward soon to put closure on it.</t>
       <t>Revision -01 is purely a refresh as -00 expired. Only a few minor
       tweaks to this "Changes" section of the document.</t>
       <t>Revision -00 is the initial release of "draft-york-dispatch-p-charge-info"
