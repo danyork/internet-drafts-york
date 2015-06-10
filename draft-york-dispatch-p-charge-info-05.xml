@@ -20,7 +20,7 @@
 <?rfc sortrefs="no" ?>
 <?rfc compact="yes" ?>
 <?rfc subcompact="no" ?>
-<rfc category="info" docName="draft-york-dispatch-p-charge-info-02" ipr="trust200902">
+<rfc category="info" docName="draft-york-dispatch-p-charge-info-05" ipr="trust200902">
 
   <!-- ***** FRONT MATTER ***** -->
 
@@ -59,7 +59,7 @@
       </address>
     </author>
     
-    <date year="2013" />
+    <date year="2015" />
 
     <!-- Meta-data Declarations -->
 
@@ -79,7 +79,7 @@
        situations to carry 
        the ISUP Charge Number parameter for PSTN interconnection.</t>
        <t>NOTE: This document has been in development since 2008 under
-       the name draft-york-sipping-p-charge-info. This -02 document is
+       the name draft-york-sipping-p-charge-info. This -05 document is
        identical to draft-york-sipping-p-charge-info-15 except for 
        edits to the text to indicate this is now for the DISPATCH
        working group as the SIPPING working group no longer exists.</t>
@@ -131,7 +131,7 @@
 	correctly bill for services.  </t>
 	<t>Several carriers and at least one 
 	equipment provider, Sonus Networks, have been using the
-	"P-Charge-Info" header for the last 7 years as a simple 
+	"P-Charge-Info" header since at least 2007 as a simple 
 	mechanism to exchange this billing identifier.</t>
 
 
@@ -493,6 +493,10 @@
     <section anchor="Changes" title="Changes">
       <t>NOTE TO RFC EDITOR - Please remove this "Changes" section prior to
       publication. Thank you.</t>
+      <t>Revision -05 is a refresh as -04 expired. Several small tweaks were
+      also made to narrative text.</t>
+      <t>Revision -04 is purely a refresh as -03 expired.</t>
+      <t>Revision -03 is purely a refresh as -02 expired.</t>
       <t>Revision -02 is purely a refresh as -01 expired. My hope is to move
       this document forward soon to put closure on it.</t>
       <t>Revision -01 is purely a refresh as -00 expired. Only a few minor
